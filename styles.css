@@ -1208,8 +1208,24 @@ nav .container {
   display: block;
   font-size: 0.875rem;
   font-weight: 500;
-  margin-bottom: 8px;
   color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.captcha-group {
+  background: var(--bg-elevated);
+  padding: 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.captcha-group label {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.captcha-group input {
+  margin-top: 8px;
 }
 
 .form-group input,

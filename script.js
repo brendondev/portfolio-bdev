@@ -43,6 +43,8 @@ const translations = {
     form_subject: 'Assunto',
     form_message: 'Mensagem',
     form_send: 'Enviar Mensagem',
+    form_captcha: 'Quanto é ',
+    form_captcha_suffix: '?',
     contact_info: 'Entre em contato',
     contact_whatsapp: 'WhatsApp',
     footer_github: 'GitHub',
@@ -254,6 +256,8 @@ const translations = {
     form_subject: 'Subject',
     form_message: 'Message',
     form_send: 'Send Message',
+    form_captcha: 'What is ',
+    form_captcha_suffix: '?',
     contact_info: 'Get in touch',
     contact_whatsapp: 'WhatsApp',
     footer_github: 'GitHub',
@@ -603,25 +607,82 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Form Submission - Netlify AJAX
+  // Form Submission - Netlify AJAX with Local CAPTCHA
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
+    // Generate math captcha on load
+    const num1 = Math.floor(Math.random() * 10) + 1;
+    const num2 = Math.floor(Math.random() * 10) + 1;
+    const correctAnswer = num1 + num2;
+    
+    // Store answer and timestamp
+    sessionStorage.setItem('captcha_answer', correctAnswer);
+    document.getElementById('form-timestamp').value = Date.now();
+    
+    // Set question text
+    const currentLang = localStorage.getItem('lang') || 'pt';
+    const t = translations[currentLang] || translations.pt;
+    const questionLabel = document.getElementById('captcha-question');
+    if (questionLabel) {
+      questionLabel.textContent = `${t.form_captcha}${num1} + ${num2}${t.form_captcha_suffix}`;
+    }
+    
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
       
       const submitBtn = this.querySelector('.submit-btn');
-      const currentLang = localStorage.getItem('lang') || 'pt';
-      const originalText = currentLang === 'pt' ? 'Enviar Mensagem' : 'Send Message';
-      const sendingText = currentLang === 'pt' ? 'Enviando...' : 'Sending...';
+      const lang = localStorage.getItem('lang') || 'pt';
+      const trans = translations[lang] || translations.pt;
+      const originalText = trans.form_send;
+      const sendingText = lang === 'pt' ? 'Enviando...' : 'Sending...';
       
-      const formData = new FormData(this);
-      const data = {};
-      formData.forEach((value, key) => data[key] = value);
+      // Validate CAPTCHA
+      const userAnswer = parseInt(document.getElementById('captcha-answer')?.value) || 0;
+      const storedAnswer = parseInt(sessionStorage.getItem('captcha_answer')) || 0;
+      
+      if (userAnswer !== storedAnswer) {
+        showToast('error', lang === 'pt' ? 'Resposta incorreta. Tente novamente.' : 'Incorrect answer. Please try again.');
+        
+        // Regenerate captcha
+        const newNum1 = Math.floor(Math.random() * 10) + 1;
+        const newNum2 = Math.floor(Math.random() * 10) + 1;
+        sessionStorage.setItem('captcha_answer', newNum1 + newNum2);
+        if (questionLabel) {
+          questionLabel.textContent = `${trans.form_captcha}${newNum1} + ${newNum2}${trans.form_captcha_suffix}`;
+        }
+        document.getElementById('captcha-answer').value = '';
+        return;
+      }
+      
+      // Validate time (minimum 3 seconds to fill form)
+      const submitTime = Date.now();
+      const startTime = parseInt(document.getElementById('form-timestamp').value) || 0;
+      const timeDiff = submitTime - startTime;
+      
+      if (timeDiff < 3000) {
+        showToast('error', lang === 'pt' ? 'Preencha o formulário mais devagar.' : 'Please fill out the form more slowly.');
+        return;
+      }
+      
+      // Check honeypot
+      const honeypot = document.querySelector('[name="bot-field"]');
+      if (honeypot && honeypot.value !== '') {
+        showToast('error', lang === 'pt' ? 'Erro de validação.' : 'Validation error.');
+        return;
+      }
       
       if (submitBtn) {
         submitBtn.textContent = sendingText;
         submitBtn.disabled = true;
       }
+      
+      const formData = new FormData(this);
+      const data = {};
+      formData.forEach((value, key) => {
+        if (key !== 'bot-field' && key !== 'captcha_answer') {
+          data[key] = value;
+        }
+      });
       
       fetch("/", {
         method: "POST",
@@ -630,20 +691,24 @@ document.addEventListener('DOMContentLoaded', function() {
       })
       .then(response => {
         if (response.ok) {
-          const successMsg = currentLang === 'pt' 
-            ? 'Mensagem enviada com sucesso!' 
-            : 'Message sent successfully!';
-          showToast('success', successMsg);
+          showToast('success', lang === 'pt' ? 'Mensagem enviada com sucesso!' : 'Message sent successfully!');
           this.reset();
+          
+          // Regenerate captcha
+          const newNum1 = Math.floor(Math.random() * 10) + 1;
+          const newNum2 = Math.floor(Math.random() * 10) + 1;
+          sessionStorage.setItem('captcha_answer', newNum1 + newNum2);
+          if (questionLabel) {
+            questionLabel.textContent = `${trans.form_captcha}${newNum1} + ${newNum2}${trans.form_captcha_suffix}`;
+          }
+          document.getElementById('form-timestamp').value = Date.now();
+          document.getElementById('captcha-answer').value = '';
         } else {
           throw new Error('Failed');
         }
       })
       .catch(error => {
-        const errorMsg = currentLang === 'pt'
-          ? 'Erro ao enviar mensagem. Tente novamente.'
-          : 'Error sending message. Please try again.';
-        showToast('error', errorMsg);
+        showToast('error', lang === 'pt' ? 'Erro ao enviar. Tente novamente.' : 'Error sending. Please try again.');
       })
       .finally(() => {
         if (submitBtn) {
