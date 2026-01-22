@@ -611,36 +611,70 @@ document.addEventListener('DOMContentLoaded', function() {
       
       const submitBtn = this.querySelector('.submit-btn');
       const currentLang = localStorage.getItem('lang') || 'pt';
-      const sentText = currentLang === 'pt' ? '✓ Mensagem enviada!' : '✓ Message sent!';
-      const sendText = currentLang === 'pt' ? 'Enviar Mensagem' : 'Send Message';
-      const errorText = currentLang === 'pt' ? 'Erro ao enviar' : 'Error sending';
+      const originalText = currentLang === 'pt' ? 'Enviar Mensagem' : 'Send Message';
+      const sendingText = currentLang === 'pt' ? 'Enviando...' : 'Sending...';
       
       const formData = new FormData(this);
       const data = {};
       formData.forEach((value, key) => data[key] = value);
+      
+      if (submitBtn) {
+        submitBtn.textContent = sendingText;
+        submitBtn.disabled = true;
+      }
       
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(data).toString()
       })
-      .then(() => {
-        if (submitBtn) {
-          submitBtn.textContent = sentText;
-          submitBtn.style.background = 'var(--gradient-success)';
+      .then(response => {
+        if (response.ok) {
+          const successMsg = currentLang === 'pt' 
+            ? 'Mensagem enviada com sucesso!' 
+            : 'Message sent successfully!';
+          showToast('success', successMsg);
           this.reset();
-          setTimeout(() => {
-            submitBtn.textContent = sendText;
-            submitBtn.style.background = '';
-          }, 3000);
+        } else {
+          throw new Error('Failed');
         }
       })
-      .catch(() => {
+      .catch(error => {
+        const errorMsg = currentLang === 'pt'
+          ? 'Erro ao enviar mensagem. Tente novamente.'
+          : 'Error sending message. Please try again.';
+        showToast('error', errorMsg);
+      })
+      .finally(() => {
         if (submitBtn) {
-          submitBtn.textContent = errorText;
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
         }
       });
     });
+  }
+  
+  // Toast notification function
+  function showToast(type, message) {
+    const container = document.getElementById('toast-container');
+    if (!container) return;
+    
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    
+    const icon = type === 'success' ? '✓' : '✕';
+    const iconEmoji = type === 'success' ? '✅' : '❌';
+    
+    toast.innerHTML = `
+      <span class="toast-icon">${iconEmoji}</span>
+      <span class="toast-message">${message}</span>
+    `;
+    
+    container.appendChild(toast);
+    
+    setTimeout(() => {
+      toast.remove();
+    }, 3000);
   }
   
   // Modal click handlers
