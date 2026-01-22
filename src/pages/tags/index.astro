@@ -22,7 +22,7 @@ const allTags = getAllTags(projects, posts);
     <div class="container-custom">
       <div class="flex flex-wrap gap-4">
         {allTags.map((tag) => {
-          const count = [...projects.filter(p => p.tags.includes(tag)).length + ...posts.filter(p => p.tags.includes(tag)).length];
+          const count = projects.filter(p => p.tags.includes(tag)).length + posts.filter(p => p.tags.includes(tag)).length;
           return (
             <TagPill tag={tag} count={count} />
           );
