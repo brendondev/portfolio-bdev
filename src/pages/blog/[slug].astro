@@ -1,8 +1,15 @@
----
 import MainLayout from '@/layouts/MainLayout.astro';
 import TagPill from '@/components/TagPill.astro';
 import { getPostBySlug, getPosts, formatDate, formatReadingTime } from '@/lib';
 import { marked } from 'marked';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
 
 const { slug } = Astro.params;
 const post = await getPostBySlug(slug!);
@@ -88,8 +95,8 @@ const relatedPosts = allPosts
                 <h3 class="text-lg font-bold text-dark-900 dark:text-dark-50 mb-4">Neste artigo</h3>
                 <nav id="toc">
                   <ul class="space-y-2 text-sm">
-                    <li><a href="#introducao" class="text-dark-600 dark:text-dark-400 hover:text-primary-600 dark:hover:text-primary-400</a></li>
-">Introdução                  </ul>
+                    <li><a href="#introducao" class="text-dark-600 dark:text-dark-400 hover:text-primary-600 dark:hover:text-primary-400">Introdução</a></li>
+                  </ul>
                 </nav>
               </div>
               
