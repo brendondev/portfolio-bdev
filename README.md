@@ -1,219 +1,167 @@
-# Portfólio Minimalista Premium
+# Brendon Portfolio
 
-Um portfólio profissional, minimalista e premium construído com Astro, focado em performance, SEO e conversão.
+Portfolio website built with pure HTML, CSS, and JavaScript. A modern, responsive WordPress developer portfolio featuring a dark/light theme toggle, multi-language support (PT/EN), and interactive project modals.
 
-**Domínio:** https://brendondev.thedev.me
+## Features
 
-## Características
+- 🎨 **Modern Bento Grid Design** - Clean, organized layout with card-based components
+- 🌓 **Dark/Light Theme** - Toggle between themes with localStorage persistence
+- 🌐 **Multi-language Support** - Portuguese (default) and English with instant switching
+- 📱 **Fully Responsive** - Optimized for all screen sizes
+- ⚡ **No Frameworks** - Pure HTML/CSS/JS for maximum performance
+- 🔗 **Interactive Modals** - Detailed project views with smooth animations
+- 📝 **Blog Integration** - Fetches posts from Dev.to API
+- 🚀 **Netlify Ready** - Deploy-ready static site
 
-- **Stack Moderna**: Astro + TypeScript + Tailwind CSS
-- **Performance Otimizada**: Site estático com carregamento rápido
-- **SEO Completo**: Meta tags, OpenGraph, Sitemap, RSS
-- **Dark Mode**: Toggle com persistência via localStorage
-- **Conteúdo em JSON**: Projetos e posts gerenciados via arquivos JSON
-- **Design Clean**: Estilo minimalista premium inspirado em sawad.framer.website
-
-## Páginas
-
-- `/` - Home com hero, projetos em destaque, serviços e posts recentes
-- `/projects` - Grid de projetos com filtros e busca
-- `/projects/[slug]` - Página individual do projeto
-- `/blog` - Listagem de posts com paginação
-- `/blog/[slug]` - Página individual do post
-- `/about` - Sobre e experiência profissional
-- `/contact` - Contato com formulário e links sociais
-- `/tags` - Página de todas as tags
-- `/tags/[tag]` - Conteúdo filtrado por tag
-
-## Estrutura de Pastas
+## Project Structure
 
 ```
-src/
-├── components/     # Componentes reutilizáveis
-│   ├── Header.astro
-│   ├── Footer.astro
-│   ├── ProjectCard.astro
-│   ├── PostCard.astro
-│   ├── TagPill.astro
-│   ├── SearchInput.astro
-│   └── Pagination.astro
-├── layouts/        # Layouts de página
-│   ├── BaseLayout.astro
-│   └── MainLayout.astro
-├── lib/            # Utilitários e tipos
-│   ├── index.ts
-│   ├── utils.ts
-│   └── types.ts
-├── pages/          # Rotas e páginas
-│   ├── index.astro
-│   ├── about.astro
-│   ├── contact.astro
-│   ├── projects/
-│   ├── blog/
-│   ├── tags/
-│   └── rss.xml.js
-├── styles/         # Estilos globais
-│   └── global.css
-└── env.d.ts
-content/
-├── projects/       # Arquivos JSON dos projetos
-└── posts/          # Arquivos JSON dos posts
-public/
-├── CNAME
-├── robots.txt
-└── favicon.svg
+portfolio-astro/
+├── index.html      # Main HTML file with all content and modals
+├── styles.css      # Complete styling with CSS variables
+├── script.js       # All JavaScript functionality
+├── favicon.svg     # Site favicon
+└── img/            # Project screenshots
+    ├── cloud-rocktron.png
+    ├── digi-vet.com.br.png
+    ├── digi-vet.com.png
+    ├── iecmbrasil.png
+    └── moodle-integration.png
 ```
 
-## Configuração do Domínio thedev.me
+## Getting Started
 
-### 1. Fork do Repositório de Domínio
+### Local Development
 
-1. Acesse: https://github.com/thedev-me/register
-2. Clique em **Fork** (canto superior direito)
-3. Após o fork, edite o arquivo `domains/brendondev.thedev.me.json`
-
-### 2. Configure o Arquivo de Domínio
-
-O arquivo `brendondev.thedev.me.json` já está criado na pasta raiz. Atualize com seu username do GitHub:
-
-```json
-{
-  "subdomain": "brendondev",
-  "domain": "thedev.me",
-  "email_or_discord": "seu-email@email.com",
-  "github_username": "SEU-USERNAME-GITHUB-AQUI",
-  "description": "Portfólio de desenvolvedor web",
-  "records": {
-    "A": [
-      "185.199.108.153",
-      "185.199.109.153",
-      "185.199.110.153",
-      "185.199.111.153"
-    ]
-  },
-  "proxied": false
-}
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd portfolio-astro
 ```
 
-3. Faça commit das alterações
-4. Abra um **Pull Request**
-
-### 3. Configure o GitHub Pages
-
-1. Vá para **Settings** > **Pages** do seu repositório
-2. Em **Build and deployment** > **Source**, selecione "GitHub Actions"
-3. O deploy será automático
-
-### 4. Aguarde a Aprovação
-
-- O PR será revisado manualmente
-- Após aprovação, o domínio estará ativo em minutos
-- Configure o domínio customizado em Settings > Pages > Custom domain: `brendondev.thedev.me`
-
-## Como Usar
-
-### Instalação
+2. Open `index.html` in your browser, or use a local server:
 
 ```bash
-npm install
+# Using Python
+python -m http.server 8000
+
+# Using Node.js (with http-server)
+npx http-server
+
+# Using PHP
+php -S localhost:8000
 ```
 
-### Desenvolvimento
+3. Visit `http://localhost:8000` in your browser.
 
-```bash
-npm run dev
+### Deploying to Netlify
+
+1. Push your code to a GitHub repository
+2. Connect your repository to Netlify
+3. Netlify will automatically detect it's a static site
+4. Your site will be live at `https://your-site.netlify.app`
+
+## Customization
+
+### Changing Content
+
+Edit `index.html` to update:
+- Project information and descriptions
+- Experience and education sections
+- Contact information
+- Links to your social profiles
+
+### Adding Projects
+
+1. Add a project card in the "Selected Work" section:
+```html
+<article class="project-bento-card bento-card project-modal-trigger" data-project="project-id">
+  <div class="project-image" style="background: linear-gradient(...)">
+    <!-- Image or icon -->
+  </div>
+  <div class="project-content">
+    <h3>Project Title</h3>
+    <p>Short description</p>
+  </div>
+</article>
 ```
 
-Acesse `http://localhost:4321`
-
-### Build
-
-```bash
-npm run build
+2. Add a modal at the bottom of the file:
+```html
+<div class="modal-overlay" id="modal-project-id">
+  <div class="modal-container">
+    <button class="modal-close" onclick="closeModal('project-id')">&times;</button>
+    <div class="modal-content">
+      <!-- Modal content -->
+    </div>
+  </div>
+</div>
 ```
 
-Os arquivos compilados ficarão em `dist/`
+### Adding Translations
 
-### Preview
-
-```bash
-npm run preview
-```
-
-## Como Adicionar Novos Projetos
-
-1. Crie um arquivo JSON em `content/projects/`
-
-2. Use o modelo abaixo:
-
-```json
-{
-  "slug": "nome-do-projeto",
-  "title": "Título do Projeto",
-  "headline": "Breve descrição",
-  "year": "2024",
-  "role": "Sua função no projeto",
-  "stack": ["Tech1", "Tech2", "Tech3"],
-  "tags": ["tag1", "tag2"],
-  "coverImage": "URL da imagem",
-  "gallery": ["URL1", "URL2"],
-  "problem": "Descrição do problema",
-  "solution": "Descrição da solução",
-  "results": ["Resultado 1", "Resultado 2"],
-  "links": [
-    { "label": "Ver Projeto", "url": "https://..." }
-  ]
-}
-```
-
-3. Salve o arquivo. O projeto aparecerá automaticamente na página de projetos.
-
-## Como Adicionar Novos Posts
-
-1. Crie um arquivo JSON em `content/posts/`
-
-2. Use o modelo abaixo:
-
-```json
-{
-  "slug": "slug-do-post",
-  "title": "Título do Post",
-  "excerpt": "Breve descrição para cards e SEO",
-  "date": "2024-12-15",
-  "updatedAt": "2024-12-18",
-  "tags": ["tag1", "tag2"],
-  "coverImage": "URL da imagem",
-  "readingTime": 10,
-  "author": "Seu Nome",
-  "canonical": "https://seu-site.com/outra-url",
-  "content": "Conteúdo em **markdown** ou HTML"
-}
-```
-
-3. Salve o arquivo. O post aparecerá automaticamente na listagem do blog.
-
-## Deployment Automático
-
-A cada push na branch `main`, o site será automaticamente buildado e deployado via GitHub Actions.
-
-## Customização
-
-### Cores
-
-Edite `tailwind.config.mjs` para alterar as cores:
+Add new translation keys to `script.js` in the `translations` object:
 
 ```javascript
-colors: {
-  primary: {
-    // Sua paleta de cores
+const translations = {
+  pt: {
+    your_key: 'Seu texto em português',
+  },
+  en: {
+    your_key: 'Your text in English',
   }
+};
+```
+
+Then add `data-i18n="your_key"` to any HTML element you want to translate.
+
+### Theme Colors
+
+Edit the CSS variables in `styles.css`:
+
+```css
+:root {
+  --accent: #6366f1;
+  --accent-light: rgba(99, 102, 241, 0.1);
+  --bg-primary: #0f0f0f;
+  --bg-secondary: #1a1a1a;
+  --bg-card: #242424;
+  --text-primary: #f5f5f5;
+  --text-secondary: #a3a3a3;
 }
 ```
 
-### Informações Pessoais
+## Technologies Used
 
-Edite os arquivos de conteúdo e as páginas para adicionar suas informações.
+- **HTML5** - Semantic markup
+- **CSS3** - Custom properties, grid, flexbox, animations
+- **JavaScript (ES6+)** - No frameworks, pure JS
+- **Dev.to API** - Blog post integration
+- **Font Awesome** - Icons (via CDN in HTML)
 
-## Licença
+## Browser Support
 
-MIT
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## Performance
+
+- Lighthouse score: ~95-100
+- No external JavaScript frameworks
+- Minimal CSS footprint
+- Optimized for Core Web Vitals
+
+## License
+
+MIT License - Feel free to use this template for your own portfolio.
+
+## Author
+
+**Brendon** - WordPress Developer & Plugin Creator
+
+- GitHub: [@brendondev](https://github.com/brendondev)
+- LinkedIn: [/in/brendondev](https://linkedin.com/in/brendondev)
+- Dev.to: [@brendondev](https://dev.to/brendondev)
+- Email: brendonlima@gmail.com
