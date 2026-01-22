@@ -3,112 +3,254 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Seu Nome | Desenvolvedor & Designer</title>
-  <meta name="description" content="Portfólio profissional com projetos de desenvolvimento web, design UI/UX e soluções digitais.">
+  <title>Sawad | Software Engineer</title>
+  <meta name="description" content="A Software Engineer who has developed countless innovative solutions.">
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" href="favicon.svg">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="nav-logo">Seu Nome</a>
-      <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
-        <span class="theme-icon">🌙</span>
-      </button>
+  <nav>
+    <div class="container">
+      <a href="index.html" class="nav-logo">Sawad</a>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#tools">Tools</a>
+        <a href="#thoughts">Thoughts</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
     </div>
   </nav>
 
   <main>
-    <section class="hero">
-      <div class="container">
-        <h1 class="hero-title">Olá, eu sou <span class="highlight">Seu Nome</span></h1>
-        <p class="hero-subtitle">Desenvolvedor Web & Designer UI/UX</p>
-        <p class="hero-description">Criando soluções digitais modernas, minimalistas e funcionais.</p>
-        <div class="hero-buttons">
-          <a href="projects.html" class="btn btn-primary">Ver Projetos</a>
-          <a href="contact.html" class="btn btn-secondary">Contato</a>
-        </div>
-      </div>
+    <section class="hero container">
+      <p class="subtitle">SOFTWARE ENGINEER</p>
+      <h1>Sawad</h1>
+      <p class="description">A Software Engineer who has developed countless innovative solutions. Passionate about creating intuitive and engaging user experiences. Specialize in transforming ideas into beautifully crafted products.</p>
     </section>
 
-    <section class="services">
+    <section class="stats">
       <div class="container">
-        <h2 class="section-title">O que faço</h2>
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-icon">💻</div>
-            <h3>Desenvolvimento Web</h3>
-            <p>Sites e aplicações web modernos com as melhores tecnologias.</p>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="number">+12</div>
+            <div class="label">YEARS OF EXPERIENCE</div>
           </div>
-          <div class="service-card">
-            <div class="service-icon">🎨</div>
-            <h3>Design UI/UX</h3>
-            <p>Interfaces intuitivas e experiências memoráveis para usuários.</p>
+          <div class="stat-item">
+            <div class="number">+46</div>
+            <div class="label">PROJECTS COMPLETED</div>
           </div>
-          <div class="service-card">
-            <div class="service-icon">⚡</div>
-            <h3>Otimização</h3>
-            <p>Sites rápidos, acessíveis e otimizados para SEO.</p>
+          <div class="stat-item">
+            <div class="number">+20</div>
+            <div class="label">WORLDWIDE CLIENTS</div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="featured-projects">
+    <section id="projects" class="projects container">
+      <div class="section-header">
+        <h2 class="section-title">RECENT PROJECTS</h2>
+        <a href="projects.html" class="section-link">View all →</a>
+      </div>
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+          <div class="project-content">
+            <h3>Damas</h3>
+            <p>Free Framer Template</p>
+            <div class="project-tags">
+              <span>Framer</span>
+              <span>React</span>
+            </div>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+          <div class="project-content">
+            <h3>Bayt</h3>
+            <p>Real Estate Framer Template</p>
+            <div class="project-tags">
+              <span>Framer</span>
+              <span>Figma</span>
+            </div>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+          <div class="project-content">
+            <h3>Najm</h3>
+            <p>AI SaaS Framer Template</p>
+            <div class="project-tags">
+              <span>AI</span>
+              <span>SaaS</span>
+            </div>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
+          <div class="project-content">
+            <h3>Store</h3>
+            <p>E-commerce Template</p>
+            <div class="project-tags">
+              <span>Shopify</span>
+              <span>Next.js</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="experience">
       <div class="container">
-        <h2 class="section-title">Projetos em Destaque</h2>
-        <div class="projects-grid">
-          <article class="project-card">
-            <div class="project-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
-            <div class="project-content">
-              <h3>1</h3>
-              <pProjeto >Aplicação web moderna com React e Node.js.</p>
-              <div class="project-tags">
-                <span class="tag">React</span>
-                <span class="tag">Node.js</span>
-              </div>
-              <a href="#" class="project-link">Ver projeto →</a>
-            </div>
-          </article>
-          <article class="project-card">
-            <div class="project-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
-            <div class="project-content">
-              <h3>Projeto 2</h3>
-              <p>Dashboard administrativo com análise de dados.</p>
-              <div class="project-tags">
-                <span class="tag">Vue.js</span>
-                <span class="tag">Chart.js</span>
-              </div>
-              <a href="#" class="project-link">Ver projeto →</a>
-            </div>
-          </article>
-          <article class="project-card">
-            <div class="project-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
-            <div class="project-content">
-              <h3>Projeto 3</h3>
-              <p>E-commerce responsivo com integração de pagamentos.</p>
-              <div class="project-tags">
-                <span class="tag">Next.js</span>
-                <span class="tag">Stripe</span>
-              </div>
-              <a href="#" class="project-link">Ver projeto →</a>
-            </div>
-          </article>
+        <div class="section-header">
+          <h2 class="section-title">EXPERIENCE</h2>
         </div>
-        <div class="text-center">
-          <a href="projects.html" class="btn btn-outline">Ver todos os projetos</a>
+        <div class="experience-list">
+          <div class="experience-item">
+            <span class="period">Jan 2020 - Present</span>
+            <div class="content">
+              <h3>PixelForge Studios</h3>
+              <p>Led the design team in creating user-centric mobile and web applications, improving the user experience and increasing user engagement.</p>
+            </div>
+          </div>
+          <div class="experience-item">
+            <span class="period">Jun 2017 - Dec 2019</span>
+            <div class="content">
+              <h3>BlueWave Innovators</h3>
+              <p>Developed and implemented design strategies for new product lines, collaborated closely with engineers and product managers.</p>
+            </div>
+          </div>
+          <div class="experience-item">
+            <span class="period">Mar 2015 - May 2017</span>
+            <div class="content">
+              <h3>TrendCraft Solutions</h3>
+              <p>Designed user interfaces for e-commerce platforms, focusing on enhancing usability and visual appeal.</p>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
+
+    <section id="tools" class="tools container">
+      <div class="section-header">
+        <h2 class="section-title">PREMIUM TOOLS</h2>
+      </div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="icon">🎨</div>
+          <h4>Framer</h4>
+          <p>Website Builder</p>
+        </div>
+        <div class="tool-card">
+          <div class="icon">✏️</div>
+          <h4>Figma</h4>
+          <p>Design Tool</p>
+        </div>
+        <div class="tool-card">
+          <div class="icon">💳</div>
+          <h4>Stripe</h4>
+          <p>Payments</p>
+        </div>
+        <div class="tool-card">
+          <div class="icon">🤖</div>
+          <h4>ChatGPT</h4>
+          <p>AI Assistant</p>
+        </div>
+        <div class="tool-card">
+          <div class="icon">📝</div>
+          <h4>Notion</h4>
+          <p>Productivity</p>
+        </div>
+        <div class="tool-card">
+          <div class="icon">⚛️</div>
+          <h4>Next.js</h4>
+          <p>React Framework</p>
+        </div>
+        <div class="tool-card">
+          <div class="icon">🔷</div>
+          <h4>TypeScript</h4>
+          <p>Language</p>
+        </div>
+        <div class="tool-card">
+          <div class="icon">🐙</div>
+          <h4>GitHub</h4>
+          <p>Version Control</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="thoughts" class="thoughts">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">DESIGN THOUGHTS</h2>
+          <a href="#" class="section-link">View all →</a>
+        </div>
+        <div class="thoughts-grid">
+          <article class="thought-card">
+            <div class="date">Apr 8, 2022</div>
+            <h3>Starting and Growing a Career in Web Design</h3>
+            <p class="read-time">6 min read</p>
+          </article>
+          <article class="thought-card">
+            <div class="date">Mar 15, 2022</div>
+            <h3>Create a Landing Page That Performs Great</h3>
+            <p class="read-time">6 min read</p>
+          </article>
+          <article class="thought-card">
+            <div class="date">Feb 28, 2022</div>
+            <h3>How Can Designers Prepare for the Future?</h3>
+            <p class="read-time">6 min read</p>
+          </article>
+          <article class="thought-card">
+            <div class="date">Jan 15, 2022</div>
+            <h3>Essential Tools for Modern Web Designers</h3>
+            <p class="read-time">5 min read</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact container">
+      <div class="section-header">
+        <h2 class="section-title">LET'S WORK TOGETHER</h2>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="budget">Budget</label>
+          <select id="budget" name="budget">
+            <option value="">Select...</option>
+            <option value="<3k">< $3k</option>
+            <option value="3k-5k">$3k - $5k</option>
+            <option value="5k-10k">$5k - $10k</option>
+            <option value=">10k">> $10k</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
     </section>
   </main>
 
-  <footer class="footer">
+  <footer>
     <div class="container">
-      <p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
-      <div class="social-links">
-        <a href="#" aria-label="GitHub">GitHub</a>
-        <a href="#" aria-label="LinkedIn">LinkedIn</a>
-        <a href="#" aria-label="Twitter">Twitter</a>
+      <p>© 2024 Sawad. All rights reserved.</p>
+      <div class="social">
+        <a href="#">Twitter</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">GitHub</a>
       </div>
     </div>
   </footer>
