@@ -1,3 +1,4 @@
+---
 import type { SEOProps } from '@/lib';
 import '../styles/global.css';
 
@@ -14,8 +15,33 @@ const defaultSEO: SEOProps = {
 
 const { seo = {} } = Astro.props;
 const fullSEO = { ...defaultSEO, ...seo };
-const siteUrl = 'https://yourname.github.io';
-const canonicalUrl = seo.canonical ? `${siteUrl}${seo.canonical}` : siteUrl;
+const siteUrl = 'https://brendondev.github.io';
+const canonicalUrl = seo.canonical ? siteUrl + seo.canonical : siteUrl;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Seu Nome',
+  url: siteUrl,
+  description: fullSEO.description,
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: siteUrl + '/blog?q={search_term_string}',
+    'query-input': 'required name=search_term_string'
+  }
+};
+
+const themeScript = `
+  (function() {
+    const theme = localStorage.getItem('theme');
+    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (theme === 'dark' || (!theme && systemDark)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  })();
+`;
 ---
 
 <html lang="pt-BR" class="dark">
@@ -33,13 +59,13 @@ const canonicalUrl = seo.canonical ? `${siteUrl}${seo.canonical}` : siteUrl;
     <meta property="og:type" content={fullSEO.type} />
     <meta property="og:title" content={fullSEO.title} />
     <meta property="og:description" content={fullSEO.description} />
-    <meta property="og:image" content={fullSEO.image ? `${siteUrl}${fullSEO.image}` : ''} />
+    <meta property="og:image" content={fullSEO.image ? siteUrl + fullSEO.image : ''} />
     <meta property="og:url" content={canonicalUrl} />
     
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullSEO.title} />
     <meta name="twitter:description" content={fullSEO.description} />
-    <meta name="twitter:image" content={fullSEO.image ? `${siteUrl}${fullSEO.image}` : ''} />
+    <meta name="twitter:image" content={fullSEO.image ? siteUrl + fullSEO.image : ''} />
     
     {fullSEO.type === 'article' && (
       <>
@@ -52,30 +78,8 @@ const canonicalUrl = seo.canonical ? `${siteUrl}${seo.canonical}` : siteUrl;
       </>
     )}
     
-    <script type="application/ld+json" set:html={JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'WebSite',
-      name: 'Seu Nome',
-      url: siteUrl,
-      description: fullSEO.description,
-      potentialAction: {
-        '@type': 'SearchAction',
-        target: `${siteUrl}/blog?q={search_term_string}`,
-        'query-input': 'required name=search_term_string'
-      }
-    })} />
-    
-    <script type="text/javascript" set:html={`
-      (function() {
-        const theme = localStorage.getItem('theme');
-        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (theme === 'dark' || (!theme && systemDark)) {
-          document.documentElement.classList.add('dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-        }
-      })();
-    `} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
+    <script type="text/javascript" set:html={themeScript} is:inline />
   </head>
   <body class="min-h-screen flex flex-col">
     <slot />
