@@ -380,32 +380,56 @@ nav .container {
   box-shadow: var(--shadow-xl);
 }
 
+.hero-visual {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  position: relative;
+  max-width: 600px;
+}
+
+.hero-card {
+  position: relative;
+}
+
 .hero-card-1 {
-  top: 10%;
-  left: 5%;
+  grid-column: span 2;
   animation: float 6s ease-in-out infinite;
-  max-width: 220px;
 }
 
 .hero-card-2 {
-  top: 35%;
-  right: 5%;
   animation: float 8s ease-in-out infinite reverse;
-  max-width: 240px;
 }
 
 .hero-card-3 {
-  bottom: 15%;
-  left: 15%;
   animation: float 7s ease-in-out infinite 1s;
-  max-width: 200px;
+}
+
+.hero-card-4 {
+  animation: float 5s ease-in-out infinite 0.5s;
+}
+
+.hero-card-5 {
+  animation: float 6s ease-in-out infinite 1.5s;
+}
+
+.hero-card-6 {
+  animation: float 7s ease-in-out infinite 2s;
+}
+
+.hero-card-7 {
+  animation: float 5s ease-in-out infinite 0.3s;
+}
+
+.hero-card-8 {
+  animation: float 6s ease-in-out infinite 1.2s;
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0) translateX(0); }
-  25% { transform: translateY(-15px) translateX(5px); }
-  50% { transform: translateY(-25px) translateX(-5px); }
-  75% { transform: translateY(-15px) translateX(5px); }
+  25% { transform: translateY(-8px) translateX(3px); }
+  50% { transform: translateY(-12px) translateX(-3px); }
+  75% { transform: translateY(-8px) translateX(3px); }
 }
 
 /* Code Preview Card */
