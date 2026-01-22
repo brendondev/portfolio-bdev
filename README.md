@@ -1,6 +1,8 @@
 # Portfólio Minimalista Premium
 
-Um portfólio profissionalminimalista e premium construído com Astro, focado em performance, SEO e conversão.
+Um portfólio profissional, minimalista e premium construído com Astro, focado em performance, SEO e conversão.
+
+**Domínio:** https://brendondev.thedev.me
 
 ## Características
 
@@ -57,9 +59,56 @@ content/
 ├── projects/       # Arquivos JSON dos projetos
 └── posts/          # Arquivos JSON dos posts
 public/
+├── CNAME
 ├── robots.txt
 └── favicon.svg
 ```
+
+## Configuração do Domínio thedev.me
+
+### 1. Fork do Repositório de Domínio
+
+1. Acesse: https://github.com/thedev-me/register
+2. Clique em **Fork** (canto superior direito)
+3. Após o fork, edite o arquivo `domains/brendondev.thedev.me.json`
+
+### 2. Configure o Arquivo de Domínio
+
+O arquivo `brendondev.thedev.me.json` já está criado na pasta raiz. Atualize com seu username do GitHub:
+
+```json
+{
+  "subdomain": "brendondev",
+  "domain": "thedev.me",
+  "email_or_discord": "seu-email@email.com",
+  "github_username": "SEU-USERNAME-GITHUB-AQUI",
+  "description": "Portfólio de desenvolvedor web",
+  "records": {
+    "A": [
+      "185.199.108.153",
+      "185.199.109.153",
+      "185.199.110.153",
+      "185.199.111.153"
+    ]
+  },
+  "proxied": false
+}
+```
+
+3. Faça commit das alterações
+4. Abra um **Pull Request**
+
+### 3. Configure o GitHub Pages
+
+1. Vá para **Settings** > **Pages** do seu repositório
+2. Em **Build and deployment** > **Source**, selecione "GitHub Actions"
+3. O deploy será automático
+
+### 4. Aguarde a Aprovação
+
+- O PR será revisado manualmente
+- Após aprovação, o domínio estará ativo em minutos
+- Configure o domínio customizado em Settings > Pages > Custom domain: `brendondev.thedev.me`
 
 ## Como Usar
 
@@ -143,34 +192,9 @@ npm run preview
 
 3. Salve o arquivo. O post aparecerá automaticamente na listagem do blog.
 
-## Deployment no GitHub Pages
+## Deployment Automático
 
-### Configuração Inicial
-
-1. Crie um repositório no GitHub
-2. Faça push do código
-3. Vá em Settings > Pages
-4. Em "Build and deployment", selecione "GitHub Actions"
-
-### Deploy Automático
-
-A cada push na branch `main`, o site será automaticamente buildado e deployado.
-
-### URL do Site
-
-O site estará disponível em:
-```
-https://seuusername.github.io/nome-do-repositorio/
-```
-
-Para funcionar corretamente, edite `astro.config.mjs` e altere a URL:
-
-```javascript
-export default defineConfig({
-  site: 'https://seuusername.github.io/nome-do-repositorio',
-  // ...
-});
-```
+A cada push na branch `main`, o site será automaticamente buildado e deployado via GitHub Actions.
 
 ## Customização
 
