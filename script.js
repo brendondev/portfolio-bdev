@@ -1,4 +1,5 @@
 (function() {
+  // Theme toggle
   const themeToggle = document.getElementById('themeToggle');
   
   const savedTheme = localStorage.getItem('theme');
@@ -27,7 +28,7 @@
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
       if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
   });
@@ -37,8 +38,108 @@
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      alert('Thanks for your message! This is a demo form.');
-      this.reset();
+      
+      // Show success message
+      const submitBtn = this.querySelector('.submit-btn');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = '✓ Message sent!';
+      submitBtn.style.background = 'var(--gradient-primary)';
+      
+      // Reset form after delay
+      setTimeout(() => {
+        this.reset();
+        submitBtn.textContent = originalText;
+        submitBtn.style.background = '';
+      }, 3000);
+    });
+  }
+
+  // Intersection Observer for animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('fade-in');
+        }, index * 100);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Observe elements for animation
+  document.querySelectorAll('.project-card, .experience-item, .tool-card, .thought-card').forEach(el => {
+    el.classList.add('fade-in');
+    observer.observe(el);
+  });
+
+  // Parallax effect on hero
+  let ticking = false;
+  function updateParallax() {
+    const scrolled = window.pageYOffset;
+    const parallax = document.querySelector('.hero::before, .hero::after');
+    if (parallax && scrolled < 600) {
+      const speed = 0.5;
+      document.documentElement.style.setProperty('--parallax-offset', `${scrolled * speed}px`);
+    }
+    ticking = false;
+  }
+
+  function requestTick() {
+    if (!ticking) {
+      window.requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', requestTick);
+
+  // Active navigation state
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (pageYOffset >= sectionTop - 200) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+
+  // Add hover effect to project cards
+  document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-8px) scale(1.02)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+      this.style.transform = '';
+    });
+  });
+
+  // Logo hover effect
+  const logo = document.querySelector('.nav-logo');
+  if (logo) {
+    logo.addEventListener('mouseenter', function() {
+      this.style.transform = 'scale(1.05)';
+    });
+    
+    logo.addEventListener('mouseleave', function() {
+      this.style.transform = '';
     });
   }
 })();
