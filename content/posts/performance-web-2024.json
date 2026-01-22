@@ -1,0 +1,12 @@
+{
+  "slug": "performance-web-2024",
+  "title": "Guia Completo de Performance Web em 2024",
+  "excerpt": "Aprenda as melhores práticas e técnicas avançadas para otimizar a performance dos seus sites e aplicações web.",
+  "date": "2024-12-15",
+  "updatedAt": "2024-12-18",
+  "tags": ["performance", "dev", "web"],
+  "coverImage": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
+  "readingTime": 12,
+  "author": "Seu Nome",
+  "content": "# Guia Completo de Performance Web em 2024\n\nA performance de sites é um dos fatores mais importantes para a experiência do usuário e para o ranking nos mecanismos de busca. Neste artigo, vou compartilhar as melhores práticas e técnicas avançadas para otimizar seus projetos.\n\n## Por que a performance importa?\n\n- **Experiência do Usuário**: Sites rápidos proporcionam uma melhor experiência.\n- **SEO**: O Google considera a velocidade como fator de ranking.\n- **Conversão**: Cada segundo de atraso pode significar perda de usuários.\n\n## Técnicas de Otimização\n\n### 1. Otimização de Imagens\n\nUtilize formatos modernos como WebP e AVIF. Imagens geralmente são o maior gargalo de performance.\n\n### 2. Code Splitting\n\nCarregue apenas o código necessário para cada página.\n\n### 3. Caching Estratégico\n\nConfigure headers de cache apropriados para diferentes tipos de conteúdo.\n\n## Conclusão\n\nA performance não é um destino, é uma jornada contínua de otimização."
+}

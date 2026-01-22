@@ -1,0 +1,11 @@
+{
+  "slug": "css-architecture-2024",
+  "title": "Arquitetura CSS Moderna em 2024",
+  "excerpt": "Organize seu CSS de forma escalável com metodologias modernas e ferramentas atuais.",
+  "date": "2024-08-10",
+  "tags": ["css", "dev", "web"],
+  "coverImage": "https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?w=800&h=400&fit=crop",
+  "readingTime": 8,
+  "author": "Seu Nome",
+  "content": "# Arquitetura CSS Moderna\n\nOrganizar CSS de forma escalável é um desafio. Veja as melhores abordagens.\n\n## CSS Modules\n\nCSS Modules oferecem scoped styles por padrão, evitando conflitos.\n\n## Tailwind CSS\n\nTailwind permite criar designs rapidamente com utility classes.\n\n## Conclusão\n\nEscolha a abordagem que melhor se adapta ao seu projeto e equipe."
+}

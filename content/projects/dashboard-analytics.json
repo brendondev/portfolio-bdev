@@ -1,0 +1,23 @@
+{
+  "slug": "dashboard-analytics",
+  "title": "Dashboard Analytics",
+  "headline": "Painel de analytics intuitivo para visualização de dados de negócios com relatórios customizáveis.",
+  "year": "2024",
+  "role": "Desenvolvedor Front-end",
+  "stack": ["React", "TypeScript", "D3.js", "Node.js", "Chart.js"],
+  "tags": ["web", "saas", "analytics"],
+  "coverImage": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=600&fit=crop",
+  "gallery": [
+    "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
+  ],
+  "problem": "A empresa tinha dados dispersos em múltiplas fontes e precisava de uma forma centralizada de visualizá-los e tomar decisões baseadas em dados.",
+  "solution": "Criamos um dashboard com mais de 30 tipos de visualizações, filtros avançados e capacidade de criar relatórios customizados. A interface foi projetada para ser intuitiva mesmo para usuários não técnicos.",
+  "results": [
+    "Economia de 20 horas semanais na criação de relatórios manuais",
+    "Adoção por 95% dos gestores da empresa",
+    "Redução de 60% no tempo para tomada de decisões estratégicas"
+  ],
+  "links": [
+    { "label": "Ver Projeto", "url": "https://exemplo.com" }
+  ]
+}

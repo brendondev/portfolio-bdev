@@ -1,0 +1,23 @@
+{
+  "slug": "brand-identity-saas",
+  "title": "Brand Identity SaaS",
+  "headline": "Aplicação web para criação e gerenciamento de identidades visuais de marcas.",
+  "year": "2023",
+  "role": "Desenvolvedor Full Stack",
+  "stack": ["Vue.js", "Nuxt", "Firebase", "Tailwind CSS", "Figma API"],
+  "tags": ["web", "saas", "ui"],
+  "coverImage": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&h=600&fit=crop",
+  "gallery": [
+    "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop"
+  ],
+  "problem": "Pequenas empresas e empreendedores individuais precisavam de uma forma acessível de criar identidades visuais profissionais sem contratar designers.",
+  "solution": "Desenvolvemos uma plataforma com ferramentas de design integradas que permite criar logos, paletas de cores, tipografias e materiais de marca de forma intuitiva.",
+  "results": [
+    "Mais de 10.000 marcas criadas na plataforma",
+    "NPS de 72, indicando alta satisfação dos usuários",
+    "Crescimento de 300% no número de assinaturas pagas em 6 meses"
+  ],
+  "links": [
+    { "label": "Ver Projeto", "url": "https://exemplo.com" }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "slug": "ux-design-principles",
+  "title": "Princípios Fundamentais de UX Design",
+  "excerpt": "Os princípios de UX design que todo desenvolvedor deve conhecer para criar interfaces melhores.",
+  "date": "2024-11-10",
+  "tags": ["ux", "design", "web"],
+  "coverImage": "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=800&h=400&fit=crop",
+  "readingTime": 8,
+  "author": "Seu Nome",
+  "content": "# Princípios Fundamentais de UX Design\n\nUX Design não é apenas sobre como as coisas parecem, mas sobre como funcionam e como fazem o usuário sentir.\n\n## Usabilidade\n\nA usabilidade é a facilidade com que um usuário pode interagir com seu produto.\n\n## Acessibilidade\n\nDesign inclusivo beneficia todos os usuários.\n\n## Feedback Visual\n\nOs usuários precisam saber o que está acontecendo no sistema.\n\n## Consistência\n\nMantendo padrões consistentes, os usuários podem transferir seu conhecimento entre diferentes partes do sistema.\n\n## Conclusão\n\nBons princípios de UX tornam produtos melhores para todos."
+}

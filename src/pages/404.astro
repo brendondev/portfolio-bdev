@@ -1,0 +1,23 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro';
+---
+
+<MainLayout title="Página Não Encontrada | Seu Nome" description="A página que você está procurando não existe." noIndex={true}>
+  <div class="min-h-[60vh] flex items-center justify-center">
+    <div class="container-custom text-center">
+      <span class="text-9xl font-bold text-primary-200 dark:text-primary-900/30">404</span>
+      <h1 class="heading-1 mt-4 mb-6">Página Não Encontrada</h1>
+      <p class="text-xl text-dark-600 dark:text-dark-400 mb-8 max-w-md mx-auto">
+        A página que você está procurando não existe ou foi movida.
+      </p>
+      <div class="flex justify-center gap-4">
+        <a href="/" class="btn btn-primary">
+          Voltar ao Início
+        </a>
+        <a href="/contact" class="btn btn-secondary">
+          Entre em Contato
+        </a>
+      </div>
+    </div>
+  </div>
+</MainLayout>

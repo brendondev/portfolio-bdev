@@ -1,0 +1,11 @@
+{
+  "slug": "wordpress-vs-custom",
+  "title": "WordPress vs Desenvolvimento Customizado",
+  "excerpt": "Quando usar WordPress e quando desenvolver uma solução customizada? Vamos analisar os prós e contras.",
+  "date": "2024-09-05",
+  "tags": ["wordpress", "dev", "web"],
+  "coverImage": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=400&fit=crop",
+  "readingTime": 11,
+  "author": "Seu Nome",
+  "content": "# WordPress vs Desenvolvimento Customizado\n\nA escolha entre WordPress e desenvolvimento customizado depende de vários fatores.\n\n## Quando usar WordPress?\n\n- Sites institucionais\n- Blogs\n- Lojas virtuais com WooCommerce\n- Quando a equipe não é técnica\n\n## Quando desenvolver customizado?\n\n- Aplicações web complexas\n- Quando há requisitos únicos\n- Performance extrema é necessária\n\n## Híbrido\n\nEm muitos casos, uma abordagem híbrida pode ser a melhor solução.\n\n## Conclusão\n\nAmbas as abordagens têm seu lugar. A escolha depende do projeto específico."
+}

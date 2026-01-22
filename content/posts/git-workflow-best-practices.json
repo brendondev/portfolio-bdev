@@ -1,0 +1,11 @@
+{
+  "slug": "git-workflow-best-practices",
+  "title": "Git Workflow: Melhores Práticas para Times",
+  "excerpt": "Um guia completo sobre fluxos de trabalho Git para equipes de desenvolvimento colaborativo.",
+  "date": "2024-08-22",
+  "tags": ["dev", "git", "workflow"],
+  "coverImage": "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=800&h=400&fit=crop",
+  "readingTime": 7,
+  "author": "Seu Nome",
+  "content": "# Git Workflow para Times\n\nUm bom fluxo de trabalho Git é essencial para colaboração eficiente em times de desenvolvimento.\n\n## Branching Strategy\n\nUtilize branches para features, bugfixes e releases de forma organizada.\n\n## Commit Messages\n\nEscreva mensagens de commit claras e descritivas.\n\n## Code Review\n\nO code review é uma prática essencial para manter a qualidade do código.\n\n## Conclusão\n\nUm bom workflow Git melhora a colaboração e reduz erros."
+}
