@@ -139,17 +139,45 @@
         <div class="projects-header">
           <h2 class="section-title">Selected Work</h2>
         </div>
-        <article class="project-bento-card bento-card">
-          <div class="project-image" style="background: var(--gradient-primary);"></div>
+        
+        <!-- IECM Brasil Project with Modal -->
+        <article class="project-bento-card bento-card project-modal-trigger" data-project="iecm">
+          <div class="project-image" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); display: flex; align-items: center; justify-content: center;">
+            <div style="text-align: center;">
+              <div style="font-size: 3rem; margin-bottom: 12px;">🎓</div>
+              <p style="font-size: 0.875rem; color: rgba(255,255,255,0.8);">Plataforma EAD + Site</p>
+            </div>
+          </div>
           <div class="project-content">
-            <h3>Custom WP Plugin</h3>
-            <p>Plugin personalizado para gestão de eventos com integração payment gateway.</p>
+            <h3>IECM Brasil — Moodle + Site</h3>
+            <p>Plataforma EAD Moodle completa com site institucional e integrações personalizadas.</p>
             <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px;">
-              <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">PHP</span>
+              <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">Moodle</span>
               <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">WordPress</span>
+              <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">PHP</span>
             </div>
           </div>
         </article>
+        
+        <!-- Moodle-WooCommerce Integration Project -->
+        <article class="project-bento-card bento-card project-modal-trigger" data-project="moodle-woo">
+          <div class="project-image" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); display: flex; align-items: center; justify-content: center;">
+            <div style="text-align: center;">
+              <div style="font-size: 3rem; margin-bottom: 12px;">🔗</div>
+              <p style="font-size: 0.875rem; color: rgba(255,255,255,0.8);">WooCommerce ↔ Moodle API</p>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>WooCommerce + Moodle Integration</h3>
+            <p>Snippets customizados para venda e entrega automática de cursos com integração via API.</p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px;">
+              <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">PHP</span>
+              <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">WooCommerce</span>
+              <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">Moodle API</span>
+            </div>
+          </div>
+        </article>
+        
         <article class="project-bento-card bento-card">
           <div class="project-image" style="background: var(--gradient-secondary);"></div>
           <div class="project-content">
@@ -164,36 +192,16 @@
         <article class="project-bento-card bento-card">
           <div class="project-image" style="background: var(--gradient-tertiary);"></div>
           <div class="project-content">
-            <h3>Moodle LMS</h3>
-            <p>Plataforma EAD personalizada com cursos, quizzes e certificados.</p>
+            <h3>Custom WP Plugin</h3>
+            <p>Plugin personalizado para gestão de eventos com integração payment gateway.</p>
             <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px;">
-              <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">Moodle</span>
               <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">PHP</span>
-            </div>
-          </div>
-        </article>
-        <article class="project-bento-card bento-card">
-          <div class="project-image" style="background: var(--gradient-quaternary);"></div>
-          <div class="project-content">
-            <h3>Theme Customizado</h3>
-            <p>Theme WordPress sob medida com page builder e ACF.</p>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px;">
               <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">WordPress</span>
-              <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">PHP</span>
             </div>
           </div>
         </article>
-        <article class="project-bento-card bento-card">
-          <div class="project-image" style="background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);"></div>
-          <div class="project-content">
-            <h3>API REST WP</h3>
-            <p>Integração WordPress com apps móveis via REST API.</p>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px;">
-              <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">REST API</span>
-              <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">JavaScript</span>
-            </div>
-          </div>
-        </article>
+        
+        <!-- Remaining projects... -->
         <article class="project-bento-card bento-card">
           <div class="project-image" style="background: linear-gradient(135deg, #14b8a6 0%, #f59e0b 100%);"></div>
           <div class="project-content">
@@ -381,6 +389,212 @@
       </div>
     </div>
   </footer>
+
+  <!-- Project Modal - IECM Brasil -->
+  <div class="modal-overlay" id="modal-iecm">
+    <div class="modal-container">
+      <button class="modal-close" onclick="closeModal('iecm')">&times;</button>
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-badge">Plataforma EAD + Site Institucional</div>
+          <h2>IECM Brasil — Moodle + Integrações</h2>
+          <p class="modal-subtitle">iecmbrasil.com</p>
+        </div>
+        
+        <div class="modal-section">
+          <h3>📋 Visão Geral</h3>
+          <p>Implementação completa do ambiente digital do IECM Brasil, combinando site institucional com plataforma EAD em Moodle, ambos organizados para crescimento, performance e facilidade de manutenção.</p>
+        </div>
+        
+        <div class="modal-section">
+          <h3>✅ O que foi entregue</h3>
+          <div class="modal-grid">
+            <div class="modal-item">
+              <span class="modal-icon">🎓</span>
+              <div>
+                <strong>Moodle (Plataforma EAD)</strong>
+                <p>Instalação via cPanel, configuração administrativa, estrutura de cursos e preparação para alunos, instrutores e administradores.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">🎨</span>
+              <div>
+                <strong>Tema e UX</strong>
+                <p>Instalação de tema profissional, ajustes de layout, legibilidade, responsividade e hierarquia de informações.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">🌐</span>
+              <div>
+                <strong>Site Institucional</strong>
+                <p>Pages: Home, Sobre, Serviços/Consultoria, Contato — focados em posicionamento de marca e conversão.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">🔌</span>
+              <div>
+                <strong>Snippets Personalizados</strong>
+                <p>Criação de snippets para integração e padronização entre site e Moodle, melhorando consistência visual e funcional.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="modal-section">
+          <h3>🛠️ Tecnologias Utilizadas</h3>
+          <div class="modal-tags">
+            <span>Moodle (LMS)</span>
+            <span>cPanel / HostGator</span>
+            <span>Tema Moodle Profissional</span>
+            <span>HTML/CSS</span>
+            <span>PHP</span>
+            <span>Snippets Customizados</span>
+          </div>
+        </div>
+        
+        <div class="modal-section">
+          <h3>⭐ Diferenciais</h3>
+          <ul class="modal-list">
+            <li>Solução completa: Site + Moodle integrados</li>
+            <li>Estrutura preparada para crescimento</li>
+            <li>Snippets personalizados para melhorar UX</li>
+            <li>Melhor organização de cursos e módulos</li>
+            <li>Base preparada para automações futuras</li>
+          </ul>
+        </div>
+        
+        <div class="modal-section highlight">
+          <h3>📈 Resultado Final</h3>
+          <p>O IECM Brasil passou a ter um ecossistema digital com:</p>
+          <div class="modal-results">
+            <span>✅ Site institucional profissional</span>
+            <span>✅ Plataforma EAD Moodle pronta</span>
+            <span>✅ Tema configurado com UX melhorada</span>
+            <span>✅ Snippets para integração e padronização</span>
+          </div>
+        </div>
+        
+        <div class="modal-footer">
+          <a href="https://iecmbrasil.com" target="_blank" class="btn-primary glow">Ver projeto ao vivo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Modal - Moodle WooCommerce Integration -->
+  <div class="modal-overlay" id="modal-moodle-woo">
+    <div class="modal-container">
+      <button class="modal-close" onclick="closeModal('moodle-woo')">&times;</button>
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-badge">WooCommerce + Moodle API</div>
+          <h2>WooCommerce ↔ Moodle Integration</h2>
+          <p class="modal-subtitle">Sistema completo de venda e entrega automática de cursos</p>
+        </div>
+        
+        <div class="modal-section">
+          <h3>📋 Visão Geral</h3>
+          <p>Desenvolvimento de uma camada de integrações via snippets em PHP, conectando WooCommerce + API do Moodle para automatizar matrícula, cancelamento e comunicação com o aluno, transformando o WordPress em uma plataforma de vendas real de cursos com entrega automática.</p>
+        </div>
+        
+        <div class="modal-section">
+          <h3>✅ Integrações Implementadas</h3>
+          <div class="modal-grid">
+            <div class="modal-item">
+              <span class="modal-icon">✅</span>
+              <div>
+                <strong>1) Matrícula Automática</strong>
+                <p>Snippet que monitora status do pedido WooCommerce e, após pagamento confirmado, executa matrícula no Moodle via API automaticamente.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">❌</span>
+              <div>
+                <strong>2) Cancelamento/Remoção de Acesso</strong>
+                <p>Lógica inversa: se pedido for cancelado/reembolsado, o sistema remove ou bloqueia o acesso no Moodle automaticamente.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">📧</span>
+              <div>
+                <strong>3) E-mails Automáticos Pós-compra</strong>
+                <p>Após matrícula, dispara e-mails automáticos com instruções de login, link direto e orientações claras para o aluno.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">📚</span>
+              <div>
+                <strong>4) Aba "Meus Cursos" no WooCommerce</strong>
+                <p>Criada aba exclusiva em "Minha Conta" que lista cursos ativos do aluno com link direto para acessar cada um.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">🔒</span>
+              <div>
+                <strong>5) Restrição Inteligente de Páginas</strong>
+                <p>Snippet que restringe páginas para alunos com curso ativo e exibe aviso fixo com CTA para "Meus Cursos".</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">📝</span>
+              <div>
+                <strong>6) Campo de Vínculo no Admin</strong>
+                <p>Campo no admin do WooCommerce para vincular produto ao curso Moodle, permitindo escalar catálogo sem código.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">📊</span>
+              <div>
+                <strong>7) Box de Informações no Pedido</strong>
+                <p>Box na tela do pedido WooCommerce com curso vinculado, ID, link direto e status da matrícula para suporte rápido.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="modal-section">
+          <h3>🛠️ Tecnologias Utilizadas</h3>
+          <div class="modal-tags">
+            <span>WordPress</span>
+            <span>WooCommerce</span>
+            <span>PHP</span>
+            <span>Moodle API</span>
+            <span>Snippets Customizados</span>
+            <span>Automação WooCommerce</span>
+          </div>
+        </div>
+        
+        <div class="modal-section highlight">
+          <h3>📈 Resultados</h3>
+          <div class="modal-results">
+            <span>✅ Venda de cursos automatizada (sem trabalho manual)</span>
+            <span>✅ Matrícula imediata após pagamento</span>
+            <span>✅ Remoção automática de acesso após reembolso</span>
+            <span>✅ Menos dúvidas no WhatsApp (e-mails claros)</span>
+            <span>✅ WordPress vira painel central de acesso (como Hotmart)</span>
+            <span>✅ Suporte e auditoria muito mais rápidos</span>
+            <span>✅ Escala simples para novos cursos/produtos</span>
+          </div>
+        </div>
+        
+        <div class="modal-section">
+          <h3>🎯 Diferenciais</h3>
+          <ul class="modal-list">
+            <li>Entrega 100% automática após compra</li>
+            <li>Sem dependência de suporte manual</li>
+            <li>Experiência profissional como grandes plataformas</li>
+            <li>Controle de acesso inteligente e seguro</li>
+            <li>Painel administrativo completo para operação</li>
+            <li>Estrutura preparada para escalar</li>
+          </ul>
+        </div>
+        
+        <div class="modal-footer">
+          <a href="#contact" class="btn-primary glow">Quero uma integração assim</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

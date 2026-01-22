@@ -122,3 +122,52 @@ async function loadBlogPosts() {
     console.log('Blog posts will show link fallback');
   }
 }
+
+// Modal Functions
+function openModal(projectId) {
+  const modal = document.getElementById('modal-' + projectId);
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeModal(projectId) {
+  const modal = document.getElementById('modal-' + projectId);
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+// Close modal on overlay click
+document.addEventListener('DOMContentLoaded', function() {
+  // Modal click handlers
+  const modalTriggers = document.querySelectorAll('.project-modal-trigger');
+  modalTriggers.forEach(trigger => {
+    trigger.addEventListener('click', function() {
+      const projectId = this.getAttribute('data-project');
+      openModal(projectId);
+    });
+  });
+  
+  // Close modal on background click
+  document.querySelectorAll('.modal-overlay').forEach(modal => {
+    modal.addEventListener('click', function(e) {
+      if (e.target === this) {
+        const projectId = this.id.replace('modal-', '');
+        closeModal(projectId);
+      }
+    });
+  });
+  
+  // Close modal on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.active').forEach(modal => {
+        const projectId = modal.id.replace('modal-', '');
+        closeModal(projectId);
+      });
+    }
+  });
+});
