@@ -3,14 +3,14 @@ const translations = {
   pt: {
     available: 'Disponível para projetos',
     cta_contact: 'Fale comigo',
-    hero_title: 'Criando soluções poderosas em WordPress',
-    hero_subtitle: 'Desenvolvedor WordPress & Criador de Plugins',
-    hero_desc: 'Eu crio plugins e temas WordPress personalizados, e soluções completas sob medida para suas necessidades de negócio. De e-commerce a plataformas LMS. Com 11 anos de experiência em desenvolvimento web.',
+    hero_title: 'Desenvolvendo soluções web sob medida',
+    hero_subtitle: 'Desenvolvedor PHP Full Stack & Especialista WordPress',
+    hero_desc: 'Desenvolvedor há mais de 11 anos, especializando-me em PHP, WordPress, WooCommerce e Moodle. Crio sistemas web personalizados, integrações via API, e-commerce e soluções completas que impulsionam negócios digitalmente.',
     cta_project: 'Iniciar projeto',
     cta_work: 'Ver trabalhos',
     perf_title: 'Performance',
     perf_subtitle: 'Carregamento: 0.3s',
-    stack_title: 'WP Full Stack',
+    stack_title: 'Full Stack PHP',
     ecom_title: 'E-commerce',
     ecom_subtitle: 'WooCommerce Pro',
     lms_subtitle: 'Integração LMS',
@@ -34,6 +34,19 @@ const translations = {
     exp_title: 'Experiência',
     edu_title: 'Formação Acadêmica',
     courses_title: 'Cursos Complementares',
+    process_title: 'Como Eu Trabalho',
+    process_subtitle: 'Uma metodologia comprovada para entregar projetos de qualidade, no prazo e dentro do orçamento.',
+    process_step1_title: 'Descubra',
+    process_step1_desc: 'Reuniões para entender suas necessidades, objetivos e dores. Analiso o cenário atual e identifico oportunidades.',
+    process_step2_title: 'Planeje',
+    process_step2_desc: 'Definimos escopo, cronograma e proposta detalhada. Criamos um roadmap claro com marcos e entregas.',
+    process_step3_title: 'Execute',
+    process_step3_desc: 'Desenvolvimento com código limpo, versionado e testado. Você acompanha o progresso em ambiente de testes.',
+    process_step4_title: 'Revise',
+    process_step4_desc: 'Testes de qualidade, ajustes finais e validação com você. Tudo pronto para ir ao ar.',
+    process_step5_title: 'Entregue',
+    process_step5_desc: 'Deploy, treinamento e documentação. Suporte pós-entrada para garantir seu sucesso.',
+    process_cta: 'Vamos conversar sobre seu projeto',
     blog_title: 'Blog',
     blog_link: 'Ver mais →',
     contact_title: 'Vamos trabalhar juntos',
@@ -216,14 +229,14 @@ const translations = {
   en: {
     available: 'Available for projects',
     cta_contact: 'Get in touch',
-    hero_title: 'Building powerful WordPress solutions',
-    hero_subtitle: 'WordPress Developer & Plugin Creator',
-    hero_desc: 'I create custom WordPress plugins, themes, and complete solutions tailored to your business needs. From e-commerce to LMS platforms. With 11 years of experience in web development.',
+    hero_title: 'Building custom web solutions',
+    hero_subtitle: 'PHP Full Stack Developer & WordPress Specialist',
+    hero_desc: 'Developer for over 11 years, specializing in PHP, WordPress, WooCommerce and Moodle. I create custom web systems, API integrations, e-commerce and complete solutions that drive digital business growth.',
     cta_project: 'Start a project',
     cta_work: 'See my work',
     perf_title: 'Performance',
     perf_subtitle: 'Loading: 0.3s',
-    stack_title: 'Full Stack WP',
+    stack_title: 'Full Stack PHP',
     ecom_title: 'E-commerce',
     ecom_subtitle: 'WooCommerce Pro',
     lms_subtitle: 'LMS Integration',
@@ -247,6 +260,19 @@ const translations = {
     exp_title: 'Experience',
     edu_title: 'Education',
     courses_title: 'Courses',
+    process_title: 'How I Work',
+    process_subtitle: 'A proven methodology to deliver quality projects, on time and within budget.',
+    process_step1_title: 'Discover',
+    process_step1_desc: 'Meetings to understand your needs, goals and pain points. I analyze the current scenario and identify opportunities.',
+    process_step2_title: 'Plan',
+    process_step2_desc: 'We define scope, timeline and detailed proposal. We create a clear roadmap with milestones and deliverables.',
+    process_step3_title: 'Execute',
+    process_step3_desc: 'Development with clean, versioned and tested code. You track progress in a staging environment.',
+    process_step4_title: 'Review',
+    process_step4_desc: 'Quality testing, final adjustments and validation with you. Everything ready to go live.',
+    process_step5_title: 'Deliver',
+    process_step5_desc: 'Deployment, training and documentation. Post-launch support to ensure your success.',
+    process_cta: 'Let\'s talk about your project',
     blog_title: 'Writing',
     blog_link: 'Read more →',
     contact_title: 'Let\'s work together',
@@ -516,10 +542,13 @@ async function loadBlogPosts() {
     
     if (posts && posts.length > 0) {
       container.innerHTML = posts.slice(0, 4).map(post => `
-        <a href="${post.url}" target="_blank" class="thought-bento-card bento-card" style="text-decoration: none; display: block;">
-          <div class="date">${new Date(post.published_at).toLocaleDateString(currentLang === 'pt' ? 'pt-BR' : 'en-US', { day: '2-digit', month: 'short', year: 'numeric' })}</div>
-          <h3>${post.title}</h3>
-          <p class="read-time">${post.reading_time_minutes} ${readTime}</p>
+        <a href="${post.url}" target="_blank" class="thought-bento-card bento-card">
+          ${post.cover_image ? `<img src="${post.cover_image}" alt="${post.title}" class="post-cover-image" onerror="this.parentElement.classList.add('no-image')">` : ''}
+          <div class="post-content-wrapper">
+            <div class="date">${new Date(post.published_at).toLocaleDateString(currentLang === 'pt' ? 'pt-BR' : 'en-US', { day: '2-digit', month: 'short', year: 'numeric' })}</div>
+            <h3>${post.title}</h3>
+            <p class="read-time">${post.reading_time_minutes} ${readTime}</p>
+          </div>
         </a>
       `).join('');
     }
