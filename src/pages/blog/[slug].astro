@@ -1,7 +1,6 @@
 import MainLayout from '@/layouts/MainLayout.astro';
 import TagPill from '@/components/TagPill.astro';
 import { getPostBySlug, getPosts, formatDate, formatReadingTime } from '@/lib';
-import { marked } from 'marked';
 
 export async function getStaticPaths() {
   const posts = await getPosts();
@@ -18,7 +17,6 @@ if (!post) {
   return Astro.redirect('/404');
 }
 
-const content = marked.parse(post.content);
 const allPosts = await getPosts();
 const relatedPosts = allPosts
   .filter(p => p.slug !== post.slug && p.tags.some(t => post.tags.includes(t)))
@@ -72,7 +70,9 @@ const relatedPosts = allPosts
               />
             </div>
             
-            <div class="prose dark:prose-invert max-w-none" set:html={content} />
+            <div class="prose dark:prose-invert max-w-none">
+              <p>{post.content}</p>
+            </div>
             
             <div class="mt-12 pt-8 border-t border-dark-200 dark:border-dark-800">
               <div class="flex items-center gap-4">
