@@ -22,130 +22,18 @@ const initLenis = () => {
   return lenis;
 };
 
-// Custom Cursor - Fixed
-const initCursor = () => {
-  const cursor = document.querySelector('.cursor');
-  const cursorDot = document.querySelector('.cursor-dot');
-  
-  if (!cursor || !cursorDot) return;
-  
-  let mouseX = -100;
-  let mouseY = -100;
-  let cursorX = -100;
-  let cursorY = -100;
-  let dotX = -100;
-  let dotY = -100;
-  
-  document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-  
-  const updateCursor = () => {
-    cursorX += (mouseX - cursorX) * 0.2;
-    cursorY += (mouseY - cursorY) * 0.2;
-    dotX += (mouseX - dotX) * 0.3;
-    dotY += (mouseY - dotY) * 0.3;
-    
-    cursor.style.left = cursorX + 'px';
-    cursor.style.top = cursorY + 'px';
-    cursorDot.style.left = dotX + 'px';
-    cursorDot.style.top = dotY + 'px';
-    
-    requestAnimationFrame(updateCursor);
-  };
-  
-  updateCursor();
-  
-  // Add hover effect to interactive elements
-  const interactiveElements = document.querySelectorAll('a, button, .project-bento-card, .tool-bento-card, .thought-bento-card, .bento-card, .magnetic');
-  
-  interactiveElements.forEach(el => {
-    if (el) {
-      el.addEventListener('mouseenter', () => cursor?.classList.add('hover'));
-      el.addEventListener('mouseleave', () => cursor?.classList.remove('hover'));
-    }
-  });
-};
-
-// Tilt Effect
-const initTilt = () => {
-  const tiltElements = document.querySelectorAll('.project-bento-card, .tool-bento-card, .thought-bento-card, .stats-card, .experience-bento-card');
-  
-  tiltElements.forEach(element => {
-    element.addEventListener('mousemove', (e) => {
-      const rect = element.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      
-      const rotateX = (y - centerY) / 25;
-      const rotateY = (centerX - x) / 25;
-      
-      element.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-    });
-    
-    element.addEventListener('mouseleave', () => {
-      element.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-    });
-    
-    element.addEventListener('mouseenter', () => {
-      element.style.transition = 'transform 0.1s ease';
-    });
-    
-    element.addEventListener('mouseleave', () => {
-      element.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
-    });
-  });
-};
-
-// Magnetic Effect
-const initMagnetic = () => {
-  const magneticElements = document.querySelectorAll('.btn-primary, .btn-secondary, .nav-logo, .theme-toggle');
-  
-  magneticElements.forEach(element => {
-    if (!element) return;
-    
-    element.addEventListener('mousemove', (e) => {
-      const rect = element.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      
-      const distance = Math.sqrt(x * x + y * y);
-      const maxDistance = 50;
-      
-      if (distance < maxDistance) {
-        const force = (maxDistance - distance) / maxDistance;
-        const moveX = x * force * 0.4;
-        const moveY = y * force * 0.4;
-        
-        element.style.transform = `translate(${moveX}px, ${moveY}px)`;
-      }
-    });
-    
-    element.addEventListener('mouseleave', () => {
-      element.style.transform = '';
-    });
-  });
-};
-
-// Theme Toggle
+// Theme Toggle - CORRIGIDO
 const initTheme = () => {
   const themeToggle = document.getElementById('themeToggle');
   if (!themeToggle) return;
   
   const savedTheme = localStorage.getItem('theme');
-  const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   
-  if (savedTheme === 'light' || (!savedTheme && !systemDark)) {
-    document.documentElement.setAttribute('data-theme', 'light');
-    themeToggle.textContent = '🌙';
-  } else {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    themeToggle.textContent = '☀️';
-  }
+  // Apply saved theme or system preference
+  const isDark = savedTheme === 'dark' || (!savedTheme && systemPrefersDark);
+  document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+  themeToggle.textContent = isDark ? '☀️' : '🌙';
   
   themeToggle.addEventListener('click', () => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
@@ -157,28 +45,32 @@ const initTheme = () => {
   });
 };
 
-// Navigation Active State
+// Navigation Active State - CORRIGIDO
 const initNavigation = () => {
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
   
-  window.addEventListener('scroll', () => {
-    let current = '';
+  const updateActiveLink = () => {
+    const scrollPos = window.scrollY + 150;
+    
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.clientHeight;
-      if (window.scrollY >= sectionTop - 200) {
-        current = section.getAttribute('id');
+      const sectionId = section.getAttribute('id');
+      
+      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${sectionId}`) {
+            link.classList.add('active');
+          }
+        });
       }
     });
-    
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-      }
-    });
-  });
+  };
+  
+  window.addEventListener('scroll', updateActiveLink);
+  updateActiveLink(); // Run on load
 };
 
 // Form Submission
@@ -209,12 +101,17 @@ const initSmoothScroll = () => {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      
+      const target = document.querySelector(targetId);
       if (target && typeof lenis !== 'undefined') {
         lenis.scrollTo(target, {
           duration: 1.2,
           easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
         });
+      } else if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
       }
     });
   });
@@ -272,9 +169,6 @@ const initParallax = () => {
 // Initialize everything
 document.addEventListener('DOMContentLoaded', () => {
   initLenis();
-  initCursor();
-  initTilt();
-  initMagnetic();
   initTheme();
   initNavigation();
   initForm();

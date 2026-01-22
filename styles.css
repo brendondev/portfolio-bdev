@@ -24,8 +24,7 @@
   --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
   --gradient-secondary: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%);
   --gradient-tertiary: linear-gradient(135deg, #14b8a6 0%, #22d3ee 100%);
-  --gradient-quaternary: linear-gradient(135deg, #f59e0b 0%, #fb24 100%);
-  --gradientbf-success: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+  --gradient-quaternary: linear-gradient(135deg, #f59e0b 0%, #fb923c 100%);
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.5);
@@ -91,40 +90,6 @@ body {
   line-height: 1.6;
   font-weight: 400;
   overflow-x: hidden;
-  cursor: none;
-}
-
-/* Custom Cursor */
-.cursor {
-  width: 8px;
-  height: 8px;
-  background: var(--accent);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 10000;
-  transition: transform 0.08s ease, width 0.2s ease, height 0.2s ease;
-  transform: translate(-50%, -50%);
-}
-
-.cursor.hover {
-  width: 40px;
-  height: 40px;
-  background: var(--accent-light);
-  border: 2px solid var(--accent);
-  border-radius: 50%;
-}
-
-.cursor-dot {
-  width: 4px;
-  height: 4px;
-  background: var(--accent);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 10001;
-  transition: transform 0.04s ease;
-  transform: translate(-50%, -50%);
 }
 
 /* Navigation - Floating Style */
@@ -134,7 +99,7 @@ nav {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  background: rgba(26, 26, 26, 0.85);
+  background: rgba(26, 26, 26, 0.9);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border);
@@ -144,7 +109,7 @@ nav {
 }
 
 [data-theme="light"] nav {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.9);
 }
 
 nav .container {
@@ -219,7 +184,6 @@ nav .container {
   border-radius: var(--radius-lg);
   font-size: 0.875rem;
   font-weight: 600;
-  cursor: none;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -241,12 +205,11 @@ nav .container {
   border-radius: var(--radius-lg);
   font-size: 0.875rem;
   font-weight: 600;
-  cursor: none;
-  transition: all 0.3s ease;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  transition: all 0.3s ease;
 }
 
 .btn-secondary:hover {
@@ -666,7 +629,6 @@ nav .container {
 .thought-bento-card {
   grid-column: span 2;
   padding: 24px;
-  cursor: none;
 }
 
 .thought-bento-card .date {
@@ -808,7 +770,6 @@ nav .container {
   border-radius: var(--radius-md);
   font-size: 1rem;
   font-weight: 600;
-  cursor: none;
   transition: all 0.3s ease;
 }
 
@@ -974,15 +935,6 @@ footer .social a:hover {
     flex-direction: column;
     gap: 20px;
     text-align: center;
-  }
-  
-  .cursor,
-  .cursor-dot {
-    display: none;
-  }
-  
-  body {
-    cursor: auto;
   }
 }
 
