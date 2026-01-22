@@ -201,6 +201,25 @@
           </div>
         </article>
         
+        <!-- Rocktron Cloud Project -->
+        <article class="project-bento-card bento-card project-modal-trigger" data-project="rocktron">
+          <div class="project-image" style="background: linear-gradient(135deg, #2d3436 0%, #636e72 50%, #b2bec3 100%); display: flex; align-items: center; justify-content: center;">
+            <div style="text-align: center;">
+              <div style="font-size: 3rem; margin-bottom: 12px;">☁️</div>
+              <p style="font-size: 0.875rem; color: rgba(255,255,255,0.8);">Sistema de Upload + Gestão</p>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Rocktron Cloud</h3>
+            <p>Sistema web para centralizar upload, organização e controle de arquivos de clientes — uma "nuvem privada".</p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px;">
+              <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">PHP</span>
+              <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">MySQL</span>
+              <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">cPanel</span>
+            </div>
+          </div>
+        </article>
+        
         <!-- Remaining projects... -->
         <article class="project-bento-card bento-card">
           <div class="project-image" style="background: linear-gradient(135deg, #14b8a6 0%, #f59e0b 100%);"></div>
@@ -591,6 +610,111 @@
         
         <div class="modal-footer">
           <a href="#contact" class="btn-primary glow">Quero uma integração assim</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Modal - Rocktron Cloud -->
+  <div class="modal-overlay" id="modal-rocktron">
+    <div class="modal-container">
+      <button class="modal-close" onclick="closeModal('rocktron')">&times;</button>
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-badge">Sistema Web</div>
+          <h2>Rocktron Cloud</h2>
+          <p class="modal-subtitle">Sistema de Upload + Gestão de Arquivos</p>
+        </div>
+        
+        <div class="modal-section">
+          <h3>📋 Visão Geral</h3>
+          <p>Sistema web desenvolvido para centralizar o envio, organização e controle de arquivos de clientes em um ambiente simples, rápido e seguro — funcionando como uma "nuvem privada" para projetos, entregas e documentos. A proposta foi criar uma solução leve, sem depender de plataformas externas, para facilitar o fluxo de trabalho entre cliente e equipe.</p>
+        </div>
+        
+        <div class="modal-section">
+          <h3>✅ Principais Recursos</h3>
+          <div class="modal-grid">
+            <div class="modal-item">
+              <span class="modal-icon">📤</span>
+              <div>
+                <strong>Upload de Arquivos</strong>
+                <p>Envio direto pelo navegador, rápido e sem complicações.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">📁</span>
+              <div>
+                <strong>Organização por Categorias</strong>
+                <p>Arquivos organizados por projetos e categorias específicas.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">📋</span>
+              <div>
+                <strong>Listagem e Gerenciamento</strong>
+                <p>Visualização completa de todos os arquivos enviados.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">👥</span>
+              <div>
+                <strong>Controle de Acesso (ACL)</strong>
+                <p>Permissões por usuário, separando admin e usuários comuns.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">📝</span>
+              <div>
+                <strong>Logs e Rastreabilidade</strong>
+                <p>Histórico de envios e ações para auditoria e segurança.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">⚡</span>
+              <div>
+                <strong>Painel Admin</strong>
+                <p>Gerenciamento de usuários, permissões e visualização por data/responsável.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="modal-section">
+          <h3>🛠️ Tecnologias Utilizadas</h3>
+          <div class="modal-tags">
+            <span>PHP</span>
+            <span>HTML/CSS/JS</span>
+            <span>MySQL</span>
+            <span>cPanel</span>
+            <span>Arquivos + Pastas</span>
+          </div>
+        </div>
+        
+        <div class="modal-section highlight">
+          <h3>📈 Resultados</h3>
+          <div class="modal-results">
+            <span>✅ Centralização de arquivos sem bagunça</span>
+            <span>✅ Organização por projeto/cliente</span>
+            <span>✅ Redução de troca de arquivos por WhatsApp/e-mail</span>
+            <span>✅ Controle e histórico de todos os envios</span>
+            <span>✅ Ambiente seguro com permissões por usuário</span>
+            <span>✅ Deploy rápido em hospedagem comum (cPanel)</span>
+          </div>
+        </div>
+        
+        <div class="modal-section">
+          <h3>🎯 Diferenciais</h3>
+          <ul class="modal-list">
+            <li>Solução leve, sem dependências pesadas</li>
+            <li>Roda em ambientes cPanel simples</li>
+            <li>Interface simples e focada em produtividade</li>
+            <li>Sem custos de plataformas externas</li>
+            <li>100% personalizado para as necessidades do negócio</li>
+          </ul>
+        </div>
+        
+        <div class="modal-footer">
+          <a href="#contact" class="btn-primary glow">Quero um sistema assim</a>
         </div>
       </div>
     </div>
