@@ -1,0 +1,127 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro';
+import TagPill from '@/components/TagPill.astro';
+import { getPostBySlug, getPosts, formatDate, formatReadingTime } from '@/lib';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { slug } = Astro.params;
+const post = await getPostBySlug(slug!);
+
+if (!post) {
+  return Astro.redirect('/404');
+}
+
+const allPosts = await getPosts();
+const relatedPosts = allPosts
+  .filter(p => p.slug !== post.slug && p.tags.some(t => post.tags.includes(t)))
+  .slice(0, 3);
+---
+
+<MainLayout
+  title={`${post.title} | Seu Nome`}
+  description={post.excerpt}
+  image={post.coverImage}
+  type="article"
+  publishedTime={post.date}
+  modifiedTime={post.updatedAt}
+  author={post.author}
+  tags={post.tags}
+>
+  <article>
+    <div class="page-header">
+      <div class="container-custom">
+        <div class="flex flex-wrap items-center gap-3 mb-6">
+          {post.tags.map((tag) => (
+            <TagPill tag={tag} />
+          ))}
+        </div>
+        <h1 class="page-title">{post.title}</h1>
+        <div class="flex items-center gap-4 text-dark-600 dark:text-dark-400 mt-4">
+          <time datetime={post.date}>{formatDate(post.date)}</time>
+          <span>•</span>
+          <span>{formatReadingTime(post.readingTime)}</span>
+          {post.updatedAt && (
+            <>
+              <span>•</span>
+              <span class="text-sm">Atualizado em {formatDate(post.updatedAt)}</span>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+    
+    <div class="py-12 bg-white dark:bg-dark-900">
+      <div class="container-custom">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
+          <div class="lg:col-span-3">
+            <div class="rounded-xl overflow-hidden mb-8 bg-dark-100 dark:bg-dark-800">
+              <img
+                src={post.coverImage}
+                alt={post.title}
+                class="w-full"
+                width="1200"
+                height="600"
+              />
+            </div>
+            
+            <div class="prose dark:prose-invert max-w-none">
+              <p>{post.content}</p>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-dark-200 dark:border-dark-800">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
+                  <span class="text-lg font-bold text-primary-600 dark:text-primary-400">
+                    {post.author.charAt(0)}
+                  </span>
+                </div>
+                <div>
+                  <p class="font-medium text-dark-900 dark:text-dark-50">{post.author}</p>
+                  <p class="text-sm text-dark-500 dark:text-dark-500">Autor do artigo</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="lg:col-span-1">
+            <div class="sticky top-24">
+              <div class="card p-6 mb-6">
+                <h3 class="text-lg font-bold text-dark-900 dark:text-dark-50 mb-4">Neste artigo</h3>
+                <nav id="toc">
+                  <ul class="space-y-2 text-sm">
+                    <li><a href="#introducao" class="text-dark-600 dark:text-dark-400 hover:text-primary-600 dark:hover:text-primary-400">Introdução</a></li>
+                  </ul>
+                </nav>
+              </div>
+              
+              {relatedPosts.length > 0 && (
+                <div class="card p-6">
+                  <h3 class="text-lg font-bold text-dark-900 dark:text-dark-50 mb-4">Posts Relacionados</h3>
+                  <div class="space-y-4">
+                    {relatedPosts.map((relatedPost) => (
+                      <a href={`/blog/${relatedPost.slug}`} class="block group">
+                        <h4 class="text-sm font-medium text-dark-900 dark:text-dark-50 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                          {relatedPost.title}
+                        </h4>
+                        <p class="text-xs text-dark-500 dark:text-dark-500 mt-1">
+                          {formatReadingTime(relatedPost.readingTime)}
+                        </p>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</MainLayout>
