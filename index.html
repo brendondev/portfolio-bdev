@@ -295,6 +295,38 @@
             </div>
           </div>
         </article>
+        
+        <!-- Jamef WooCommerce Plugin Project -->
+        <article class="project-bento-card bento-card project-modal-trigger" data-project="jamef-woo">
+          <div class="project-image">
+            <img src="img/jamefWoocommerce.png" alt="Jamef WooCommerce" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;background:linear-gradient(135deg,#e94560 0%,#0f3460 100%);\'><div style=\'text-align:center;\'><div style=\'font-size:3rem;margin-bottom:12px;\'>🚚</div><p style=\'font-size:0.875rem;color:rgba(255,255,255,0.8);\'>Plugin de Frete</p></div></div>'">
+          </div>
+          <div class="project-content">
+            <h3>Plugin Frete Jamef</h3>
+            <p>Plugin WooCommerce para integração com a transportadora Jamef, calculando fretes em tempo real.</p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px;">
+              <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">WooCommerce</span>
+              <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">WordPress</span>
+              <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">PHP</span>
+            </div>
+          </div>
+        </article>
+        
+        <!-- QR Code Generator Project -->
+        <article class="project-bento-card bento-card project-modal-trigger" data-project="qr-generator">
+          <div class="project-image">
+            <img src="img/qr-code.png" alt="QR Code Generator" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;background:linear-gradient(135deg,#000000 0%,#1a1a2e 100%);\'><div style=\'text-align:center;\'><div style=\'font-size:3rem;margin-bottom:12px;\'>📱</div><p style=\'font-size:0.875rem;color:rgba(255,255,255,0.8);\'>Gerador de QR Code</p></div></div>'">
+          </div>
+          <div class="project-content">
+            <h3>QR Code Generator</h3>
+            <p>Aplicação web para gerar QR Codes a partir de texto ou URLs com ajuste de tamanho.</p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px;">
+              <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">React</span>
+              <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">TypeScript</span>
+              <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">Vite</span>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -962,6 +994,160 @@
         
         <div class="modal-footer">
           <a href="#contact" class="btn-primary glow" data-i18n="modal_cta_rock">Quero um sistema assim</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Modal - Jamef WooCommerce -->
+  <div class="modal-overlay" id="modal-jamef-woo">
+    <div class="modal-container">
+      <button class="modal-close" onclick="closeModal('jamef-woo')">&times;</button>
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-badge" data-i18n="modal_jamef_badge">Plugin WooCommerce</div>
+          <h2 data-i18n="modal_jamef_title">Plugin Frete Jamef</h2>
+          <p class="modal-subtitle" data-i18n="modal_jamef_subtitle">Integração com transportadora Jamef</p>
+        </div>
+        
+        <div class="modal-screenshot">
+          <img src="img/jamefWoocommerce.png" alt="Jamef WooCommerce" onerror="this.style.display='none'">
+        </div>
+        
+        <div class="modal-section">
+          <h3>📋 <span data-i18n="modal_overview">Visão Geral</span></h3>
+          <p data-i18n="modal_jamef_overview">O Plugin de Frete Jamef para WooCommerce é uma extensão que permite a integração simples e eficaz dos serviços de transporte da Jamef com sua loja online. Ele oferece cotações de frete em tempo real e configuração fácil.</p>
+        </div>
+        
+        <div class="modal-section">
+          <h3>✅ <span data-i18n="modal_jamef_features">Principais Recursos</span></h3>
+          <div class="modal-grid">
+            <div class="modal-item">
+              <span class="modal-icon">🚚</span>
+              <div>
+                <strong data-i18n="modal_jamef_integration">Integração de Frete</strong>
+                <p data-i18n="modal_jamef_integration_desc">Conexão direta com a transportadora Jamef para cotações em tempo real.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">⚙️</span>
+              <div>
+                <strong data-i18n="modal_jamef_flexible">Configurações Flexíveis</strong>
+                <p data-i18n="modal_jamef_flexible_desc">Personalize opções de frete para atender necessidades únicas do seu negócio.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">💰</span>
+              <div>
+                <strong data-i18n="modal_jamef_realtime">Calculadora em Tempo Real</strong>
+                <p data-i18n="modal_jamef_realtime_desc">Cálculos precisos de frete baseados no carrinho e configurações do plugin.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">📋</span>
+              <div>
+                <strong data-i18n="modal_jamef_debug">Log de Depuração</strong>
+                <p data-i18n="modal_jamef_debug_desc">Ative registro para rastrear eventos e solucionar problemas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="modal-section">
+          <h3>🛠️ <span data-i18n="modal_tech">Tecnologias Utilizadas</span></h3>
+          <div class="modal-tags">
+            <span>PHP</span>
+            <span>WordPress</span>
+            <span>WooCommerce</span>
+            <span>REST API</span>
+          </div>
+        </div>
+        
+        <div class="modal-section highlight">
+          <h3>📦 <span data-i18n="modal_jamef_install">Instalação</span></h3>
+          <ol class="modal-list">
+            <li data-i18n="modal_jamef_install1">Faça download do arquivo ZIP do plugin</li>
+            <li data-i18n="modal_jamef_install2">No WordPress, vá em Plugins → Adicionar Novo → Fazer upload de plugin</li>
+            <li data-i18n="modal_jamef_install3">Selecione o arquivo ZIP e ative o plugin</li>
+            <li data-i18n="modal_jamef_install4">Configure em WooCommerce → Configurações → Entrega → Jamef</li>
+          </ol>
+        </div>
+        
+        <div class="modal-footer">
+          <a href="https://github.com/brendondev/jamefWoocommerce" target="_blank" class="btn-secondary" data-i18n="modal_view_repo">Ver no GitHub</a>
+          <a href="#contact" class="btn-primary glow" data-i18n="modal_cta_jamef">Quero um plugin assim</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Modal - QR Code Generator -->
+  <div class="modal-overlay" id="modal-qr-generator">
+    <div class="modal-container">
+      <button class="modal-close" onclick="closeModal('qr-generator')">&times;</button>
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-badge" data-i18n="modal_qr_badge">Web App</div>
+          <h2 data-i18n="modal_qr_title">QR Code Generator</h2>
+          <p class="modal-subtitle" data-i18n="modal_qr_subtitle">Gere QR Codes instantaneamente</p>
+        </div>
+        
+        <div class="modal-screenshot">
+          <img src="img/qr-code.png" alt="QR Code Generator" onerror="this.style.display='none'">
+        </div>
+        
+        <div class="modal-section">
+          <h3>📋 <span data-i18n="modal_overview">Visão Geral</span></h3>
+          <p data-i18n="modal_qr_overview">Aplicação web simples e rápida para gerar QR Codes a partir de texto ou URLs. Basta inserir o conteúdo e ajustar o tamanho desejado para criar seu QR Code instantaneamente.</p>
+        </div>
+        
+        <div class="modal-section">
+          <h3>✅ <span data-i18n="modal_qr_features">Recursos</span></h3>
+          <div class="modal-grid">
+            <div class="modal-item">
+              <span class="modal-icon">📝</span>
+              <div>
+                <strong data-i18n="modal_qr_text">Texto ou URL</strong>
+                <p data-i18n="modal_qr_text_desc">Converta qualquer texto ou link em QR Code rapidamente.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">📐</span>
+              <div>
+                <strong data-i18n="modal_qr_size">Tamanho Ajustável</strong>
+                <p data-i18n="modal_qr_size_desc">Configure o tamanho do QR Code conforme sua necessidade.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">⚡</span>
+              <div>
+                <strong data-i18n="modal_qr_fast">Geração Rápida</strong>
+                <p data-i18n="modal_qr_fast_desc">QR Code gerado instantaneamente via API.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">💾</span>
+              <div>
+                <strong data-i18n="modal_qr_download">Fácil Download</strong>
+                <p data-i18n="modal_qr_download_desc">Baixe o QR Code gerado com um clique.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="modal-section">
+          <h3>🛠️ <span data-i18n="modal_tech">Tecnologias</span></h3>
+          <div class="modal-tags">
+            <span>React</span>
+            <span>TypeScript</span>
+            <span>Vite</span>
+            <span>TailwindCSS</span>
+            <span>React Query</span>
+          </div>
+        </div>
+        
+        <div class="modal-footer">
+          <a href="https://qr-code-one-silk.vercel.app/" target="_blank" class="btn-primary glow" data-i18n="modal_qr_try">Usar agora</a>
         </div>
       </div>
     </div>
