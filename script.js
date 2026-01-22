@@ -82,36 +82,43 @@ async function loadBlogPosts() {
   const container = document.getElementById('blog-posts');
   if (!container) return;
   
+  container.innerHTML = `
+    <div class="bento-card" style="grid-column: span 2; text-align: center; color: var(--text-secondary);">
+      <p style="margin-bottom: 12px;">📝 Writing</p>
+      <p style="font-size: 0.875rem; margin-bottom: 12px;">Meus artigos no Dev.to:</p>
+      <a href="https://dev.to/brendondev" target="_blank" style="color: var(--accent); font-weight: 600;">
+        Ver meus posts no Dev.to →
+      </a>
+      <p style="font-size: 0.75rem; margin-top: 16px; color: var(--text-muted);">
+        Posts também aparecem aqui automaticamente
+      </p>
+    </div>
+  `;
+  
   try {
-    const response = await fetch('https://dev.to/api/articles?username=brendondev&per_page=4');
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 5000);
     
-    if (!response.ok) throw new Error('Failed to fetch');
+    const response = await fetch('https://dev.to/api/articles?username=brendondev', {
+      signal: controller.signal
+    });
+    
+    clearTimeout(timeout);
+    
+    if (!response.ok) throw new Error('API error');
     
     const posts = await response.json();
     
-    if (posts.length === 0) {
-      container.innerHTML = `
-        <div class="bento-card" style="grid-column: span 2; text-align: center; color: var(--text-secondary);">
-          Nenhum post encontrado. <a href="https://dev.to/brendondev" target="_blank" style="color: var(--accent);">Escreva seu primeiro post no Dev.to!</a>
-        </div>
-      `;
-      return;
+    if (posts && posts.length > 0) {
+      container.innerHTML = posts.slice(0, 4).map(post => `
+        <a href="${post.url}" target="_blank" class="thought-bento-card bento-card" style="text-decoration: none; display: block;">
+          <div class="date">${new Date(post.published_at).toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' })}</div>
+          <h3>${post.title}</h3>
+          <p class="read-time">${post.reading_time_minutes} min de leitura</p>
+        </a>
+      `).join('');
     }
-    
-    container.innerHTML = posts.map(post => `
-      <a href="${post.url}" target="_blank" class="thought-bento-card bento-card" style="text-decoration: none; display: block;">
-        <div class="date">${new Date(post.published_at).toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' })}</div>
-        <h3>${post.title}</h3>
-        <p class="read-time">${post.reading_time_minutes} min de leitura</p>
-      </a>
-    `).join('');
-    
   } catch (error) {
-    console.error('Error loading blog posts:', error);
-    container.innerHTML = `
-      <div class="bento-card" style="grid-column: span 2; text-align: center; color: var(--text-secondary);">
-        Não foi possível carregar os posts. <a href="https://dev.to/brendondev" target="_blank" style="color: var(--accent);">Ver no Dev.to →</a>
-      </div>
-    `;
+    console.log('Blog posts will show link fallback');
   }
 }
