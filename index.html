@@ -14,164 +14,144 @@
   <!-- Navigation -->
   <nav>
     <div class="container">
-      <a href="#" class="nav-logo">brendon.</a>
+       <a href="#" class="nav-logo" data-i18n="nav_logo">brendon.</a>
       <div class="nav-links">
-        <a href="#projects" class="active">Work</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#courses">Courses</a>
-        <a href="#tools">Stack</a>
-        <a href="#thoughts">Writing</a>
+        <a href="#projects" class="active" data-i18n="nav_work">Trabalhos</a>
+        <a href="#experience" data-i18n="nav_exp">Experiência</a>
+        <a href="#education" data-i18n="nav_edu">Formação</a>
+        <a href="#courses" data-i18n="nav_courses">Cursos</a>
+        <a href="#tools" data-i18n="nav_stack">Stack</a>
+        <a href="#thoughts" data-i18n="nav_blog">Blog</a>
       </div>
       <div class="nav-actions">
-        <a href="#contact" class="btn-primary glow">Get in touch</a>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+        <a href="#contact" class="btn-primary glow" data-i18n="cta_contact">Fale comigo</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">🌙</button>
       </div>
     </div>
   </nav>
 
+  <!-- Language Toggle -->
+  <div class="language-toggle-fixed">
+    <button class="lang-btn active" data-lang="pt" aria-label="Português">
+      <span class="flag">🇧🇷</span>
+    </button>
+    <button class="lang-btn" data-lang="en" aria-label="English">
+      <span class="flag">🇺🇸</span>
+    </button>
+  </div>
+
   <main>
     <!-- Hero Section -->
     <section class="hero-section">
-      <div class="bento-grid">
+      <div class="hero-grid">
         <div class="hero-content">
           <div class="badge">
             <span class="badge-dot"></span>
-            Available for projects
+            <span data-i18n="available">Disponível para projetos</span>
           </div>
-          <h1>Building powerful WordPress solutions</h1>
-          <p class="subtitle">WordPress Developer & Plugin Creator</p>
-          <p class="description">
-            I create custom WordPress plugins, themes, and complete solutions 
-            tailored to your business needs. From e-commerce to LMS platforms.
-            With 11 years of experience in web development.
+          <h1 data-i18n="hero_title">Criando soluções poderosas em WordPress</h1>
+          <p class="subtitle" data-i18n="hero_subtitle">Desenvolvedor WordPress & Criador de Plugins</p>
+          <p class="description" data-i18n="hero_desc">
+            Eu crio plugins e temas WordPress personalizados, e soluções completas 
+            sob medida para suas necessidades de negócio. De e-commerce a plataformas LMS.
+            Com 11 anos de experiência em desenvolvimento web.
           </p>
           <div class="hero-cta">
-            <a href="#contact" class="btn-primary glow">Start a project</a>
-            <a href="#projects" class="btn-secondary">See my work</a>
-          </div>
-          <div class="hero-stats">
-            <div class="hero-stat">
-              <div class="number">11+</div>
-              <div class="label">Years Experience</div>
-            </div>
-            <div class="hero-stat">
-              <div class="number">30+</div>
-              <div class="label">Projects Delivered</div>
-            </div>
-            <div class="hero-stat">
-              <div class="number">30+</div>
-              <div class="label">Plugins Created</div>
-            </div>
+            <a href="#contact" class="btn-primary glow" data-i18n="cta_project">Iniciar projeto</a>
+            <a href="#projects" class="btn-secondary" data-i18n="cta_work">Ver trabalhos</a>
           </div>
         </div>
         <div class="hero-visual">
           <div class="hero-card hero-card-1 bento-card code-preview">
-            <div style="display: flex; gap: 8px; margin-bottom: 16px;">
-              <span style="width: 12px; height: 12px; border-radius: 50%; background: #ef4444;"></span>
-              <span style="width: 12px; height: 12px; border-radius: 50%; background: #f59e0b;"></span>
-              <span style="width: 12px; height: 12px; border-radius: 50%; background: #22c55e;"></span>
+            <div style="display: flex; gap: 6px; margin-bottom: 8px;">
+              <span style="width: 10px; height: 10px; border-radius: 50%; background: #ef4444;"></span>
+              <span style="width: 10px; height: 10px; border-radius: 50%; background: #f59e0b;"></span>
+              <span style="width: 10px; height: 10px; border-radius: 50%; background: #22c55e;"></span>
             </div>
             <div class="line"><span class="line-num">1</span><span class="line-code comment">// Custom WordPress Plugin</span></div>
             <div class="line"><span class="line-num">2</span><span class="line-code"><span class="keyword">function</span> <span class="function">my_custom_shortcode</span>() {</span></div>
             <div class="line"><span class="line-num">3</span><span class="line-code">  <span class="keyword">return</span> <span class="string">'Hello World!'</span>;</span></div>
             <div class="line"><span class="line-num">4</span><span class="line-code">}</span></div>
-            <div class="line"><span class="line-num">5</span><span class="line-code"></span></div>
-            <div class="line"><span class="line-num">6</span><span class="line-code comment">// Add to WordPress</span></div>
-            <div class="line"><span class="line-num">7</span><span class="line-code">add_shortcode(<span class="string">'hello'</span>, <span class="function">'my_custom_shortcode'</span>);</span></div>
+            <div class="line"><span class="line-num">5</span><span class="line-code">add_shortcode(<span class="string">'hello'</span>, <span class="function">'my_custom_shortcode'</span>);</span></div>
           </div>
           
           <div class="hero-card hero-card-2 bento-card">
-            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
-              <div style="width: 48px; height: 48px; background: var(--gradient-primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">⚡</div>
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <div style="width: 36px; height: 36px; background: var(--gradient-primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">⚡</div>
               <div>
-                <p style="font-size: 0.875rem; color: var(--text-secondary); font-weight: 500;">Performance Optimized</p>
-                <p style="font-size: 0.75rem; color: var(--text-muted);">Loading: 0.3s</p>
+                <p style="font-size: 0.8rem; color: var(--text-secondary); font-weight: 500;" data-i18n="perf_title">Performance</p>
+                <p style="font-size: 0.7rem; color: var(--text-muted);" data-i18n="perf_subtitle">Carregamento: 0.3s</p>
               </div>
             </div>
-            <div style="display: flex; gap: 8px;">
-              <span style="padding: 4px 10px; background: var(--accent-light); border-radius: 20px; font-size: 0.7rem; color: var(--accent);">PHP 8.2</span>
-              <span style="padding: 4px 10px; background: var(--accent-light); border-radius: 20px; font-size: 0.7rem; color: var(--accent);">OPcache</span>
+            <div style="display: flex; gap: 6px; margin-top: 10px;">
+              <span style="padding: 3px 8px; background: var(--accent-light); border-radius: 20px; font-size: 0.65rem; color: var(--accent);">PHP 8.2</span>
+              <span style="padding: 3px 8px; background: var(--accent-light); border-radius: 20px; font-size: 0.65rem; color: var(--accent);">OPcache</span>
             </div>
           </div>
           
           <div class="hero-card hero-card-3 bento-card">
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 12px;">
-              <div style="text-align: center;"><span style="font-size: 1.5rem;">🔌</span></div>
-              <div style="text-align: center;"><span style="font-size: 1.5rem;">🛒</span></div>
-              <div style="text-align: center;"><span style="font-size: 1.5rem;">🎓</span></div>
-              <div style="text-align: center;"><span style="font-size: 1.5rem;">🎨</span></div>
+            <div style="display: flex; justify-content: center; gap: 16px; margin-bottom: 8px;">
+              <span style="font-size: 1.3rem;">🔌</span>
+              <span style="font-size: 1.3rem;">🛒</span>
+              <span style="font-size: 1.3rem;">🎓</span>
+              <span style="font-size: 1.3rem;">🎨</span>
             </div>
-            <p style="font-size: 0.875rem; color: var(--text-secondary); font-weight: 500; text-align: center;">Full Stack WP Developer</p>
+            <p style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 500; text-align: center;" data-i18n="stack_title">WP Full Stack</p>
           </div>
 
           <div class="hero-card hero-card-4 bento-card">
-            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
-              <div style="width: 48px; height: 48px; background: var(--gradient-secondary); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🛒</div>
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <div style="width: 36px; height: 36px; background: var(--gradient-secondary); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">🛒</div>
               <div>
-                <p style="font-size: 0.875rem; color: var(--text-secondary); font-weight: 500;">E-commerce Expert</p>
-                <p style="font-size: 0.75rem; color: var(--text-muted);">WooCommerce Pro</p>
+                <p style="font-size: 0.8rem; color: var(--text-secondary); font-weight: 500;" data-i18n="ecom_title">E-commerce</p>
+                <p style="font-size: 0.7rem; color: var(--text-muted);" data-i18n="ecom_subtitle">WooCommerce Pro</p>
               </div>
             </div>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-              <span style="padding: 4px 10px; background: rgba(236, 72, 153, 0.1); border-radius: 20px; font-size: 0.7rem; color: #ec4899;">WooCommerce</span>
-              <span style="padding: 4px 10px; background: rgba(236, 72, 153, 0.1); border-radius: 20px; font-size: 0.7rem; color: #ec4899;">Mercado Pago</span>
+            <div style="display: flex; gap: 6px; margin-top: 10px;">
+              <span style="padding: 3px 8px; background: rgba(236, 72, 153, 0.1); border-radius: 20px; font-size: 0.65rem; color: #ec4899;">Woo</span>
+              <span style="padding: 3px 8px; background: rgba(236, 72, 153, 0.1); border-radius: 20px; font-size: 0.65rem; color: #ec4899;">Mercado Pago</span>
             </div>
           </div>
 
           <div class="hero-card hero-card-5 bento-card">
-            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
-              <div style="width: 48px; height: 48px; background: var(--gradient-tertiary); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🎓</div>
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <div style="width: 36px; height: 36px; background: var(--gradient-tertiary); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">🎓</div>
               <div>
-                <p style="font-size: 0.875rem; color: var(--text-secondary); font-weight: 500;">Moodle Specialist</p>
-                <p style="font-size: 0.75rem; color: var(--text-muted);">LMS Integration</p>
+                <p style="font-size: 0.8rem; color: var(--text-secondary); font-weight: 500;">Moodle</p>
+                <p style="font-size: 0.7rem; color: var(--text-muted);" data-i18n="lms_subtitle">Integração LMS</p>
               </div>
             </div>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-              <span style="padding: 4px 10px; background: rgba(20, 184, 166, 0.1); border-radius: 20px; font-size: 0.7rem; color: #14b8a6;">Moodle API</span>
-              <span style="padding: 4px 10px; background: rgba(20, 184, 166, 0.1); border-radius: 20px; font-size: 0.7rem; color: #14b8a6;">cPanel</span>
+            <div style="display: flex; gap: 6px; margin-top: 10px;">
+              <span style="padding: 3px 8px; background: rgba(20, 184, 166, 0.1); border-radius: 20px; font-size: 0.65rem; color: #14b8a6;">API</span>
+              <span style="padding: 3px 8px; background: rgba(20, 184, 166, 0.1); border-radius: 20px; font-size: 0.65rem; color: #14b8a6;">cPanel</span>
             </div>
           </div>
 
           <div class="hero-card hero-card-6 bento-card">
-            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
-              <div style="width: 48px; height: 48px; background: var(--gradient-quaternary); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">☁️</div>
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <div style="width: 36px; height: 36px; background: var(--gradient-success); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">🔧</div>
               <div>
-                <p style="font-size: 0.875rem; color: var(--text-secondary); font-weight: 500;">Cloud Solutions</p>
-                <p style="font-size: 0.75rem; color: var(--text-muted);">Deploy & Scale</p>
+                <p style="font-size: 0.8rem; color: var(--text-secondary); font-weight: 500;" data-i18n="custom_title">Customizado</p>
+                <p style="font-size: 0.7rem; color: var(--text-muted);" data-i18n="custom_subtitle">Plugins & Snippets</p>
               </div>
             </div>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-              <span style="padding: 4px 10px; background: rgba(245, 158, 11, 0.1); border-radius: 20px; font-size: 0.7rem; color: #f59e0b;">Netlify</span>
-              <span style="padding: 4px 10px; background: rgba(245, 158, 11, 0.1); border-radius: 20px; font-size: 0.7rem; color: #f59e0b;">cPanel</span>
+            <div style="display: flex; gap: 6px; margin-top: 10px;">
+              <span style="padding: 3px 8px; background: rgba(16, 185, 129, 0.1); border-radius: 20px; font-size: 0.65rem; color: #10b981;">Plugins</span>
+              <span style="padding: 3px 8px; background: rgba(16, 185, 129, 0.1); border-radius: 20px; font-size: 0.65rem; color: #10b981;">Snippets</span>
             </div>
           </div>
 
           <div class="hero-card hero-card-7 bento-card">
-            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
-              <div style="width: 48px; height: 48px; background: var(--gradient-success); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🔧</div>
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <div style="width: 36px; height: 36px; background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">🔗</div>
               <div>
-                <p style="font-size: 0.875rem; color: var(--text-secondary); font-weight: 500;">Custom Solutions</p>
-                <p style="font-size: 0.75rem; color: var(--text-muted);">Tailored to Your Needs</p>
+                <p style="font-size: 0.8rem; color: var(--text-secondary); font-weight: 500;" data-i18n="api_title">API</p>
+                <p style="font-size: 0.7rem; color: var(--text-muted);" data-i18n="api_subtitle">Integrações</p>
               </div>
             </div>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-              <span style="padding: 4px 10px; background: rgba(16, 185, 129, 0.1); border-radius: 20px; font-size: 0.7rem; color: #10b981;">Plugins</span>
-              <span style="padding: 4px 10px; background: rgba(16, 185, 129, 0.1); border-radius: 20px; font-size: 0.7rem; color: #10b981;">Snippets</span>
-            </div>
-          </div>
-
-          <div class="hero-card hero-card-8 bento-card">
-            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
-              <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🔗</div>
-              <div>
-                <p style="font-size: 0.875rem; color: var(--text-secondary); font-weight: 500;">API Integrations</p>
-                <p style="font-size: 0.75rem; color: var(--text-muted);">Connect Everything</p>
-              </div>
-            </div>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-              <span style="padding: 4px 10px; background: rgba(99, 102, 241, 0.1); border-radius: 20px; font-size: 0.7rem; color: var(--accent);">REST API</span>
-              <span style="padding: 4px 10px; background: rgba(236, 72, 153, 0.1); border-radius: 20px; font-size: 0.7rem; color: #ec4899;">Webhooks</span>
+            <div style="display: flex; gap: 6px; margin-top: 10px;">
+              <span style="padding: 3px 8px; background: rgba(99, 102, 241, 0.1); border-radius: 20px; font-size: 0.65rem; color: var(--accent);">REST</span>
+              <span style="padding: 3px 8px; background: rgba(236, 72, 153, 0.1); border-radius: 20px; font-size: 0.65rem; color: #ec4899;">Webhooks</span>
             </div>
           </div>
         </div>
@@ -184,21 +164,21 @@
         <div class="stats-card bento-card">
           <div class="icon">🏆</div>
           <div class="number">11+</div>
-          <div class="label">Years Experience</div>
+          <div class="label" data-i18n="stats_years">Anos de Experiência</div>
         </div>
         <div class="stats-card bento-card">
           <div class="icon">📦</div>
           <div class="number">30+</div>
-          <div class="label">Projects Delivered</div>
+          <div class="label" data-i18n="stats_projects">Projetos Entregues</div>
         </div>
         <div class="stats-card bento-card">
           <div class="icon">👥</div>
           <div class="number">30+</div>
-          <div class="label">Happy Clients</div>
+          <div class="label" data-i18n="stats_clients">Clientes Satisfeitos</div>
         </div>
         <div class="stats-card highlight bento-card glow">
-          <div class="number">Open</div>
-          <div class="label">For New Projects</div>
+          <div class="number" data-i18n="stats_open">Abr</div>
+          <div class="label" data-i18n="stats_projects_sub">Para Novos Projetos</div>
         </div>
       </div>
     </section>
@@ -207,7 +187,7 @@
     <section id="projects" class="projects-section">
       <div class="bento-grid projects-bento">
         <div class="projects-header">
-          <h2 class="section-title">Selected Work</h2>
+          <h2 class="section-title" data-i18n="projects_title">Trabalhos Selecionados</h2>
         </div>
         
         <!-- IECM Brasil Project with Modal -->
@@ -311,17 +291,17 @@
     <section id="experience" class="experience-section">
       <div class="bento-grid experience-bento">
         <div class="experience-header">
-          <h2 class="section-title">Experience</h2>
+          <h2 class="section-title" data-i18n="exp_title">Experiência</h2>
         </div>
         <div class="experience-bento-card bento-card">
           <span class="period">2022 — Present</span>
-          <h3>Full Stack Web Developer</h3>
+          <h3>Desenvolvedor Web Full Stack</h3>
           <p style="color: var(--accent); font-size: 0.875rem; margin-bottom: 12px;">Digicare Animal Health</p>
           <p>Desenvolvimento fullstack de e-commerce WooCommerce, sites institucionais em WordPress, integração com CoreCommerce USA, plataformas de gestão de clientes, sistemas de upload e gerenciamento de arquivos, integrações via API e automações web.</p>
         </div>
         <div class="experience-bento-card bento-card">
           <span class="period">2017 — 2022</span>
-          <h3>Senior WordPress Developer</h3>
+          <h3>Desenvolvedor WordPress Senior</h3>
           <p style="color: var(--accent); font-size: 0.875rem; margin-bottom: 12px;">Freelancer</p>
           <p>Desenvolvendo plugins e temas WordPress personalizados para clientes nacionais e internacionais. Especialização em WooCommerce, integrações e soluções sob medida.</p>
         </div>
@@ -332,7 +312,7 @@
     <section id="education" class="education-section">
       <div class="bento-grid education-bento">
         <div class="education-header">
-          <h2 class="section-title">Education</h2>
+          <h2 class="section-title" data-i18n="edu_title">Formação Acadêmica</h2>
         </div>
         <div class="education-bento-card bento-card">
           <span class="period">2023 — 2025</span>
@@ -347,7 +327,7 @@
     <section id="courses" class="courses-section">
       <div class="bento-grid courses-bento">
         <div class="courses-header">
-          <h2 class="section-title">Courses</h2>
+          <h2 class="section-title" data-i18n="courses_title">Cursos Complementares</h2>
         </div>
         <div class="course-bento-card bento-card">
           <span class="period">2024</span>
@@ -368,7 +348,7 @@
     <section id="tools" class="tools-section">
       <div class="bento-grid tools-bento">
         <div class="tools-header">
-          <h2 class="section-title">Tech Stack</h2>
+          <h2 class="section-title" data-i18n="stack_title">Stack Tecnológica</h2>
         </div>
         <div class="tool-bento-card bento-card">
           <div class="icon">⚛️</div>
@@ -437,8 +417,8 @@
     <section id="thoughts" class="thoughts-section">
       <div class="bento-grid thoughts-bento">
         <div class="thoughts-header">
-          <h2 class="section-title">Writing</h2>
-          <a href="https://dev.to/brendondev" target="_blank" class="section-link">Read more →</a>
+          <h2 class="section-title" data-i18n="blog_title">Blog</h2>
+          <a href="https://dev.to/brendondev" target="_blank" class="section-link" data-i18n="blog_link">Ver mais →</a>
         </div>
         <div class="blog-posts-grid" id="blog-posts">
           <div class="bento-card" style="grid-column: span 2; text-align: center; color: var(--text-secondary);">
@@ -452,30 +432,30 @@
     <section id="contact" class="contact-section">
       <div class="bento-grid contact-bento">
         <div class="contact-header">
-          <h2 class="section-title">Let's work together</h2>
-          <p>Have a project in mind? I'd love to hear about it.</p>
+          <h2 class="section-title" data-i18n="contact_title">Vamos trabalhar juntos</h2>
+          <p data-i18n="contact_subtitle">Tem um projeto em mente? Eu adoraria ouvir sobre ele.</p>
         </div>
         <form class="contact-form-bento bento-card" id="contactForm">
           <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required placeholder="Your name">
+            <label for="name" data-i18n="form_name">Nome</label>
+            <input type="text" id="name" name="name" required placeholder="Seu nome">
           </div>
           <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required placeholder="your@email.com">
+            <label for="email" data-i18n="form_email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="seu@email.com">
           </div>
           <div class="form-group">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" required placeholder="What's this about?">
+            <label for="subject" data-i18n="form_subject">Assunto</label>
+            <input type="text" id="subject" name="subject" required placeholder="Sobre o que é?">
           </div>
           <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required placeholder="Tell me about your project..."></textarea>
+            <label for="message" data-i18n="form_message">Mensagem</label>
+            <textarea id="message" name="message" required placeholder="Fale sobre seu projeto..."></textarea>
           </div>
-          <button type="submit" class="submit-btn glow">Send Message</button>
+          <button type="submit" class="submit-btn glow" data-i18n="form_send">Enviar Mensagem</button>
         </form>
         <div class="contact-info-bento bento-card">
-          <h3>Get in touch</h3>
+          <h3 data-i18n="contact_info">Entre em contato</h3>
           <div class="contact-info-item">
             <h4>Email</h4>
             <a href="mailto:brendonlima@gmail.com">brendonlima@gmail.com</a>
@@ -496,101 +476,108 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p>© 2024 Brendon. All rights reserved.</p>
+      <p>© 2024 Brendon. Todos os direitos reservados.</p>
       <div class="social">
-        <a href="https://github.com/brendondev" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/in/brendondev" target="_blank">LinkedIn</a>
-        <a href="https://dev.to/brendondev" target="_blank">Dev.to</a>
+        <a href="https://github.com/brendondev" target="_blank" data-i18n="footer_github">GitHub</a>
+        <a href="https://linkedin.com/in/brendondev" target="_blank" data-i18n="footer_linkedin">LinkedIn</a>
+        <a href="https://dev.to/brendondev" target="_blank" data-i18n="footer_blog">Dev.to</a>
       </div>
     </div>
   </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
 
   <!-- Project Modal - IECM Brasil -->
   <div class="modal-overlay" id="modal-iecm">
     <div class="modal-container">
       <button class="modal-close" onclick="closeModal('iecm')">&times;</button>
-      <div class="modal-content">
+        <div class="modal-content">
         <div class="modal-header">
-          <div class="modal-badge">Plataforma EAD + Site Institucional</div>
-          <h2>IECM Brasil — Moodle + Integrações</h2>
+          <div class="modal-badge" data-i18n="modal_iecm_badge">Plataforma EAD + Site Institucional</div>
+          <h2 data-i18n="modal_iecm_title">IECM Brasil — Moodle + Integrações</h2>
           <p class="modal-subtitle">iecmbrasil.com</p>
         </div>
         
         <div class="modal-section">
-          <h3>📋 Visão Geral</h3>
-          <p>Implementação completa do ambiente digital do IECM Brasil, combinando site institucional com plataforma EAD em Moodle, ambos organizados para crescimento, performance e facilidade de manutenção.</p>
+          <h3>📋 <span data-i18n="modal_overview">Visão Geral</span></h3>
+          <p data-i18n="modal_iecm_overview">Implementação completa do ambiente digital do IECM Brasil, combinando site institucional com plataforma EAD em Moodle, ambos organizados para crescimento, performance e facilidade de manutenção.</p>
         </div>
         
         <div class="modal-section">
-          <h3>✅ O que foi entregue</h3>
+          <h3>✅ <span data-i18n="modal_delivered">O que foi entregue</span></h3>
           <div class="modal-grid">
             <div class="modal-item">
               <span class="modal-icon">🎓</span>
               <div>
-                <strong>Moodle (Plataforma EAD)</strong>
-                <p>Instalação via cPanel, configuração administrativa, estrutura de cursos e preparação para alunos, instrutores e administradores.</p>
+                <strong data-i18n="modal_iecm_moodle_title">Moodle (Plataforma EAD)</strong>
+                <p data-i18n="modal_iecm_moodle_desc">Instalação via cPanel, configuração administrativa, estrutura de cursos e preparação para alunos, instrutores e administradores.</p>
               </div>
             </div>
             <div class="modal-item">
               <span class="modal-icon">🎨</span>
               <div>
-                <strong>Tema e UX</strong>
-                <p>Instalação de tema profissional, ajustes de layout, legibilidade, responsividade e hierarquia de informações.</p>
+                <strong data-i18n="modal_iecm_theme_title">Tema e UX</strong>
+                <p data-i18n="modal_iecm_theme_desc">Instalação de tema profissional, ajustes de layout, legibilidade, responsividade e hierarquia de informações.</p>
               </div>
             </div>
             <div class="modal-item">
               <span class="modal-icon">🌐</span>
               <div>
-                <strong>Site Institucional</strong>
-                <p>Pages: Home, Sobre, Serviços/Consultoria, Contato — focados em posicionamento de marca e conversão.</p>
+                <strong data-i18n="modal_iecm_site_title">Site Institucional</strong>
+                <p data-i18n="modal_iecm_site_desc">Pages: Home, Sobre, Serviços/Consultoria, Contato — focados em posicionamento de marca e conversão.</p>
               </div>
             </div>
             <div class="modal-item">
               <span class="modal-icon">🔌</span>
               <div>
-                <strong>Snippets Personalizados</strong>
-                <p>Criação de snippets para integração e padronização entre site e Moodle, melhorando consistência visual e funcional.</p>
+                <strong data-i18n="modal_iecm_snippets_title">Snippets Personalizados</strong>
+                <p data-i18n="modal_iecm_snippets_desc">Criação de snippets para integração e padronização entre site e Moodle, melhorando consistência visual e funcional.</p>
               </div>
             </div>
           </div>
         </div>
         
         <div class="modal-section">
-          <h3>🛠️ Tecnologias Utilizadas</h3>
+          <h3>🛠️ <span data-i18n="modal_tech">Tecnologias Utilizadas</span></h3>
           <div class="modal-tags">
-            <span>Moodle (LMS)</span>
-            <span>cPanel / HostGator</span>
-            <span>Tema Moodle Profissional</span>
+            <span data-i18n="tech_moodle">Moodle (LMS)</span>
+            <span data-i18n="tech_cpanel">cPanel / HostGator</span>
+            <span data-i18n="tech_theme">Tema Moodle Profissional</span>
             <span>HTML/CSS</span>
             <span>PHP</span>
-            <span>Snippets Customizados</span>
+            <span data-i18n="tech_snippets">Snippets Customizados</span>
           </div>
         </div>
         
         <div class="modal-section">
-          <h3>⭐ Diferenciais</h3>
+          <h3>⭐ <span data-i18n="modal_highlights">Diferenciais</span></h3>
           <ul class="modal-list">
-            <li>Solução completa: Site + Moodle integrados</li>
-            <li>Estrutura preparada para crescimento</li>
-            <li>Snippets personalizados para melhorar UX</li>
-            <li>Melhor organização de cursos e módulos</li>
-            <li>Base preparada para automações futuras</li>
+            <li data-i18n="modal_iecm_diff1">Solução completa: Site + Moodle integrados</li>
+            <li data-i18n="modal_iecm_diff2">Estrutura preparada para crescimento</li>
+            <li data-i18n="modal_iecm_diff3">Snippets personalizados para melhorar UX</li>
+            <li data-i18n="modal_iecm_diff4">Melhor organização de cursos e módulos</li>
+            <li data-i18n="modal_iecm_diff5">Base preparada para automações futuras</li>
           </ul>
         </div>
         
         <div class="modal-section highlight">
-          <h3>📈 Resultado Final</h3>
-          <p>O IECM Brasil passou a ter um ecossistema digital com:</p>
+          <h3>📈 <span data-i18n="modal_result">Resultado Final</span></h3>
+          <p data-i18n="modal_iecm_result">O IECM Brasil passou a ter um ecossistema digital com:</p>
           <div class="modal-results">
-            <span>✅ Site institucional profissional</span>
-            <span>✅ Plataforma EAD Moodle pronta</span>
-            <span>✅ Tema configurado com UX melhorada</span>
-            <span>✅ Snippets para integração e padronização</span>
+            <span data-i18n="modal_iecm_res1">✅ Site institucional profissional</span>
+            <span data-i18n="modal_iecm_res2">✅ Plataforma EAD Moodle pronta</span>
+            <span data-i18n="modal_iecm_res3">✅ Tema configurado com UX melhorada</span>
+            <span data-i18n="modal_iecm_res4">✅ Snippets para integração e padronização</span>
           </div>
         </div>
         
         <div class="modal-footer">
-          <a href="https://iecmbrasil.com" target="_blank" class="btn-primary glow">Ver projeto ao vivo</a>
+          <a href="https://iecmbrasil.com" target="_blank" class="btn-primary glow" data-i18n="modal_view_project">Ver projeto ao vivo</a>
         </div>
       </div>
     </div>
@@ -602,110 +589,110 @@
       <button class="modal-close" onclick="closeModal('moodle-woo')">&times;</button>
       <div class="modal-content">
         <div class="modal-header">
-          <div class="modal-badge">WooCommerce + Moodle API</div>
-          <h2>WooCommerce ↔ Moodle Integration</h2>
-          <p class="modal-subtitle">Sistema completo de venda e entrega automática de cursos</p>
+          <div class="modal-badge" data-i18n="modal_woo_badge">WooCommerce + Moodle API</div>
+          <h2 data-i18n="modal_woo_title">WooCommerce ↔ Moodle Integration</h2>
+          <p class="modal-subtitle" data-i18n="modal_woo_subtitle">Sistema completo de venda e entrega automática de cursos</p>
         </div>
         
         <div class="modal-section">
-          <h3>📋 Visão Geral</h3>
-          <p>Desenvolvimento de uma camada de integrações via snippets em PHP, conectando WooCommerce + API do Moodle para automatizar matrícula, cancelamento e comunicação com o aluno, transformando o WordPress em uma plataforma de vendas real de cursos com entrega automática.</p>
+          <h3>📋 <span data-i18n="modal_overview">Visão Geral</span></h3>
+          <p data-i18n="modal_woo_overview">Desenvolvimento de uma camada de integrações via snippets em PHP, conectando WooCommerce + API do Moodle para automatizar matrícula, cancelamento e comunicação com o aluno, transformando o WordPress em uma plataforma de vendas real de cursos com entrega automática.</p>
         </div>
         
         <div class="modal-section">
-          <h3>✅ Integrações Implementadas</h3>
+          <h3>✅ <span data-i18n="modal_delivered">Integrações Implementadas</span></h3>
           <div class="modal-grid">
             <div class="modal-item">
               <span class="modal-icon">✅</span>
               <div>
-                <strong>1) Matrícula Automática</strong>
-                <p>Snippet que monitora status do pedido WooCommerce e, após pagamento confirmado, executa matrícula no Moodle via API automaticamente.</p>
+                <strong data-i18n="modal_woo_enroll">1) Matrícula Automática</strong>
+                <p data-i18n="modal_woo_enroll_desc">Snippet que monitora status do pedido WooCommerce e, após pagamento confirmado, executa matrícula no Moodle via API automaticamente.</p>
               </div>
             </div>
             <div class="modal-item">
               <span class="modal-icon">❌</span>
               <div>
-                <strong>2) Cancelamento/Remoção de Acesso</strong>
-                <p>Lógica inversa: se pedido for cancelado/reembolsado, o sistema remove ou bloqueia o acesso no Moodle automaticamente.</p>
+                <strong data-i18n="modal_woo_cancel">2) Cancelamento/Remoção de Acesso</strong>
+                <p data-i18n="modal_woo_cancel_desc">Lógica inversa: se pedido for cancelado/reembolsado, o sistema remove ou bloqueia o acesso no Moodle automaticamente.</p>
               </div>
             </div>
             <div class="modal-item">
               <span class="modal-icon">📧</span>
               <div>
-                <strong>3) E-mails Automáticos Pós-compra</strong>
-                <p>Após matrícula, dispara e-mails automáticos com instruções de login, link direto e orientações claras para o aluno.</p>
+                <strong data-i18n="modal_woo_email">3) E-mails Automáticos Pós-compra</strong>
+                <p data-i18n="modal_woo_email_desc">Após matrícula, dispara e-mails automáticos com instruções de login, link direto e orientações claras para o aluno.</p>
               </div>
             </div>
             <div class="modal-item">
               <span class="modal-icon">📚</span>
               <div>
-                <strong>4) Aba "Meus Cursos" no WooCommerce</strong>
-                <p>Criada aba exclusiva em "Minha Conta" que lista cursos ativos do aluno com link direto para acessar cada um.</p>
+                <strong data-i18n="modal_woo_courses">4) Aba "Meus Cursos" no WooCommerce</strong>
+                <p data-i18n="modal_woo_courses_desc">Criada aba exclusiva em "Minha Conta" que lista cursos ativos do aluno com link direto para acessar cada um.</p>
               </div>
             </div>
             <div class="modal-item">
               <span class="modal-icon">🔒</span>
               <div>
-                <strong>5) Restrição Inteligente de Páginas</strong>
-                <p>Snippet que restringe páginas para alunos com curso ativo e exibe aviso fixo com CTA para "Meus Cursos".</p>
+                <strong data-i18n="modal_woo_restrict">5) Restrição Inteligente de Páginas</strong>
+                <p data-i18n="modal_woo_restrict_desc">Snippet que restringe páginas para alunos com curso ativo e exibe aviso fixo com CTA para "Meus Cursos".</p>
               </div>
             </div>
             <div class="modal-item">
               <span class="modal-icon">📝</span>
               <div>
-                <strong>6) Campo de Vínculo no Admin</strong>
-                <p>Campo no admin do WooCommerce para vincular produto ao curso Moodle, permitindo escalar catálogo sem código.</p>
+                <strong data-i18n="modal_woo_admin">6) Campo de Vínculo no Admin</strong>
+                <p data-i18n="modal_woo_admin_desc">Campo no admin do WooCommerce para vincular produto ao curso Moodle, permitindo escalar catálogo sem código.</p>
               </div>
             </div>
             <div class="modal-item">
               <span class="modal-icon">📊</span>
               <div>
-                <strong>7) Box de Informações no Pedido</strong>
-                <p>Box na tela do pedido WooCommerce com curso vinculado, ID, link direto e status da matrícula para suporte rápido.</p>
+                <strong data-i18n="modal_woo_order">7) Box de Informações no Pedido</strong>
+                <p data-i18n="modal_woo_order_desc">Box na tela do pedido WooCommerce com curso vinculado, ID, link direto e status da matrícula para suporte rápido.</p>
               </div>
             </div>
           </div>
         </div>
         
         <div class="modal-section">
-          <h3>🛠️ Tecnologias Utilizadas</h3>
+          <h3>🛠️ <span data-i18n="modal_tech">Tecnologias Utilizadas</span></h3>
           <div class="modal-tags">
-            <span>WordPress</span>
-            <span>WooCommerce</span>
+            <span data-i18n="tech_wordpress">WordPress</span>
+            <span data-i18n="tech_woocommerce">WooCommerce</span>
             <span>PHP</span>
-            <span>Moodle API</span>
-            <span>Snippets Customizados</span>
-            <span>Automação WooCommerce</span>
+            <span data-i18n="tech_moodle_api">Moodle API</span>
+            <span data-i18n="tech_snippets">Snippets Customizados</span>
+            <span data-i18n="tech_woo_auto">Automação WooCommerce</span>
           </div>
         </div>
         
         <div class="modal-section highlight">
-          <h3>📈 Resultados</h3>
+          <h3>📈 <span data-i18n="modal_results">Resultados</span></h3>
           <div class="modal-results">
-            <span>✅ Venda de cursos automatizada (sem trabalho manual)</span>
-            <span>✅ Matrícula imediata após pagamento</span>
-            <span>✅ Remoção automática de acesso após reembolso</span>
-            <span>✅ Menos dúvidas no WhatsApp (e-mails claros)</span>
-            <span>✅ WordPress vira painel central de acesso (como Hotmart)</span>
-            <span>✅ Suporte e auditoria muito mais rápidos</span>
-            <span>✅ Escala simples para novos cursos/produtos</span>
+            <span data-i18n="modal_woo_res1">✅ Venda de cursos automatizada (sem trabalho manual)</span>
+            <span data-i18n="modal_woo_res2">✅ Matrícula imediata após pagamento</span>
+            <span data-i18n="modal_woo_res3">✅ Remoção automática de acesso após reembolso</span>
+            <span data-i18n="modal_woo_res4">✅ Menos dúvidas no WhatsApp (e-mails claros)</span>
+            <span data-i18n="modal_woo_res5">✅ WordPress vira painel central de acesso (como Hotmart)</span>
+            <span data-i18n="modal_woo_res6">✅ Suporte e auditoria muito mais rápidos</span>
+            <span data-i18n="modal_woo_res7">✅ Escala simples para novos cursos/produtos</span>
           </div>
         </div>
         
         <div class="modal-section">
-          <h3>🎯 Diferenciais</h3>
+          <h3>🎯 <span data-i18n="modal_diffs">Diferenciais</span></h3>
           <ul class="modal-list">
-            <li>Entrega 100% automática após compra</li>
-            <li>Sem dependência de suporte manual</li>
-            <li>Experiência profissional como grandes plataformas</li>
-            <li>Controle de acesso inteligente e seguro</li>
-            <li>Painel administrativo completo para operação</li>
-            <li>Estrutura preparada para escalar</li>
+            <li data-i18n="modal_woo_diff1">Entrega 100% automática após compra</li>
+            <li data-i18n="modal_woo_diff2">Sem dependência de suporte manual</li>
+            <li data-i18n="modal_woo_diff3">Experiência profissional como grandes plataformas</li>
+            <li data-i18n="modal_woo_diff4">Controle de acesso inteligente e seguro</li>
+            <li data-i18n="modal_woo_diff5">Painel administrativo completo para operação</li>
+            <li data-i18n="modal_woo_diff6">Estrutura preparada para escalar</li>
           </ul>
         </div>
         
         <div class="modal-footer">
-          <a href="#contact" class="btn-primary glow">Quero uma integração assim</a>
+          <a href="#contact" class="btn-primary glow" data-i18n="modal_cta_woo">Quero uma integração assim</a>
         </div>
       </div>
     </div>
@@ -717,10 +704,102 @@
       <button class="modal-close" onclick="closeModal('rocktron')">&times;</button>
       <div class="modal-content">
         <div class="modal-header">
-          <div class="modal-badge">Sistema Web</div>
-          <h2>Rocktron Cloud</h2>
-          <p class="modal-subtitle">Sistema de Upload + Gestão de Arquivos</p>
+          <div class="modal-badge" data-i18n="modal_rock_badge">Sistema Web</div>
+          <h2 data-i18n="modal_rock_title">Rocktron Cloud</h2>
+          <p class="modal-subtitle" data-i18n="modal_rock_subtitle">Sistema de Upload + Gestão de Arquivos</p>
         </div>
+        
+        <div class="modal-section">
+          <h3>📋 <span data-i18n="modal_overview">Visão Geral</span></h3>
+          <p data-i18n="modal_rock_overview">Sistema web desenvolvido para centralizar o envio, organização e controle de arquivos de clientes em um ambiente simples, rápido e seguro — funcionando como uma "nuvem privada" para projetos, entregas e documentos.</p>
+        </div>
+        
+        <div class="modal-section">
+          <h3>✅ <span data-i18n="modal_rock_features">Principais Recursos</span></h3>
+          <div class="modal-grid">
+            <div class="modal-item">
+              <span class="modal-icon">📤</span>
+              <div>
+                <strong data-i18n="modal_rock_upload">Upload de Arquivos</strong>
+                <p data-i18n="modal_rock_upload_desc">Envio direto pelo navegador, rápido e sem complicações.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">📁</span>
+              <div>
+                <strong data-i18n="modal_rock_folders">Organização por Categorias</strong>
+                <p data-i18n="modal_rock_folders_desc">Arquivos organizados por projetos e categorias específicas.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">📋</span>
+              <div>
+                <strong data-i18n="modal_rock_list">Listagem e Gerenciamento</strong>
+                <p data-i18n="modal_rock_list_desc">Visualização completa de todos os arquivos enviados.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">👥</span>
+              <div>
+                <strong data-i18n="modal_rock_acl">Controle de Acesso (ACL)</strong>
+                <p data-i18n="modal_rock_acl_desc">Permissões por usuário, separando admin e usuários comuns.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">📝</span>
+              <div>
+                <strong data-i18n="modal_rock_logs">Logs e Rastreabilidade</strong>
+                <p data-i18n="modal_rock_logs_desc">Histórico de envios e ações para auditoria e segurança.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">⚡</span>
+              <div>
+                <strong data-i18n="modal_rock_admin">Painel Admin</strong>
+                <p data-i18n="modal_rock_admin_desc">Gerenciamento de usuários, permissões e visualização por data/responsável.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="modal-section">
+          <h3>🛠️ <span data-i18n="modal_tech">Tecnologias Utilizadas</span></h3>
+          <div class="modal-tags">
+            <span>PHP</span>
+            <span data-i18n="tech_html_css_js">HTML/CSS/JS</span>
+            <span data-i18n="tech_mysql">MySQL</span>
+            <span data-i18n="tech_cpanel_host">cPanel</span>
+            <span>Arquivos + Pastas</span>
+          </div>
+        </div>
+        
+        <div class="modal-section highlight">
+          <h3>📈 <span data-i18n="modal_results">Resultados</span></h3>
+          <div class="modal-results">
+            <span data-i18n="modal_rock_res1">✅ Centralização de arquivos sem bagunça</span>
+            <span data-i18n="modal_rock_res2">✅ Organização por projeto/cliente</span>
+            <span data-i18n="modal_rock_res3">✅ Redução de troca de arquivos por WhatsApp/e-mail</span>
+            <span data-i18n="modal_rock_res4">✅ Controle e histórico de todos os envios</span>
+            <span data-i18n="modal_rock_res5">✅ Ambiente seguro com permissões por usuário</span>
+            <span data-i18n="modal_rock_res6">✅ Deploy rápido em hospedagem comum (cPanel)</span>
+          </div>
+        </div>
+        
+        <div class="modal-section">
+          <h3>🎯 <span data-i18n="modal_rock_diffs">Diferenciais</span></h3>
+          <ul class="modal-list">
+            <li data-i18n="modal_rock_diff1">Solução leve, sem dependências pesadas</li>
+            <li data-i18n="modal_rock_diff2">Roda em ambientes cPanel simples</li>
+            <li data-i18n="modal_rock_diff3">Interface simples e focada em produtividade</li>
+            <li data-i18n="modal_rock_diff4">Sem custos de plataformas externas</li>
+            <li data-i18n="modal_rock_diff5">100% personalizado para as necessidades do negócio</li>
+          </ul>
+        </div>
+        
+        <div class="modal-footer">
+          <a href="#contact" class="btn-primary glow" data-i18n="modal_cta_rock">Quero um sistema assim</a>
+        </div>
+      </div>
         
         <div class="modal-section">
           <h3>📋 Visão Geral</h3>
@@ -826,9 +905,9 @@
       <button class="modal-close" onclick="closeModal('digivet-br')">&times;</button>
       <div class="modal-content">
         <div class="modal-header">
-          <div class="modal-badge">E-commerce + Portal</div>
-          <h2>Digi-Vet Brasil</h2>
-          <p class="modal-subtitle">digi-vet.com.br</p>
+          <div class="modal-badge" data-i18n="modal_br_badge">E-commerce + Portal</div>
+          <h2 data-i18n="modal_br_title">Digi-Vet Brasil</h2>
+          <p class="modal-subtitle" data-i18n="modal_br_subtitle">digi-vet.com.br</p>
         </div>
         
         <div class="modal-section">
@@ -836,83 +915,83 @@
         </div>
         
         <div class="modal-section">
-          <h3>📋 Visão Geral</h3>
-          <p>O Digi-Vet é o site oficial da Digicare Animal Health no Brasil, estruturado como loja + vitrine técnica para equipamentos veterinários (monitores multiparamétricos, bombas de infusão, anestesia/ventilação, radiografia e acessórios), com navegação por categorias, páginas de produto detalhadas e suporte comercial via WhatsApp.</p>
+          <h3>📋 <span data-i18n="modal_overview">Visão Geral</span></h3>
+          <p data-i18n="modal_br_overview">O Digi-Vet é o site oficial da Digicare Animal Health no Brasil, estruturado como loja + vitrine técnica para equipamentos veterinários (monitores multiparamétricos, bombas de infusão, anestesia/ventilação, radiografia e acessórios), com navegação por categorias, páginas de produto detalhadas e suporte comercial via WhatsApp.</p>
         </div>
         
         <div class="modal-section">
-          <h3>✅ O que foi implementado</h3>
+          <h3>✅ <span data-i18n="modal_br_impl">O que foi implementado</span></h3>
           <div class="modal-grid">
             <div class="modal-item">
               <span class="modal-icon">🛒</span>
               <div>
-                <strong>E-commerce WooCommerce</strong>
-                <p>Catálogo completo com carrinho, produtos, categorias, promoções e área de compra.</p>
+                <strong data-i18n="modal_br_woo">E-commerce WooCommerce</strong>
+                <p data-i18n="modal_br_woo_desc">Catálogo completo com carrinho, produtos, categorias, promoções e área de compra.</p>
               </div>
             </div>
             <div class="modal-item">
               <span class="modal-icon">🎯</span>
               <div>
-                <strong>UX e Conversão</strong>
-                <p>CTAs estratégicos, fluxo claro até carrinho/contato e otimizações de conversão.</p>
+                <strong data-i18n="modal_br_ux">UX e Conversão</strong>
+                <p data-i18n="modal_br_ux_desc">CTAs estratégicos, fluxo claro até carrinho/contato e otimizações de conversão.</p>
               </div>
             </div>
             <div class="modal-item">
               <span class="modal-icon">📝</span>
               <div>
-                <strong>Blog e SEO</strong>
-                <p>Estrutura de posts para fortalecer SEO e autoridade, com "Últimas postagens".</p>
+                <strong data-i18n="modal_br_seo">Blog e SEO</strong>
+                <p data-i18n="modal_br_seo_desc">Estrutura de posts para fortalecer SEO e autoridade, com "Últimas postagens".</p>
               </div>
             </div>
             <div class="modal-item">
               <span class="modal-icon">💬</span>
               <div>
-                <strong>Chat com Quick Replies</strong>
-                <p>Plugin de atendimento rápido com respostas padronizadas via JSON.</p>
+                <strong data-i18n="modal_br_chat">Chat com Quick Replies</strong>
+                <p data-i18n="modal_br_chat_desc">Plugin de atendimento rápido com respostas padronizadas via JSON.</p>
               </div>
             </div>
             <div class="modal-item">
               <span class="modal-icon">🎬</span>
               <div>
-                <strong>Video Balloon Modal</strong>
-                <p>Plugin de vídeo flutuante com tooltip configurável para destacar produtos.</p>
+                <strong data-i18n="modal_br_video">Video Balloon Modal</strong>
+                <p data-i18n="modal_br_video_desc">Plugin de vídeo flutuante com tooltip configurável para destacar produtos.</p>
               </div>
             </div>
             <div class="modal-item">
               <span class="modal-icon">⚙️</span>
               <div>
-                <strong>Snippets Técnicos</strong>
-                <p>Ajustes de UX, busca, navegação e conversão sob medida.</p>
+                <strong data-i18n="modal_br_snippets">Snippets Técnicos</strong>
+                <p data-i18n="modal_br_snippets_desc">Ajustes de UX, busca, navegação e conversão sob medida.</p>
               </div>
             </div>
           </div>
         </div>
         
         <div class="modal-section">
-          <h3>🛠️ Tecnologias</h3>
+          <h3>🛠️ <span data-i18n="modal_tech">Tecnologias</span></h3>
           <div class="modal-tags">
-            <span>WordPress</span>
-            <span>WooCommerce</span>
+            <span data-i18n="tech_wordpress">WordPress</span>
+            <span data-i18n="tech_woocommerce">WooCommerce</span>
             <span>PHP</span>
-            <span>JavaScript</span>
+            <span data-i18n="tech_js">JavaScript</span>
             <span>MySQL</span>
           </div>
         </div>
         
         <div class="modal-section highlight">
-          <h3>📈 Resultados</h3>
+          <h3>📈 <span data-i18n="modal_results">Resultados</span></h3>
           <div class="modal-results">
-            <span>✅ E-commerce robusto para equipamentos veterinários</span>
-            <span>✅ Catálogo organizado por linhas de produto</span>
-            <span>✅ Páginas de produto com foco comercial</span>
-            <span>✅ Ferramentas de conversão (WhatsApp, promoções, blog)</span>
-            <span>✅ Atendimento mais rápido com Quick Replies</span>
-            <span>✅ SEO fortalecido com estrutura de conteúdo</span>
+            <span data-i18n="modal_br_res1">✅ E-commerce robusto para equipamentos veterinários</span>
+            <span data-i18n="modal_br_res2">✅ Catálogo organizado por linhas de produto</span>
+            <span data-i18n="modal_br_res3">✅ Páginas de produto com foco comercial</span>
+            <span data-i18n="modal_br_res4">✅ Ferramentas de conversão (WhatsApp, promoções, blog)</span>
+            <span data-i18n="modal_br_res5">✅ Atendimento mais rápido com Quick Replies</span>
+            <span data-i18n="modal_br_res6">✅ SEO fortalecido com estrutura de conteúdo</span>
           </div>
         </div>
         
         <div class="modal-footer">
-          <a href="https://digi-vet.com.br" target="_blank" class="btn-primary glow">Ver site</a>
+          <a href="https://digi-vet.com.br" target="_blank" class="btn-primary glow" data-i18n="modal_view_site">Ver site</a>
         </div>
       </div>
     </div>
@@ -924,9 +1003,9 @@
       <button class="modal-close" onclick="closeModal('digivet-usa')">&times;</button>
       <div class="modal-content">
         <div class="modal-header">
-          <div class="modal-badge">Site Institucional</div>
-          <h2>Digi-Vet USA</h2>
-          <p class="modal-subtitle">digi-vet.com</p>
+          <div class="modal-badge" data-i18n="modal_usa_badge">Site Institucional</div>
+          <h2 data-i18n="modal_usa_title">Digi-Vet USA</h2>
+          <p class="modal-subtitle" data-i18n="modal_usa_subtitle">digi-vet.com</p>
         </div>
         
         <div class="modal-section">
@@ -934,33 +1013,90 @@
         </div>
         
         <div class="modal-section">
-          <h3>📋 Visão Geral</h3>
-          <p>O digi-vet.com é o site americano da Digi-Vet, criado para apresentar a marca e seus equipamentos veterinários com um visual premium, direto e comercial. O foco foi elevar o padrão para um nível "enterprise": mais clareza, confiança e navegação melhor, principalmente em mobile.</p>
+          <h3>📋 <span data-i18n="modal_overview">Visão Geral</span></h3>
+          <p data-i18n="modal_usa_overview">O digi-vet.com é o site americano da Digi-Vet, criado para apresentar a marca e seus equipamentos veterinários com um visual premium, direto e comercial. O foco foi elevar o padrão para um nível "enterprise".</p>
         </div>
         
         <div class="modal-section">
-          <h3>🔄 Antes → Depois</h3>
+          <h3>🔄 <span data-i18n="modal_usa_before">Antes</span> → <span data-i18n="modal_usa_after">Depois</span></h3>
           <div class="modal-grid">
             <div class="modal-item">
               <span class="modal-icon">🔻</span>
               <div>
-                <strong>Antes</strong>
-                <p>Visual antigo, inconsistências de layout, hierarquia fraca, navegação ruim em mobile.</p>
+                <strong data-i18n="modal_usa_before">Antes</strong>
+                <p data-i18n="modal_usa_before_desc">Visual antigo, inconsistências de layout, hierarquia fraca, navegação ruim em mobile.</p>
               </div>
             </div>
             <div class="modal-item">
               <span class="modal-icon">🔺</span>
               <div>
-                <strong>Depois</strong>
-                <p>Aparência premium, grid profissional, tipografia moderna, responsividade perfeita.</p>
+                <strong data-i18n="modal_usa_after">Depois</strong>
+                <p data-i18n="modal_usa_after_desc">Aparência premium, grid profissional, tipografia moderna, responsividade perfeita.</p>
               </div>
             </div>
           </div>
         </div>
         
         <div class="modal-section">
-          <h3>✅ Entregas do Projeto</h3>
+          <h3>✅ <span data-i18n="modal_usa_deliver">Entregas do Projeto</span></h3>
           <div class="modal-grid">
+            <div class="modal-item">
+              <span class="modal-icon">🏠</span>
+              <div>
+                <strong data-i18n="modal_usa_home">Homepage Reformulada</strong>
+                <p data-i18n="modal_usa_home_desc">Foco em posicionamento, destaque de linhas de produto e CTAs bem placed.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">📄</span>
+              <div>
+                <strong data-i18n="modal_usa_pages">Páginas Padronizadas</strong>
+                <p data-i18n="modal_usa_pages_desc">Criação de páginas novas seguindo padrão visual único e consistente.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">📰</span>
+              <div>
+                <strong data-i18n="modal_usa_news">News Room / Tradeshows</strong>
+                <p data-i18n="modal_usa_news_desc">Seções especiais organizadas e fáceis de manter atualizadas.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">📱</span>
+              <div>
+                <strong data-i18n="modal_usa_mobile">Responsividade Premium</strong>
+                <p data-i18n="modal_usa_mobile_desc">Melhor experiência mobile, reduzindo atrito para leads.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="modal-section">
+          <h3>🛠️ <span data-i18n="modal_tech">Tecnologias</span></h3>
+          <div class="modal-tags">
+            <span data-i18n="tech_html">HTML</span>
+            <span data-i18n="tech_css">CSS</span>
+            <span data-i18n="tech_js2">JavaScript</span>
+            <span data-i18n="tech_core">CoreCommerce</span>
+            <span data-i18n="tech_custom">Custom Code</span>
+          </div>
+        </div>
+        
+        <div class="modal-section highlight">
+          <h3>📈 <span data-i18n="modal_usa_impact">Impacto</span></h3>
+          <div class="modal-results">
+            <span data-i18n="modal_usa_res1">✅ Mais confiança imediata na marca (cara de empresa grande)</span>
+            <span data-i18n="modal_usa_res2">✅ Navegação clara e rápida para encontrar produtos</span>
+            <span data-i18n="modal_usa_res3">✅ Experiência mobile otimizada</span>
+            <span data-i18n="modal_usa_res4">✅ Site pronto para escalar com novas páginas e campanhas</span>
+            <span data-i18n="modal_usa_res5">✅ Base sólida para SEO on-page e crescimento orgânico</span>
+          </div>
+        </div>
+        
+        <div class="modal-footer">
+          <a href="https://digi-vet.com" target="_blank" class="btn-primary glow" data-i18n="modal_view_site">Ver site</a>
+        </div>
+      </div>
             <div class="modal-item">
               <span class="modal-icon">🏠</span>
               <div>
