@@ -603,23 +603,43 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Form Submission
+  // Form Submission - Netlify AJAX
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
+      
       const submitBtn = this.querySelector('.submit-btn');
       const currentLang = localStorage.getItem('lang') || 'pt';
       const sentText = currentLang === 'pt' ? '✓ Mensagem enviada!' : '✓ Message sent!';
       const sendText = currentLang === 'pt' ? 'Enviar Mensagem' : 'Send Message';
+      const errorText = currentLang === 'pt' ? 'Erro ao enviar' : 'Error sending';
       
-      if (submitBtn) {
-        submitBtn.textContent = sentText;
-        setTimeout(() => {
+      const formData = new FormData(this);
+      const data = {};
+      formData.forEach((value, key) => data[key] = value);
+      
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(data).toString()
+      })
+      .then(() => {
+        if (submitBtn) {
+          submitBtn.textContent = sentText;
+          submitBtn.style.background = 'var(--gradient-success)';
           this.reset();
-          submitBtn.textContent = sendText;
-        }, 3000);
-      }
+          setTimeout(() => {
+            submitBtn.textContent = sendText;
+            submitBtn.style.background = '';
+          }, 3000);
+        }
+      })
+      .catch(() => {
+        if (submitBtn) {
+          submitBtn.textContent = errorText;
+        }
+      });
     });
   }
   
