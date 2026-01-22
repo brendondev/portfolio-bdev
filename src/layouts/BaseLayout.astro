@@ -78,8 +78,7 @@ const themeScript = `
       </>
     )}
     
-    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
-    <script type="text/javascript" set:html={themeScript} is:inline />
+<script src="/theme.js"></script>
   </head>
   <body class="min-h-screen flex flex-col">
     <slot />
