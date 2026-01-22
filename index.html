@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sawad | Building digital products</title>
-  <meta name="description" content="Product Engineer passionate about creating intuitive and engaging user experiences.">
+  <title>Brendon | WordPress Developer</title>
+  <meta name="description" content="WordPress Developer & Plugin Creator - Building powerful WordPress solutions.">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +14,7 @@
   <!-- Navigation -->
   <nav>
     <div class="container">
-      <a href="#" class="nav-logo">sawad.</a>
+      <a href="#" class="nav-logo">brendon.</a>
       <div class="nav-links">
         <a href="#projects" class="active">Work</a>
         <a href="#experience">Experience</a>
@@ -63,17 +63,46 @@
           </div>
         </div>
         <div class="hero-visual">
-          <div class="hero-card hero-card-1 bento-card">
-            <div style="width: 48px; height: 48px; background: var(--gradient-primary); border-radius: 12px; margin-bottom: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🔌</div>
-            <p style="font-size: 0.875rem; color: var(--text-secondary); font-weight: 500;">Custom Plugins</p>
+          <!-- Code Preview Card -->
+          <div class="hero-card hero-card-1 bento-card code-preview">
+            <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+              <span style="width: 12px; height: 12px; border-radius: 50%; background: #ef4444;"></span>
+              <span style="width: 12px; height: 12px; border-radius: 50%; background: #f59e0b;"></span>
+              <span style="width: 12px; height: 12px; border-radius: 50%; background: #22c55e;"></span>
+            </div>
+            <div class="line"><span class="line-num">1</span><span class="line-code comment">// Custom WordPress Plugin</span></div>
+            <div class="line"><span class="line-num">2</span><span class="line-code"><span class="keyword">function</span> <span class="function">my_custom_shortcode</span>() {</span></div>
+            <div class="line"><span class="line-num">3</span><span class="line-code">  <span class="keyword">return</span> <span class="string">'Hello World!'</span>;</span></div>
+            <div class="line"><span class="line-num">4</span><span class="line-code">}</span></div>
+            <div class="line"><span class="line-num">5</span><span class="line-code"></span></div>
+            <div class="line"><span class="line-num">6</span><span class="line-code comment">// Add to WordPress</span></div>
+            <div class="line"><span class="line-num">7</span><span class="line-code">add_shortcode(<span class="string">'hello'</span>, <span class="function">'my_custom_shortcode'</span>);</span></div>
           </div>
+          
+          <!-- Stats Card -->
           <div class="hero-card hero-card-2 bento-card">
-            <div style="width: 48px; height: 48px; background: var(--gradient-secondary); border-radius: 12px; margin-bottom: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🎓</div>
-            <p style="font-size: 0.875rem; color: var(--text-secondary); font-weight: 500;">Moodle LMS</p>
+            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
+              <div style="width: 48px; height: 48px; background: var(--gradient-primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">⚡</div>
+              <div>
+                <p style="font-size: 0.875rem; color: var(--text-secondary); font-weight: 500;">Performance Optimized</p>
+                <p style="font-size: 0.75rem; color: var(--text-muted);">Loading: 0.3s</p>
+              </div>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <span style="padding: 4px 10px; background: var(--accent-light); border-radius: 20px; font-size: 0.7rem; color: var(--accent);">PHP 8.2</span>
+              <span style="padding: 4px 10px; background: var(--accent-light); border-radius: 20px; font-size: 0.7rem; color: var(--accent);">OPcache</span>
+            </div>
           </div>
+          
+          <!-- Stack Icons -->
           <div class="hero-card hero-card-3 bento-card">
-            <div style="width: 48px; height: 48px; background: var(--gradient-tertiary); border-radius: 12px; margin-bottom: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🛒</div>
-            <p style="font-size: 0.875rem; color: var(--text-secondary); font-weight: 500;">WooCommerce</p>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 12px;">
+              <div style="text-align: center;"><span style="font-size: 1.5rem;">🔌</span></div>
+              <div style="text-align: center;"><span style="font-size: 1.5rem;">🛒</span></div>
+              <div style="text-align: center;"><span style="font-size: 1.5rem;">🎓</span></div>
+              <div style="text-align: center;"><span style="font-size: 1.5rem;">🎨</span></div>
+            </div>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); font-weight: 500; text-align: center;">Full Stack WP Developer</p>
           </div>
         </div>
       </div>
@@ -109,7 +138,6 @@
       <div class="bento-grid projects-bento">
         <div class="projects-header">
           <h2 class="section-title">Selected Work</h2>
-          <a href="#" class="section-link">View all projects →</a>
         </div>
         <article class="project-bento-card bento-card">
           <div class="project-image" style="background: var(--gradient-primary);"></div>
@@ -188,27 +216,27 @@
         </div>
         <div class="experience-bento-card bento-card">
           <span class="period">2020 — Present</span>
-          <h3>Senior Product Engineer</h3>
-          <p style="color: var(--accent); font-size: 0.875rem; margin-bottom: 12px;">PixelForge Studios</p>
-          <p>Leading product development, mentoring engineers, and driving technical decisions for flagship products.</p>
+          <h3>Senior WordPress Developer</h3>
+          <p style="color: var(--accent); font-size: 0.875rem; margin-bottom: 12px;">Freelancer</p>
+          <p>Desenvolvendo plugins e temas WordPress personalizados para clientes nacionais e internacionais.</p>
         </div>
         <div class="experience-bento-card bento-card">
           <span class="period">2017 — 2020</span>
           <h3>Full Stack Developer</h3>
-          <p style="color: var(--accent); font-size: 0.875rem; margin-bottom: 12px;">BlueWave Innovators</p>
-          <p>Built scalable web applications, implemented CI/CD pipelines, and improved system architecture.</p>
+          <p style="color: var(--accent); font-size: 0.875rem; margin-bottom: 12px;">Digital Agency</p>
+          <p>Desenvolvimento de sites institucionais, e-commerces e plataformas educacionais.</p>
         </div>
         <div class="experience-bento-card bento-card">
           <span class="period">2015 — 2017</span>
           <h3>Frontend Developer</h3>
-          <p style="color: var(--accent); font-size: 0.875rem; margin-bottom: 12px;">TrendCraft Solutions</p>
-          <p>Developed responsive web interfaces, implemented design systems, and improved performance.</p>
+          <p style="color: var(--accent); font-size: 0.875rem; margin-bottom: 12px;">Web Agency</p>
+          <p>Criação de interfaces responsivas, animações e otimização de performance.</p>
         </div>
         <div class="experience-bento-card bento-card">
           <span class="period">2014 — 2015</span>
           <h3>Junior Developer</h3>
-          <p style="color: var(--accent); font-size: 0.875rem; margin-bottom: 12px;">Startup Inc</p>
-          <p>Started career building websites and learning modern development practices.</p>
+          <p style="color: var(--accent); font-size: 0.875rem; margin-bottom: 12px;">Start-up</p>
+          <p>Início da carreira com HTML, CSS, JavaScript e primeiros projetos WordPress.</p>
         </div>
       </div>
     </section>
@@ -289,14 +317,11 @@
           <h2 class="section-title">Writing</h2>
           <a href="https://dev.to/brendondev" target="_blank" class="section-link">Read more →</a>
         </div>
-        <div class="blog-posts-grid" style="grid-column: span 4; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;" id="blog-posts">
-          <!-- Posts serão carregados via JavaScript -->
+        <div class="blog-posts-grid" id="blog-posts">
           <div class="bento-card" style="grid-column: span 2; text-align: center; color: var(--text-secondary);">
             Carregando posts do Dev.to...
           </div>
         </div>
-      </div>
-    </section>
       </div>
     </section>
 
@@ -317,14 +342,8 @@
             <input type="email" id="email" name="email" required placeholder="your@email.com">
           </div>
           <div class="form-group">
-            <label for="budget">Budget</label>
-            <select id="budget" name="budget" required>
-              <option value="">Select range</option>
-              <option value="<3k">< $3k</option>
-              <option value="3k-5k">$3k - $5k</option>
-              <option value="5k-10k">$5k - $10k</option>
-              <option value=">10k">> $10k</option>
-            </select>
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required placeholder="What's this about?">
           </div>
           <div class="form-group">
             <label for="message">Message</label>
@@ -336,19 +355,15 @@
           <h3>Get in touch</h3>
           <div class="contact-info-item">
             <h4>Email</h4>
-            <a href="mailto:hello@sawad.dev">hello@sawad.dev</a>
-          </div>
-          <div class="contact-info-item">
-            <h4>Twitter</h4>
-            <a href="#">@sawad</a>
-          </div>
-          <div class="contact-info-item">
-            <h4>LinkedIn</h4>
-            <a href="#">/in/sawad</a>
+            <a href="mailto:brendonlima@gmail.com">brendonlima@gmail.com</a>
           </div>
           <div class="contact-info-item">
             <h4>GitHub</h4>
-            <a href="#">/sawad</a>
+            <a href="https://github.com/brendondev" target="_blank">@brendondev</a>
+          </div>
+          <div class="contact-info-item">
+            <h4>LinkedIn</h4>
+            <a href="https://linkedin.com/in/brendondev" target="_blank">/in/brendondev</a>
           </div>
         </div>
       </div>
@@ -358,11 +373,11 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p>© 2024 sawad. All rights reserved.</p>
+      <p>© 2024 Brendon. All rights reserved.</p>
       <div class="social">
-        <a href="#">Twitter</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">GitHub</a>
+        <a href="https://github.com/brendondev" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/brendondev" target="_blank">LinkedIn</a>
+        <a href="https://dev.to/brendondev" target="_blank">Dev.to</a>
       </div>
     </div>
   </footer>
