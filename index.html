@@ -178,25 +178,40 @@
           </div>
         </article>
         
-        <article class="project-bento-card bento-card">
-          <div class="project-image" style="background: var(--gradient-secondary);"></div>
+        <!-- Digi-Vet Brasil Project -->
+        <article class="project-bento-card bento-card project-modal-trigger" data-project="digivet-br">
+          <div class="project-image" style="background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%); display: flex; align-items: center; justify-content: center;">
+            <div style="text-align: center;">
+              <div style="font-size: 3rem; margin-bottom: 12px;">🇧🇷</div>
+              <p style="font-size: 0.875rem; color: rgba(255,255,255,0.8);">E-commerce Veterinário</p>
+            </div>
+          </div>
           <div class="project-content">
-            <h3>E-commerce WP</h3>
-            <p>Loja virtual completa com WooCommerce, gateways de pagamento e inventário.</p>
+            <h3>Digi-Vet Brasil</h3>
+            <p>E-commerce e portal de produtos veterinários com WooCommerce, blog e ferramentas de conversão.</p>
             <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px;">
               <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">WooCommerce</span>
-              <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">MySQL</span>
+              <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">WordPress</span>
+              <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">PHP</span>
             </div>
           </div>
         </article>
-        <article class="project-bento-card bento-card">
-          <div class="project-image" style="background: var(--gradient-tertiary);"></div>
+        
+        <!-- Digi-Vet USA Project -->
+        <article class="project-bento-card bento-card project-modal-trigger" data-project="digivet-usa">
+          <div class="project-image" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); display: flex; align-items: center; justify-content: center;">
+            <div style="text-align: center;">
+              <div style="font-size: 3rem; margin-bottom: 12px;">🇺🇸</div>
+              <p style="font-size: 0.875rem; color: rgba(255,255,255,0.8);">Site Institucional</p>
+            </div>
+          </div>
           <div class="project-content">
-            <h3>Custom WP Plugin</h3>
-            <p>Plugin personalizado para gestão de eventos com integração payment gateway.</p>
+            <h3>Digi-Vet USA</h3>
+            <p>Site institucional premium com catálogo de produtos veterinários, desenvolvido customizado.</p>
             <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px;">
-              <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">PHP</span>
-              <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">WordPress</span>
+              <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">HTML/CSS</span>
+              <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">JavaScript</span>
+              <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">CoreCommerce</span>
             </div>
           </div>
         </article>
@@ -221,19 +236,6 @@
         </article>
         
         <!-- Remaining projects... -->
-        <article class="project-bento-card bento-card">
-          <div class="project-image" style="background: linear-gradient(135deg, #14b8a6 0%, #f59e0b 100%);"></div>
-          <div class="project-content">
-            <h3>Membership Site</h3>
-            <p>Sistema de membros com conteúdo restrito e integração payment.</p>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px;">
-              <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">WordPress</span>
-              <span style="padding: 6px 14px; background: var(--accent-light); border-radius: 20px; font-size: 0.75rem; color: var(--accent); font-weight: 500;">PHP</span>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
 
     <!-- Experience Section -->
     <section id="experience" class="experience-section">
@@ -719,6 +721,207 @@
         
         <div class="modal-footer">
           <a href="#contact" class="btn-primary glow">Quero um sistema assim</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Modal - Digi-Vet Brasil -->
+  <div class="modal-overlay" id="modal-digivet-br">
+    <div class="modal-container">
+      <button class="modal-close" onclick="closeModal('digivet-br')">&times;</button>
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-badge">E-commerce + Portal</div>
+          <h2>Digi-Vet Brasil</h2>
+          <p class="modal-subtitle">digi-vet.com.br</p>
+        </div>
+        
+        <div class="modal-section">
+          <img src="img/digi-vet.com.br.png" alt="Digi-Vet Brasil" style="width: 100%; border-radius: 12px; margin: 20px 0; border: 1px solid var(--border);">
+        </div>
+        
+        <div class="modal-section">
+          <h3>📋 Visão Geral</h3>
+          <p>O Digi-Vet é o site oficial da Digicare Animal Health no Brasil, estruturado como loja + vitrine técnica para equipamentos veterinários (monitores multiparamétricos, bombas de infusão, anestesia/ventilação, radiografia e acessórios), com navegação por categorias, páginas de produto detalhadas e suporte comercial via WhatsApp.</p>
+        </div>
+        
+        <div class="modal-section">
+          <h3>✅ O que foi implementado</h3>
+          <div class="modal-grid">
+            <div class="modal-item">
+              <span class="modal-icon">🛒</span>
+              <div>
+                <strong>E-commerce WooCommerce</strong>
+                <p>Catálogo completo com carrinho, produtos, categorias, promoções e área de compra.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">🎯</span>
+              <div>
+                <strong>UX e Conversão</strong>
+                <p>CTAs estratégicos, fluxo claro até carrinho/contato e otimizações de conversão.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">📝</span>
+              <div>
+                <strong>Blog e SEO</strong>
+                <p>Estrutura de posts para fortalecer SEO e autoridade, com "Últimas postagens".</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">💬</span>
+              <div>
+                <strong>Chat com Quick Replies</strong>
+                <p>Plugin de atendimento rápido com respostas padronizadas via JSON.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">🎬</span>
+              <div>
+                <strong>Video Balloon Modal</strong>
+                <p>Plugin de vídeo flutuante com tooltip configurável para destacar produtos.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">⚙️</span>
+              <div>
+                <strong>Snippets Técnicos</strong>
+                <p>Ajustes de UX, busca, navegação e conversão sob medida.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="modal-section">
+          <h3>🛠️ Tecnologias</h3>
+          <div class="modal-tags">
+            <span>WordPress</span>
+            <span>WooCommerce</span>
+            <span>PHP</span>
+            <span>JavaScript</span>
+            <span>MySQL</span>
+          </div>
+        </div>
+        
+        <div class="modal-section highlight">
+          <h3>📈 Resultados</h3>
+          <div class="modal-results">
+            <span>✅ E-commerce robusto para equipamentos veterinários</span>
+            <span>✅ Catálogo organizado por linhas de produto</span>
+            <span>✅ Páginas de produto com foco comercial</span>
+            <span>✅ Ferramentas de conversão (WhatsApp, promoções, blog)</span>
+            <span>✅ Atendimento mais rápido com Quick Replies</span>
+            <span>✅ SEO fortalecido com estrutura de conteúdo</span>
+          </div>
+        </div>
+        
+        <div class="modal-footer">
+          <a href="https://digi-vet.com.br" target="_blank" class="btn-primary glow">Ver site</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Modal - Digi-Vet USA -->
+  <div class="modal-overlay" id="modal-digivet-usa">
+    <div class="modal-container">
+      <button class="modal-close" onclick="closeModal('digivet-usa')">&times;</button>
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-badge">Site Institucional</div>
+          <h2>Digi-Vet USA</h2>
+          <p class="modal-subtitle">digi-vet.com</p>
+        </div>
+        
+        <div class="modal-section">
+          <img src="img/digi-vet.com.png" alt="Digi-Vet USA" style="width: 100%; border-radius: 12px; margin: 20px 0; border: 1px solid var(--border);">
+        </div>
+        
+        <div class="modal-section">
+          <h3>📋 Visão Geral</h3>
+          <p>O digi-vet.com é o site americano da Digi-Vet, criado para apresentar a marca e seus equipamentos veterinários com um visual premium, direto e comercial. O foco foi elevar o padrão para um nível "enterprise": mais clareza, confiança e navegação melhor, principalmente em mobile.</p>
+        </div>
+        
+        <div class="modal-section">
+          <h3>🔄 Antes → Depois</h3>
+          <div class="modal-grid">
+            <div class="modal-item">
+              <span class="modal-icon">🔻</span>
+              <div>
+                <strong>Antes</strong>
+                <p>Visual antigo, inconsistências de layout, hierarquia fraca, navegação ruim em mobile.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">🔺</span>
+              <div>
+                <strong>Depois</strong>
+                <p>Aparência premium, grid profissional, tipografia moderna, responsividade perfeita.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="modal-section">
+          <h3>✅ Entregas do Projeto</h3>
+          <div class="modal-grid">
+            <div class="modal-item">
+              <span class="modal-icon">🏠</span>
+              <div>
+                <strong>Homepage Reformulada</strong>
+                <p>Foco em posicionamento, destaque de linhas de produto e CTAs bem placed.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">📄</span>
+              <div>
+                <strong>Páginas Padronizadas</strong>
+                <p>Criação de páginas novas seguindo padrão visual único e consistente.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">📰</span>
+              <div>
+                <strong>News Room / Tradeshows</strong>
+                <p>Seções especiais organizadas e fáceis de manter atualizadas.</p>
+              </div>
+            </div>
+            <div class="modal-item">
+              <span class="modal-icon">📱</span>
+              <div>
+                <strong>Responsividade Premium</strong>
+                <p>Melhor experiência mobile, reduzindo atrito para leads.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="modal-section">
+          <h3>🛠️ Tecnologias</h3>
+          <div class="modal-tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>CoreCommerce</span>
+            <span>Custom Code</span>
+          </div>
+        </div>
+        
+        <div class="modal-section highlight">
+          <h3>📈 Impacto</h3>
+          <div class="modal-results">
+            <span>✅ Mais confiança imediata na marca (cara de empresa grande)</span>
+            <span>✅ Navegação clara e rápida para encontrar produtos</span>
+            <span>✅ Experiência mobile otimizada</span>
+            <span>✅ Site pronto para escalar com novas páginas e campanhas</span>
+            <span>✅ Base sólida para SEO on-page e crescimento orgânico</span>
+          </div>
+        </div>
+        
+        <div class="modal-footer">
+          <a href="https://digi-vet.com" target="_blank" class="btn-primary glow">Ver site</a>
         </div>
       </div>
     </div>
