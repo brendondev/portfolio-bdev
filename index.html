@@ -1,12 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brendon | WordPress Developer</title>
-  <meta name="description" content="WordPress Developer & Plugin Creator - Building powerful WordPress solutions.">
+  <title>Brendon | Desenvolvedor WordPress</title>
+  <meta name="description" content="Desenvolvedor WordPress & Criador de Plugins. Criando soluções poderosas em WordPress, plugins personalizados, e-commerce WooCommerce e integrações Moodle.">
+  <meta name="keywords" content="WordPress, WooCommerce, Moodle, PHP, Desenvolvedor, Plugin, E-commerce, LMS">
+  <meta name="author" content="Brendon">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://brendondev-portfolio.netlify.app/">
+  <meta property="og:title" content="Brendon | Desenvolvedor WordPress">
+  <meta property="og:description" content="Desenvolvedor WordPress & Criador de Plugins. Especializado em WooCommerce, Moodle e soluções personalizadas.">
+  <meta property="og:image" content="https://brendondev-portfolio.netlify.app/favicon.svg">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://brendondev-portfolio.netlify.app/">
+  <meta property="twitter:title" content="Brendon | Desenvolvedor WordPress">
+  <meta property="twitter:description" content="Desenvolvedor WordPress & Criador de Plugins. Especializado em WooCommerce, Moodle e soluções personalizadas.">
+  <meta property="twitter:image" content="https://brendondev-portfolio.netlify.app/favicon.svg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  
+  <!-- Umami Analytics (gratuito e privado) -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="797a163c-7d39-4b04-a91b-30b0ebc62a01"></script>
+  
+  <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
@@ -14,7 +40,7 @@
   <!-- Navigation -->
   <nav>
     <div class="container">
-       <a href="#" class="nav-logo" data-i18n="nav_logo">brendon.</a>
+      <a href="#" class="nav-logo" data-i18n="nav_logo">brendon.</a>
       <div class="nav-links">
         <a href="#projects" class="active" data-i18n="nav_work">Trabalhos</a>
         <a href="#experience" data-i18n="nav_exp">Experiência</a>
@@ -63,10 +89,8 @@
         </div>
         <div class="hero-visual">
           <div class="hero-card hero-card-1 bento-card code-preview">
-            <div style="display: flex; gap: 6px; margin-bottom: 8px;">
-              <span style="width: 10px; height: 10px; border-radius: 50%; background: #ef4444;"></span>
-              <span style="width: 10px; height: 10px; border-radius: 50%; background: #f59e0b;"></span>
-              <span style="width: 10px; height: 10px; border-radius: 50%; background: #22c55e;"></span>
+            <div class="hero-window-controls">
+              <span></span><span></span><span></span>
             </div>
             <div class="line"><span class="line-num">1</span><span class="line-code comment">// Custom WordPress Plugin</span></div>
             <div class="line"><span class="line-num">2</span><span class="line-code"><span class="keyword">function</span> <span class="function">my_custom_shortcode</span>() {</span></div>
@@ -77,81 +101,81 @@
           
           <div class="hero-card hero-card-2 bento-card">
             <div style="display: flex; align-items: center; gap: 12px;">
-              <div style="width: 36px; height: 36px; background: var(--gradient-primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">⚡</div>
+              <div class="hero-icon-box primary">⚡</div>
               <div>
-                <p style="font-size: 0.8rem; color: var(--text-secondary); font-weight: 500;" data-i18n="perf_title">Performance</p>
-                <p style="font-size: 0.7rem; color: var(--text-muted);" data-i18n="perf_subtitle">Carregamento: 0.3s</p>
+                <p class="hero-card-title" data-i18n="perf_title">Performance</p>
+                <p class="hero-card-subtitle" data-i18n="perf_subtitle">Carregamento: 0.3s</p>
               </div>
             </div>
-            <div style="display: flex; gap: 6px; margin-top: 10px;">
-              <span style="padding: 3px 8px; background: var(--accent-light); border-radius: 20px; font-size: 0.65rem; color: var(--accent);">PHP 8.2</span>
-              <span style="padding: 3px 8px; background: var(--accent-light); border-radius: 20px; font-size: 0.65rem; color: var(--accent);">OPcache</span>
+            <div class="hero-card-tags">
+              <span class="hero-tag accent">PHP 8.2</span>
+              <span class="hero-tag accent">OPcache</span>
             </div>
           </div>
           
           <div class="hero-card hero-card-3 bento-card">
-            <div style="display: flex; justify-content: center; gap: 16px; margin-bottom: 8px;">
-              <span style="font-size: 1.3rem;">🔌</span>
-              <span style="font-size: 1.3rem;">🛒</span>
-              <span style="font-size: 1.3rem;">🎓</span>
-              <span style="font-size: 1.3rem;">🎨</span>
+            <div class="hero-stack-icons">
+              <span>🔌</span>
+              <span>🛒</span>
+              <span>🎓</span>
+              <span>🎨</span>
             </div>
-            <p style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 500; text-align: center;" data-i18n="stack_title">WP Full Stack</p>
+            <p class="hero-stack-title" data-i18n="stack_title">WP Full Stack</p>
           </div>
 
           <div class="hero-card hero-card-4 bento-card">
             <div style="display: flex; align-items: center; gap: 12px;">
-              <div style="width: 36px; height: 36px; background: var(--gradient-secondary); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">🛒</div>
+              <div class="hero-icon-box secondary">🛒</div>
               <div>
-                <p style="font-size: 0.8rem; color: var(--text-secondary); font-weight: 500;" data-i18n="ecom_title">E-commerce</p>
-                <p style="font-size: 0.7rem; color: var(--text-muted);" data-i18n="ecom_subtitle">WooCommerce Pro</p>
+                <p class="hero-card-title" data-i18n="ecom_title">E-commerce</p>
+                <p class="hero-card-subtitle" data-i18n="ecom_subtitle">WooCommerce Pro</p>
               </div>
             </div>
-            <div style="display: flex; gap: 6px; margin-top: 10px;">
-              <span style="padding: 3px 8px; background: rgba(236, 72, 153, 0.1); border-radius: 20px; font-size: 0.65rem; color: #ec4899;">Woo</span>
-              <span style="padding: 3px 8px; background: rgba(236, 72, 153, 0.1); border-radius: 20px; font-size: 0.65rem; color: #ec4899;">Mercado Pago</span>
+            <div class="hero-card-tags">
+              <span class="hero-tag pink">Woo</span>
+              <span class="hero-tag pink">Mercado Pago</span>
             </div>
           </div>
 
           <div class="hero-card hero-card-5 bento-card">
             <div style="display: flex; align-items: center; gap: 12px;">
-              <div style="width: 36px; height: 36px; background: var(--gradient-tertiary); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">🎓</div>
+              <div class="hero-icon-box tertiary">🎓</div>
               <div>
-                <p style="font-size: 0.8rem; color: var(--text-secondary); font-weight: 500;">Moodle</p>
-                <p style="font-size: 0.7rem; color: var(--text-muted);" data-i18n="lms_subtitle">Integração LMS</p>
+                <p class="hero-card-title">Moodle</p>
+                <p class="hero-card-subtitle" data-i18n="lms_subtitle">Integração LMS</p>
               </div>
             </div>
-            <div style="display: flex; gap: 6px; margin-top: 10px;">
-              <span style="padding: 3px 8px; background: rgba(20, 184, 166, 0.1); border-radius: 20px; font-size: 0.65rem; color: #14b8a6;">API</span>
-              <span style="padding: 3px 8px; background: rgba(20, 184, 166, 0.1); border-radius: 20px; font-size: 0.65rem; color: #14b8a6;">cPanel</span>
+            <div class="hero-card-tags">
+              <span class="hero-tag teal">API</span>
+              <span class="hero-tag teal">cPanel</span>
             </div>
           </div>
 
           <div class="hero-card hero-card-6 bento-card">
             <div style="display: flex; align-items: center; gap: 12px;">
-              <div style="width: 36px; height: 36px; background: var(--gradient-success); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">🔧</div>
+              <div class="hero-icon-box success">🔧</div>
               <div>
-                <p style="font-size: 0.8rem; color: var(--text-secondary); font-weight: 500;" data-i18n="custom_title">Customizado</p>
-                <p style="font-size: 0.7rem; color: var(--text-muted);" data-i18n="custom_subtitle">Plugins & Snippets</p>
+                <p class="hero-card-title" data-i18n="custom_title">Customizado</p>
+                <p class="hero-card-subtitle" data-i18n="custom_subtitle">Plugins & Snippets</p>
               </div>
             </div>
-            <div style="display: flex; gap: 6px; margin-top: 10px;">
-              <span style="padding: 3px 8px; background: rgba(16, 185, 129, 0.1); border-radius: 20px; font-size: 0.65rem; color: #10b981;">Plugins</span>
-              <span style="padding: 3px 8px; background: rgba(16, 185, 129, 0.1); border-radius: 20px; font-size: 0.65rem; color: #10b981;">Snippets</span>
+            <div class="hero-card-tags">
+              <span class="hero-tag green">Plugins</span>
+              <span class="hero-tag green">Snippets</span>
             </div>
           </div>
 
           <div class="hero-card hero-card-7 bento-card">
             <div style="display: flex; align-items: center; gap: 12px;">
-              <div style="width: 36px; height: 36px; background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">🔗</div>
+              <div class="hero-icon-box purple">🔗</div>
               <div>
-                <p style="font-size: 0.8rem; color: var(--text-secondary); font-weight: 500;" data-i18n="api_title">API</p>
-                <p style="font-size: 0.7rem; color: var(--text-muted);" data-i18n="api_subtitle">Integrações</p>
+                <p class="hero-card-title" data-i18n="api_title">API</p>
+                <p class="hero-card-subtitle" data-i18n="api_subtitle">Integrações</p>
               </div>
             </div>
-            <div style="display: flex; gap: 6px; margin-top: 10px;">
-              <span style="padding: 3px 8px; background: rgba(99, 102, 241, 0.1); border-radius: 20px; font-size: 0.65rem; color: var(--accent);">REST</span>
-              <span style="padding: 3px 8px; background: rgba(236, 72, 153, 0.1); border-radius: 20px; font-size: 0.65rem; color: #ec4899;">Webhooks</span>
+            <div class="hero-card-tags">
+              <span class="hero-tag purple">REST</span>
+              <span class="hero-tag pink">Webhooks</span>
             </div>
           </div>
         </div>
@@ -177,8 +201,9 @@
           <div class="label" data-i18n="stats_clients">Clientes Satisfeitos</div>
         </div>
         <div class="stats-card highlight bento-card glow">
-          <div class="number" data-i18n="stats_open">Abr</div>
-          <div class="label" data-i18n="stats_projects_sub">Para Novos Projetos</div>
+          <div class="icon">🚀</div>
+          <div class="number" data-i18n="stats_open">Disponível</div>
+          <div class="label" data-i18n="stats_projects_sub">Para novos projetos</div>
         </div>
       </div>
     </section>
@@ -192,11 +217,8 @@
         
         <!-- IECM Brasil Project with Modal -->
         <article class="project-bento-card bento-card project-modal-trigger" data-project="iecm">
-          <div class="project-image" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); display: flex; align-items: center; justify-content: center;">
-            <div style="text-align: center;">
-              <div style="font-size: 3rem; margin-bottom: 12px;">🎓</div>
-              <p style="font-size: 0.875rem; color: rgba(255,255,255,0.8);">Plataforma EAD + Site</p>
-            </div>
+          <div class="project-image">
+            <img src="img/iecmbrasil.png" alt="IECM Brasil" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);\'><div style=\'text-align:center;\'><div style=\'font-size:3rem;margin-bottom:12px;\'>🎓</div><p style=\'font-size:0.875rem;color:rgba(255,255,255,0.8);\'>Plataforma EAD + Site</p></div></div>'">
           </div>
           <div class="project-content">
             <h3>IECM Brasil — Moodle + Site</h3>
@@ -211,11 +233,8 @@
         
         <!-- Moodle-WooCommerce Integration Project -->
         <article class="project-bento-card bento-card project-modal-trigger" data-project="moodle-woo">
-          <div class="project-image" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); display: flex; align-items: center; justify-content: center;">
-            <div style="text-align: center;">
-              <div style="font-size: 3rem; margin-bottom: 12px;">🔗</div>
-              <p style="font-size: 0.875rem; color: rgba(255,255,255,0.8);">WooCommerce ↔ Moodle API</p>
-            </div>
+          <div class="project-image">
+            <img src="img/moodle-integration.png" alt="WooCommerce Moodle Integration" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;background:linear-gradient(135deg,#11998e 0%,#38ef7d 100%);\'><div style=\'text-align:center;\'><div style=\'font-size:3rem;margin-bottom:12px;\'>🔗</div><p style=\'font-size:0.875rem;color:rgba(255,255,255,0.8);\'>WooCommerce ↔ Moodle API</p></div></div>'">
           </div>
           <div class="project-content">
             <h3>WooCommerce + Moodle Integration</h3>
@@ -230,11 +249,8 @@
         
         <!-- Digi-Vet Brasil Project -->
         <article class="project-bento-card bento-card project-modal-trigger" data-project="digivet-br">
-          <div class="project-image" style="background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%); display: flex; align-items: center; justify-content: center;">
-            <div style="text-align: center;">
-              <div style="font-size: 3rem; margin-bottom: 12px;">🇧🇷</div>
-              <p style="font-size: 0.875rem; color: rgba(255,255,255,0.8);">E-commerce Veterinário</p>
-            </div>
+          <div class="project-image">
+            <img src="img/digi-vet.com.br.png" alt="Digi-Vet Brasil" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;background:linear-gradient(135deg,#0077b6 0%,#00b4d8 100%);\'><div style=\'text-align:center;\'><div style=\'font-size:3rem;margin-bottom:12px;\'>🇧🇷</div><p style=\'font-size:0.875rem;color:rgba(255,255,255,0.8);\'>E-commerce Veterinário</p></div></div>'">
           </div>
           <div class="project-content">
             <h3>Digi-Vet Brasil</h3>
@@ -249,11 +265,8 @@
         
         <!-- Digi-Vet USA Project -->
         <article class="project-bento-card bento-card project-modal-trigger" data-project="digivet-usa">
-          <div class="project-image" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); display: flex; align-items: center; justify-content: center;">
-            <div style="text-align: center;">
-              <div style="font-size: 3rem; margin-bottom: 12px;">🇺🇸</div>
-              <p style="font-size: 0.875rem; color: rgba(255,255,255,0.8);">Site Institucional</p>
-            </div>
+          <div class="project-image">
+            <img src="img/digi-vet.com.png" alt="Digi-Vet USA" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);\'><div style=\'text-align:center;\'><div style=\'font-size:3rem;margin-bottom:12px;\'>🇺🇸</div><p style=\'font-size:0.875rem;color:rgba(255,255,255,0.8);\'>Site Institucional</p></div></div>'">
           </div>
           <div class="project-content">
             <h3>Digi-Vet USA</h3>
@@ -268,11 +281,8 @@
         
         <!-- Rocktron Cloud Project -->
         <article class="project-bento-card bento-card project-modal-trigger" data-project="rocktron">
-          <div class="project-image" style="background: linear-gradient(135deg, #2d3436 0%, #636e72 50%, #b2bec3 100%); display: flex; align-items: center; justify-content: center;">
-            <div style="text-align: center;">
-              <div style="font-size: 3rem; margin-bottom: 12px;">☁️</div>
-              <p style="font-size: 0.875rem; color: rgba(255,255,255,0.8);">Sistema de Upload + Gestão</p>
-            </div>
+          <div class="project-image">
+            <img src="img/cloud-rocktron.png" alt="Rocktron Cloud" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;background:linear-gradient(135deg,#2d3436 0%,#636e72 50%,#b2bec3 100%);\'><div style=\'text-align:center;\'><div style=\'font-size:3rem;margin-bottom:12px;\'>☁️</div><p style=\'font-size:0.875rem;color:rgba(255,255,255,0.8);\'>Sistema de Upload + Gestão</p></div></div>'">
           </div>
           <div class="project-content">
             <h3>Rocktron Cloud</h3>
@@ -286,6 +296,15 @@
         </article>
       </div>
     </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider">
+      <div class="divider-line"></div>
+      <div class="divider-accent">
+        <div class="divider-dot"></div>
+      </div>
+      <div class="divider-line"></div>
+    </div>
 
     <!-- Experience Section -->
     <section id="experience" class="experience-section">
@@ -308,6 +327,15 @@
       </div>
     </section>
 
+    <!-- Section Divider -->
+    <div class="section-divider">
+      <div class="divider-line"></div>
+      <div class="divider-accent">
+        <div class="divider-dot"></div>
+      </div>
+      <div class="divider-line"></div>
+    </div>
+
     <!-- Education Section -->
     <section id="education" class="education-section">
       <div class="bento-grid education-bento">
@@ -322,6 +350,15 @@
         </div>
       </div>
     </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider">
+      <div class="divider-line"></div>
+      <div class="divider-accent">
+        <div class="divider-dot"></div>
+      </div>
+      <div class="divider-line"></div>
+    </div>
 
     <!-- Courses Section -->
     <section id="courses" class="courses-section">
@@ -343,6 +380,15 @@
         </div>
       </div>
     </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider">
+      <div class="divider-line"></div>
+      <div class="divider-accent">
+        <div class="divider-dot"></div>
+      </div>
+      <div class="divider-line"></div>
+    </div>
 
     <!-- Tools Section -->
     <section id="tools" class="tools-section">
@@ -413,6 +459,15 @@
       </div>
     </section>
 
+    <!-- Section Divider -->
+    <div class="section-divider">
+      <div class="divider-line"></div>
+      <div class="divider-accent">
+        <div class="divider-dot"></div>
+      </div>
+      <div class="divider-line"></div>
+    </div>
+
     <!-- Thoughts Section -->
     <section id="thoughts" class="thoughts-section">
       <div class="bento-grid thoughts-bento">
@@ -428,6 +483,15 @@
       </div>
     </section>
 
+    <!-- Section Divider -->
+    <div class="section-divider">
+      <div class="divider-line"></div>
+      <div class="divider-accent">
+        <div class="divider-dot"></div>
+      </div>
+      <div class="divider-line"></div>
+    </div>
+
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
       <div class="bento-grid contact-bento">
@@ -435,7 +499,11 @@
           <h2 class="section-title" data-i18n="contact_title">Vamos trabalhar juntos</h2>
           <p data-i18n="contact_subtitle">Tem um projeto em mente? Eu adoraria ouvir sobre ele.</p>
         </div>
-        <form class="contact-form-bento bento-card" id="contactForm">
+        <form class="contact-form-bento bento-card" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact">
+          <p class="hidden" style="display:none;">
+            <label>Não preencha se você é humano: <input name="bot-field"></label>
+          </p>
           <div class="form-group">
             <label for="name" data-i18n="form_name">Nome</label>
             <input type="text" id="name" name="name" required placeholder="Seu nome">
@@ -456,6 +524,12 @@
         </form>
         <div class="contact-info-bento bento-card">
           <h3 data-i18n="contact_info">Entre em contato</h3>
+          <a href="https://wa.me/5521965110269?text=Oi%20Brendon,%20vim%20do%20seu%20portfolio" target="_blank" class="whatsapp-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span data-i18n="contact_whatsapp">WhatsApp</span>
+          </a>
           <div class="contact-info-item">
             <h4>Email</h4>
             <a href="mailto:brendonlima@gmail.com">brendonlima@gmail.com</a>
@@ -476,7 +550,7 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p>© 2024 Brendon. Todos os direitos reservados.</p>
+      <p>© 2025 Brendon. Todos os direitos reservados.</p>
       <div class="social">
         <a href="https://github.com/brendondev" target="_blank" data-i18n="footer_github">GitHub</a>
         <a href="https://linkedin.com/in/brendondev" target="_blank" data-i18n="footer_linkedin">LinkedIn</a>
@@ -594,6 +668,10 @@
           <p class="modal-subtitle" data-i18n="modal_woo_subtitle">Sistema completo de venda e entrega automática de cursos</p>
         </div>
         
+        <div class="modal-screenshot">
+          <img src="img/moodle-integration.png" alt="WooCommerce Moodle Integration" onerror="this.style.display='none'">
+        </div>
+        
         <div class="modal-section">
           <h3>📋 <span data-i18n="modal_overview">Visão Geral</span></h3>
           <p data-i18n="modal_woo_overview">Desenvolvimento de uma camada de integrações via snippets em PHP, conectando WooCommerce + API do Moodle para automatizar matrícula, cancelamento e comunicação com o aluno, transformando o WordPress em uma plataforma de vendas real de cursos com entrega automática.</p>
@@ -709,6 +787,10 @@
           <p class="modal-subtitle" data-i18n="modal_rock_subtitle">Sistema de Upload + Gestão de Arquivos</p>
         </div>
         
+        <div class="modal-screenshot">
+          <img src="img/cloud-rocktron.png" alt="Rocktron Cloud" onerror="this.style.display='none'">
+        </div>
+        
         <div class="modal-section">
           <h3>📋 <span data-i18n="modal_overview">Visão Geral</span></h3>
           <p data-i18n="modal_rock_overview">Sistema web desenvolvido para centralizar o envio, organização e controle de arquivos de clientes em um ambiente simples, rápido e seguro — funcionando como uma "nuvem privada" para projetos, entregas e documentos.</p>
@@ -786,7 +868,7 @@
         </div>
         
         <div class="modal-section">
-          <h3>🎯 <span data-i18n="modal_rock_diffs">Diferenciais</span></h3>
+          <h3>🎯 <span data-i18n="modal_diffs">Diferenciais</span></h3>
           <ul class="modal-list">
             <li data-i18n="modal_rock_diff1">Solução leve, sem dependências pesadas</li>
             <li data-i18n="modal_rock_diff2">Roda em ambientes cPanel simples</li>
@@ -798,102 +880,6 @@
         
         <div class="modal-footer">
           <a href="#contact" class="btn-primary glow" data-i18n="modal_cta_rock">Quero um sistema assim</a>
-        </div>
-      </div>
-        
-        <div class="modal-section">
-          <h3>📋 Visão Geral</h3>
-          <p>Sistema web desenvolvido para centralizar o envio, organização e controle de arquivos de clientes em um ambiente simples, rápido e seguro — funcionando como uma "nuvem privada" para projetos, entregas e documentos. A proposta foi criar uma solução leve, sem depender de plataformas externas, para facilitar o fluxo de trabalho entre cliente e equipe.</p>
-        </div>
-        
-        <div class="modal-section">
-          <img src="img/cloud-rocktron.png" alt="Rocktron Cloud Dashboard" style="width: 100%; border-radius: 12px; margin: 20px 0; border: 1px solid var(--border);">
-        </div>
-        
-        <div class="modal-section">
-          <h3>✅ Principais Recursos</h3>
-          <div class="modal-grid">
-            <div class="modal-item">
-              <span class="modal-icon">📤</span>
-              <div>
-                <strong>Upload de Arquivos</strong>
-                <p>Envio direto pelo navegador, rápido e sem complicações.</p>
-              </div>
-            </div>
-            <div class="modal-item">
-              <span class="modal-icon">📁</span>
-              <div>
-                <strong>Organização por Categorias</strong>
-                <p>Arquivos organizados por projetos e categorias específicas.</p>
-              </div>
-            </div>
-            <div class="modal-item">
-              <span class="modal-icon">📋</span>
-              <div>
-                <strong>Listagem e Gerenciamento</strong>
-                <p>Visualização completa de todos os arquivos enviados.</p>
-              </div>
-            </div>
-            <div class="modal-item">
-              <span class="modal-icon">👥</span>
-              <div>
-                <strong>Controle de Acesso (ACL)</strong>
-                <p>Permissões por usuário, separando admin e usuários comuns.</p>
-              </div>
-            </div>
-            <div class="modal-item">
-              <span class="modal-icon">📝</span>
-              <div>
-                <strong>Logs e Rastreabilidade</strong>
-                <p>Histórico de envios e ações para auditoria e segurança.</p>
-              </div>
-            </div>
-            <div class="modal-item">
-              <span class="modal-icon">⚡</span>
-              <div>
-                <strong>Painel Admin</strong>
-                <p>Gerenciamento de usuários, permissões e visualização por data/responsável.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="modal-section">
-          <h3>🛠️ Tecnologias Utilizadas</h3>
-          <div class="modal-tags">
-            <span>PHP</span>
-            <span>HTML/CSS/JS</span>
-            <span>MySQL</span>
-            <span>cPanel</span>
-            <span>Arquivos + Pastas</span>
-          </div>
-        </div>
-        
-        <div class="modal-section highlight">
-          <h3>📈 Resultados</h3>
-          <div class="modal-results">
-            <span>✅ Centralização de arquivos sem bagunça</span>
-            <span>✅ Organização por projeto/cliente</span>
-            <span>✅ Redução de troca de arquivos por WhatsApp/e-mail</span>
-            <span>✅ Controle e histórico de todos os envios</span>
-            <span>✅ Ambiente seguro com permissões por usuário</span>
-            <span>✅ Deploy rápido em hospedagem comum (cPanel)</span>
-          </div>
-        </div>
-        
-        <div class="modal-section">
-          <h3>🎯 Diferenciais</h3>
-          <ul class="modal-list">
-            <li>Solução leve, sem dependências pesadas</li>
-            <li>Roda em ambientes cPanel simples</li>
-            <li>Interface simples e focada em produtividade</li>
-            <li>Sem custos de plataformas externas</li>
-            <li>100% personalizado para as necessidades do negócio</li>
-          </ul>
-        </div>
-        
-        <div class="modal-footer">
-          <a href="#contact" class="btn-primary glow">Quero um sistema assim</a>
         </div>
       </div>
     </div>
@@ -1003,13 +989,13 @@
       <button class="modal-close" onclick="closeModal('digivet-usa')">&times;</button>
       <div class="modal-content">
         <div class="modal-header">
-          <div class="modal-badge" data-i18n="modal_usa_badge">Site Institucional</div>
-          <h2 data-i18n="modal_usa_title">Digi-Vet USA</h2>
-          <p class="modal-subtitle" data-i18n="modal_usa_subtitle">digi-vet.com</p>
+          <div class="modal-badge" data-i18n="modal_digivet_usa_badge">Site Institucional USA</div>
+          <h2>Digi-Vet USA</h2>
+          <p class="modal-subtitle" data-i18n="modal_digivet_usa_subtitle">Site institucional premium com catálogo de produtos</p>
         </div>
         
-        <div class="modal-section">
-          <img src="img/digi-vet.com.png" alt="Digi-Vet USA" style="width: 100%; border-radius: 12px; margin: 20px 0; border: 1px solid var(--border);">
+        <div class="modal-screenshot">
+          <img src="img/digi-vet.com.png" alt="Digi-Vet USA" onerror="this.style.display='none'">
         </div>
         
         <div class="modal-section">
@@ -1095,63 +1081,6 @@
         
         <div class="modal-footer">
           <a href="https://digi-vet.com" target="_blank" class="btn-primary glow" data-i18n="modal_view_site">Ver site</a>
-        </div>
-      </div>
-            <div class="modal-item">
-              <span class="modal-icon">🏠</span>
-              <div>
-                <strong>Homepage Reformulada</strong>
-                <p>Foco em posicionamento, destaque de linhas de produto e CTAs bem placed.</p>
-              </div>
-            </div>
-            <div class="modal-item">
-              <span class="modal-icon">📄</span>
-              <div>
-                <strong>Páginas Padronizadas</strong>
-                <p>Criação de páginas novas seguindo padrão visual único e consistente.</p>
-              </div>
-            </div>
-            <div class="modal-item">
-              <span class="modal-icon">📰</span>
-              <div>
-                <strong>News Room / Tradeshows</strong>
-                <p>Seções especiais organizadas e fáceis de manter atualizadas.</p>
-              </div>
-            </div>
-            <div class="modal-item">
-              <span class="modal-icon">📱</span>
-              <div>
-                <strong>Responsividade Premium</strong>
-                <p>Melhor experiência mobile, reduzindo atrito para leads.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="modal-section">
-          <h3>🛠️ Tecnologias</h3>
-          <div class="modal-tags">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-            <span>CoreCommerce</span>
-            <span>Custom Code</span>
-          </div>
-        </div>
-        
-        <div class="modal-section highlight">
-          <h3>📈 Impacto</h3>
-          <div class="modal-results">
-            <span>✅ Mais confiança imediata na marca (cara de empresa grande)</span>
-            <span>✅ Navegação clara e rápida para encontrar produtos</span>
-            <span>✅ Experiência mobile otimizada</span>
-            <span>✅ Site pronto para escalar com novas páginas e campanhas</span>
-            <span>✅ Base sólida para SEO on-page e crescimento orgânico</span>
-          </div>
-        </div>
-        
-        <div class="modal-footer">
-          <a href="https://digi-vet.com" target="_blank" class="btn-primary glow">Ver site</a>
         </div>
       </div>
     </div>

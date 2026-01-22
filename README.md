@@ -11,7 +11,23 @@ Portfolio website built with pure HTML, CSS, and JavaScript. A modern, responsiv
 - ⚡ **No Frameworks** - Pure HTML/CSS/JS for maximum performance
 - 🔗 **Interactive Modals** - Detailed project views with smooth animations
 - 📝 **Blog Integration** - Fetches posts from Dev.to API
-- 🚀 **Netlify Ready** - Deploy-ready static site
+- 📊 **Analytics** - Umami Analytics (privacy-friendly, cookie-free)
+- 🚀 **Netlify Ready** - Deploy-ready static site with forms support
+
+## Forms
+
+The contact form uses **Netlify Forms** for spam-free form handling with no backend code required.
+
+### How it works
+- Forms are automatically detected by Netlify during deployment
+- Spam filtering with honeypot (no CAPTCHAs needed)
+- Email notifications can be configured in Netlify dashboard
+- Submissions are stored and manageable in Netlify
+
+### Setup
+1. The form is already configured in `index.html`
+2. After deploying to Netlify, configure notification settings in Netlify Dashboard
+3. Go to Site settings > Forms > Form notifications to set up email alerts
 
 ## Project Structure
 
@@ -20,7 +36,7 @@ portfolio-astro/
 ├── index.html      # Main HTML file with all content and modals
 ├── styles.css      # Complete styling with CSS variables
 ├── script.js       # All JavaScript functionality
-├── favicon.svg     # Site favicon
+├── favicon.svg     # Site favicon (B logo)
 └── img/            # Project screenshots
     ├── cloud-rocktron.png
     ├── digi-vet.com.br.png
@@ -131,13 +147,30 @@ Edit the CSS variables in `styles.css`:
 }
 ```
 
+## Analytics
+
+**Umami Analytics** - Privacy-friendly, cookie-free, and free for up to 30,000 page views/month.
+
+### Setup
+
+1. Create a free account at [umami.is](https://umami.is)
+2. Add your website to get a website ID
+3. Replace `YOUR_UMAMI_WEBSITE_ID` in `index.html` with your actual ID
+
+### Features
+- No cookies, no GDPR consent needed
+- Lightweight (< 1KB script)
+- Real-time dashboard
+- Open source
+
 ## Technologies Used
 
 - **HTML5** - Semantic markup
 - **CSS3** - Custom properties, grid, flexbox, animations
 - **JavaScript (ES6+)** - No frameworks, pure JS
 - **Dev.to API** - Blog post integration
-- **Font Awesome** - Icons (via CDN in HTML)
+- **Umami Analytics** - Privacy-friendly analytics
+- **SVG** - Favicon
 
 ## Browser Support
 

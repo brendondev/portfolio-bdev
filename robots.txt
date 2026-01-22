@@ -1,0 +1,14 @@
+# Robots.txt for Brendon Portfolio
+# https://brendondev-portfolio.netlify.app/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://brendondev-portfolio.netlify.app/sitemap.xml
+
+# Disallow private paths (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Crawl-delay (optional, for respectful crawling)
+Crawl-delay: 10
