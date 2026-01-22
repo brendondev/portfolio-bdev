@@ -616,6 +616,96 @@ nav .container {
   line-height: 1.7;
 }
 
+/* Education Section */
+.education-section {
+  padding: 100px 0;
+  background: var(--bg-secondary);
+}
+
+.education-bento {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.education-header {
+  grid-column: span 2;
+  margin-bottom: 16px;
+}
+
+.education-bento-card {
+  grid-column: span 1;
+  padding: 28px;
+}
+
+.education-bento-card .period {
+  display: inline-block;
+  padding: 6px 14px;
+  background: var(--accent-light);
+  color: var(--accent);
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.education-bento-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.education-bento-card p {
+  color: var(--text-tertiary);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+/* Courses Section */
+.courses-section {
+  padding: 100px 0;
+  background: var(--bg-secondary);
+}
+
+.courses-bento {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.courses-header {
+  grid-column: span 2;
+  margin-bottom: 16px;
+}
+
+.course-bento-card {
+  grid-column: span 1;
+  padding: 28px;
+}
+
+.course-bento-card .period {
+  display: inline-block;
+  padding: 6px 14px;
+  background: var(--accent-light);
+  color: var(--accent);
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.course-bento-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.course-bento-card p {
+  color: var(--text-tertiary);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
 /* Tools Section */
 .tools-section {
   padding: 100px 0;
@@ -878,12 +968,16 @@ footer .social a:hover {
   }
   
   .projects-bento,
-  .tools-bento {
+  .tools-bento,
+  .education-bento,
+  .courses-bento {
     grid-template-columns: repeat(2, 1fr);
   }
   
   .tools-header,
-  .thoughts-header {
+  .thoughts-header,
+  .education-header,
+  .courses-header {
     grid-column: span 2;
   }
   
@@ -941,12 +1035,16 @@ footer .social a:hover {
   
   .projects-bento,
   .experience-bento,
+  .education-bento,
+  .courses-bento,
   .contact-bento {
     grid-template-columns: 1fr;
   }
   
   .projects-header,
   .experience-header,
+  .education-header,
+  .courses-header,
   .contact-header,
   .tools-header,
   .thoughts-header {
@@ -955,6 +1053,8 @@ footer .social a:hover {
   
   .project-bento-card,
   .experience-bento-card,
+  .education-bento-card,
+  .course-bento-card,
   .tool-bento-card,
   .contact-form-bento,
   .contact-info-bento {
