@@ -11,7 +11,7 @@ const translations = {
     perf_title: 'Performance',
     perf_subtitle: 'Carregamento: 0.3s',
     stack_title: 'Full Stack',
-    tools_title: 'Stack Tecnológica',
+    tools_title: 'Full Stack',
     ecom_title: 'E-commerce',
     ecom_subtitle: 'WooCommerce Pro',
     lms_subtitle: 'Integração LMS',
@@ -274,7 +274,7 @@ const translations = {
     perf_title: 'Performance',
     perf_subtitle: 'Loading: 0.3s',
     stack_title: 'Full Stack',
-    tools_title: 'Tech Stack',
+    tools_title: 'Full Stack',
     ecom_title: 'E-commerce',
     ecom_subtitle: 'WooCommerce Pro',
     lms_subtitle: 'LMS Integration',
@@ -528,6 +528,103 @@ const translations = {
   }
 };
 
+function escapeHtml(value) {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function setThemeToggleIcon(button, isDark) {
+  if (!button) return;
+  button.innerHTML = `<i class="fa-solid ${isDark ? 'fa-sun' : 'fa-moon'}" aria-hidden="true"></i>`;
+}
+
+function upgradeIcons() {
+  const iconMap = {
+    '⚡': 'fa-solid fa-bolt',
+    '🔌': 'fa-solid fa-plug',
+    '🛒': 'fa-solid fa-cart-shopping',
+    '🎓': 'fa-solid fa-graduation-cap',
+    '🔧': 'fa-solid fa-screwdriver-wrench',
+    '🔗': 'fa-solid fa-link',
+    '🏆': 'fa-solid fa-trophy',
+    '📦': 'fa-solid fa-box-archive',
+    '👥': 'fa-solid fa-users',
+    '🚀': 'fa-solid fa-rocket',
+    '⚛️': 'fa-brands fa-react',
+    '🟢': 'fa-brands fa-vuejs',
+    '🔷': 'fa-solid fa-code',
+    '🎨': 'fa-solid fa-palette',
+    '💨': 'fa-solid fa-wind',
+    '🐘': 'fa-brands fa-php',
+    '🗄️': 'fa-solid fa-database',
+    '📝': 'fa-solid fa-pen-ruler',
+    '🌐': 'fa-solid fa-globe',
+    '🐙': 'fa-brands fa-git-alt',
+    '🐳': 'fa-brands fa-docker',
+    '☁️': 'fa-solid fa-cloud',
+    '🎯': 'fa-solid fa-bullseye',
+    '📋': 'fa-solid fa-clipboard-list',
+    '📤': 'fa-solid fa-upload',
+    '📁': 'fa-solid fa-folder-open',
+    '🚚': 'fa-solid fa-truck-fast',
+    '⚙️': 'fa-solid fa-gears',
+    '💰': 'fa-solid fa-money-bill-wave',
+    '📐': 'fa-solid fa-ruler-combined',
+    '💾': 'fa-solid fa-floppy-disk',
+    '💬': 'fa-solid fa-comments',
+    '🎬': 'fa-solid fa-clapperboard',
+    '📧': 'fa-solid fa-envelope',
+    '📚': 'fa-solid fa-book-open',
+    '🔒': 'fa-solid fa-lock',
+    '📊': 'fa-solid fa-chart-column',
+    '📱': 'fa-solid fa-mobile-screen-button',
+    '🏠': 'fa-solid fa-house',
+    '📄': 'fa-solid fa-file-lines',
+    '📰': 'fa-solid fa-newspaper',
+    '🔄': 'fa-solid fa-arrows-rotate',
+    '🔻': 'fa-solid fa-arrow-trend-down',
+    '🔺': 'fa-solid fa-arrow-trend-up',
+    '⭐': 'fa-solid fa-star',
+    '✅': 'fa-solid fa-circle-check',
+    '❌': 'fa-solid fa-circle-xmark'
+  };
+
+  document.querySelectorAll('.hero-icon-box, .hero-stack-icons span, .stats-card .icon, .step-icon, .tool-bento-card .icon, .modal-icon').forEach((element) => {
+    const iconKey = element.textContent.trim();
+    const iconClass = iconMap[iconKey];
+    if (iconClass) {
+      element.innerHTML = `<i class="${iconClass}" aria-hidden="true"></i>`;
+    }
+  });
+
+  document.querySelectorAll('.modal-section h3').forEach((heading) => {
+    const firstNode = heading.firstChild;
+    if (!firstNode || firstNode.nodeType !== Node.TEXT_NODE) return;
+
+    const original = firstNode.textContent || '';
+    const match = original.match(/^\s*([^\s]+)\s*/);
+    if (!match) return;
+
+    const iconClass = iconMap[match[1]];
+    if (!iconClass) return;
+
+    firstNode.textContent = original.replace(match[0], '');
+    if (!heading.querySelector('.section-icon')) {
+      heading.insertAdjacentHTML('afterbegin', `<i class="section-icon ${iconClass}" aria-hidden="true"></i> `);
+    }
+  });
+
+  document.querySelectorAll('.modal-results span').forEach((result) => {
+    const text = result.textContent.trim().replace(/^✅\s*/, '');
+    if (!text) return;
+    result.innerHTML = `<i class="result-icon fa-solid fa-circle-check" aria-hidden="true"></i>${escapeHtml(text)}`;
+  });
+}
+
 // Language Toggle
 function initLanguage() {
   const savedLang = localStorage.getItem('lang') || 'pt';
@@ -546,6 +643,7 @@ function initLanguage() {
     });
     
     localStorage.setItem('lang', lang);
+    upgradeIcons();
   }
   
   langBtns.forEach(btn => {
@@ -589,7 +687,7 @@ async function loadBlogPosts() {
   
   container.innerHTML = `
     <div class="bento-card" style="grid-column: span 2; text-align: center; color: var(--text-secondary);">
-      <p style="margin-bottom: 12px;">📝 ${blogTitle}</p>
+      <p style="margin-bottom: 12px;"><i class="fa-solid fa-pen-ruler" aria-hidden="true"></i> ${blogTitle}</p>
       <p style="font-size: 0.875rem; margin-bottom: 12px;">${blogSubtitle}</p>
       <a href="https://dev.to/brendondev" target="_blank" style="color: var(--accent); font-weight: 600;">
         ${blogLink}
@@ -644,13 +742,13 @@ document.addEventListener('DOMContentLoaded', function() {
     let isDark = savedTheme ? savedTheme === 'dark' : prefersDark;
     
     document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-    themeToggle.textContent = isDark ? '☀️' : '🌙';
+    setThemeToggleIcon(themeToggle, isDark);
     
     themeToggle.onclick = function() {
       isDark = !isDark;
       document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      themeToggle.textContent = isDark ? '☀️' : '🌙';
+      setThemeToggleIcon(themeToggle, isDark);
     };
   }
   
@@ -830,11 +928,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const toast = document.createElement('div');
     toast.className = `toast ${type}`;
     
-    const icon = type === 'success' ? '✓' : '✕';
-    const iconEmoji = type === 'success' ? '✅' : '❌';
+    const iconClass = type === 'success' ? 'fa-circle-check' : 'fa-circle-xmark';
     
     toast.innerHTML = `
-      <span class="toast-icon">${iconEmoji}</span>
+      <span class="toast-icon"><i class="fa-solid ${iconClass}" aria-hidden="true"></i></span>
       <span class="toast-message">${message}</span>
     `;
     
@@ -876,4 +973,5 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Load Blog Posts
   loadBlogPosts();
+  upgradeIcons();
 });
